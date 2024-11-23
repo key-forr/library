@@ -1,44 +1,66 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace library
 {
     internal class DataBaseHelper
     {
-        MySqlConnection myConn;
-        public DataBaseHelper() 
+        private readonly SqlConnection sqlConnection;
+
+        public DataBaseHelper()
         {
-            string connStr = "server=localhost;user=root;database=library;port=3306;password=root";
-            myConn = new MySqlConnection(connStr);
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBLibrary.mdf;Integrated Security=True";
+            sqlConnection = new SqlConnection(connectionString);
             try
             {
-                Console.WriteLine("Connecting to MySQL...");
-                myConn.Open();
+                Console.WriteLine("Connecting to SQL Server...");
+                sqlConnection.Open();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine($"Connection Error: {ex.Message}");
             }
-
         }
 
         public bool CheckUser(string login, string password)
         {
-            string sql = $"SELECT COUNT(*) as count FROM user WHERE login='{login}' AND password='{password}'";
-            MySqlCommand cmd = new MySqlCommand(sql, myConn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
+            // Використовуємо параметризований запит для захисту від SQL-ін'єкцій
+            string sql = "SELECT COUNT(*) FROM [user] WHERE login = @Login AND password = @Password";
 
-            while (rdr.Read())
+            using (SqlCommand command = new SqlCommand(sql, sqlConnection))
             {
-                return rdr[0].ToString() != "0";
-            }
+                // Додаємо параметри
+                command.Parameters.AddWithValue("@Login", login);
+                command.Parameters.AddWithValue("@Password", password);
 
-            rdr.Close();
-            return false;
+                try
+                {
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Query Error: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+        // Метод для закриття з'єднання
+        public void CloseConnection()
+        {
+            if (sqlConnection != null && sqlConnection.State == System.Data.ConnectionState.Open)
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        // Реалізація IDisposable для коректного звільнення ресурсів
+        public void Dispose()
+        {
+            CloseConnection();
+            sqlConnection?.Dispose();
         }
     }
 }
