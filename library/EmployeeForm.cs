@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace library
 {
-    public partial class ReminderAddForm : Form
+    public partial class EmployeeForm : Form
     {
-        private HomeForm _parentForm; 
-        private Panel _targetPanel; 
+        private HomeForm _parentForm;
+        private Panel _targetPanel;
 
-        public ReminderAddForm(HomeForm parentForm, Panel targetPanel)
+        public EmployeeForm(HomeForm parentForm, Panel targetPanel)
         {
             InitializeComponent();
-            _parentForm = parentForm;  
-            _targetPanel = targetPanel; 
+            _parentForm = parentForm;
+            _targetPanel = targetPanel;
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
