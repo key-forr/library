@@ -229,14 +229,5 @@
   <ItemGroup>
     <None Include="Resources\bell.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="DBLibrary.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DBLibrary_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DBLibrary.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
