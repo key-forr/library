@@ -11,7 +11,8 @@ namespace library
 
         public void SavePanelState(Panel panel)
         {
-            if (panel == null) return;
+            if (panel == null) 
+                return;
 
             var controlsCopy = panel.Controls.Cast<Control>().ToList();
 
@@ -23,20 +24,14 @@ namespace library
 
         public void RestorePanelState(Panel panel)
         {
-            if (panel == null || !panelStates.ContainsKey(panel)) return;
+            if (panel == null || !panelStates.ContainsKey(panel)) 
+                return;
 
             panel.Controls.Clear();
 
             foreach (var control in panelStates[panel])
             {
                 panel.Controls.Add(control);
-            }
-        }
-        public void ClearPanelState(Panel panel)
-        {
-            if (panelStates.ContainsKey(panel))
-            {
-                panelStates.Remove(panel);
             }
         }
     }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    //Клас для реалізації основно логіки
     public class AuthorizationPresenter
     {
         private readonly AutorizationForm view;
@@ -16,25 +15,34 @@ namespace library
             this.view = view;
         }
 
-        public void HandleLogin(string username, string password)
+        public void HandleLogin(string login, string password)
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
             {
-                view.ShowError("Заповніть логін та пароль!");
+                string errorMessage = string.IsNullOrEmpty(login) ? "Заповніть логін!" : "Заповніть пароль!";
+                if (string.IsNullOrEmpty(login) && string.IsNullOrEmpty(password))
+                    errorMessage = "Заповніть логін та пароль!";
+
+                view.ShowError(errorMessage);
                 return;
             }
 
             DataBaseHelper dataBaseHelper = new DataBaseHelper();
-            if (dataBaseHelper.CheckUser(username, password))
+            if (dataBaseHelper.CheckUser(login, password))
             {
+                UserSession.CurrentUserLogin = login;
+                UserSession.UserId = dataBaseHelper.GetUserId(login);
                 view.NavigateToHome();
             }
             else
             {
-                view.ShowError("Не правильний логін або пароль!");
+                view.ShowError("Неправильний логін або пароль!");
             }
         }
 
-
+        public string GetUserLogin()
+        {
+            return view.GetUserLogin();
+        }
     }
 }

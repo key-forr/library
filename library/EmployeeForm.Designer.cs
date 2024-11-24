@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.button_back = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
-            // guna2Button2
+            // button_back
             // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = global::library.Properties.Resources.Back;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button2.Location = new System.Drawing.Point(27, 25);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(55, 53);
-            this.guna2Button2.TabIndex = 19;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.button_back.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_back.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_back.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_back.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_back.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.button_back.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_back.ForeColor = System.Drawing.Color.White;
+            this.button_back.Image = global::library.Properties.Resources.Back;
+            this.button_back.ImageSize = new System.Drawing.Size(40, 40);
+            this.button_back.Location = new System.Drawing.Point(27, 25);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(55, 53);
+            this.button_back.TabIndex = 19;
+            this.button_back.Click += new System.EventHandler(this.button_back_home);
             // 
             // EmployeeForm
             // 
@@ -54,7 +54,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(1442, 679);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.button_back);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
@@ -64,6 +64,6 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button button_back;
     }
 }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace library
@@ -19,27 +20,23 @@ namespace library
             InitializeComponent();
             presenter = new AuthorizationPresenter(this);
 
-            //Центрування контенту
             CenterContent();
             this.Resize += (s, e) => CenterContent();
-
         }
 
         private void CenterContent()
         {
-            
             panel_signIn.Left = (this.ClientSize.Width - panel_signIn.Width) / 2;
             panel_signIn.Top = (this.ClientSize.Height - panel_signIn.Height) / 2;
             label_signIn.Left = (this.ClientSize.Width - label_signIn.Width) / 2;
             label_signIn.Top = (this.ClientSize.Height - panel_signIn.Height) / 4;
-
         }
 
         private void button_autorization(object sender, EventArgs e)
         {
-            presenter.HandleLogin(login_box.Text, password_box.Text);
+            presenter.HandleLogin(text_box_login.Text, text_box_password.Text);
         }
-       
+
         public void ShowError(string message)
         {
             MessageBox.Show(message);
@@ -53,8 +50,8 @@ namespace library
 
         private void check_box_checked_changed(object sender, EventArgs e)
         {
-            if (check_showPass.Checked) password_box.PasswordChar = '\0';
-            else password_box.PasswordChar = '*';
+            if (check_show_pass.Checked) text_box_password.PasswordChar = '\0';
+            else text_box_password.PasswordChar = '*';
         }
 
         private void button_submit_mouse_leave(object sender, EventArgs e)
@@ -69,6 +66,11 @@ namespace library
             button_submit.BackColor = Color.FromArgb(22, 26, 50);
             button_submit.FlatAppearance.BorderColor = Color.FromArgb(154, 73, 229);
             button_submit.FlatAppearance.BorderSize = 2;
+        }
+
+        public string GetUserLogin()
+        {
+            return label_login.Text;
         }
     }
 }

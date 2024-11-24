@@ -29,326 +29,286 @@ namespace library
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel_navigation = new System.Windows.Forms.Panel();
+            this.label_book = new System.Windows.Forms.Label();
+            this.label_haven = new System.Windows.Forms.Label();
+            this.button_home_nav = new Guna.UI2.WinForms.Guna2Button();
+            this.button_personal_office_nav = new Guna.UI2.WinForms.Guna2Button();
+            this.logo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.button_employee_nav = new System.Windows.Forms.Button();
+            this.button_booking_nav = new System.Windows.Forms.Button();
+            this.button_books_nav = new System.Windows.Forms.Button();
+            this.button_statistics_nav = new System.Windows.Forms.Button();
+            this.button_customer_nav = new System.Windows.Forms.Button();
+            this.button_storage_nav = new System.Windows.Forms.Button();
+            this.panel_main = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel_reminder = new Guna.UI2.WinForms.Guna2Panel();
+            this.picture_box_bell = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.button_more_reminder = new Guna.UI2.WinForms.Guna2Button();
+            this.label_reminder = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.guna2Panel5.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
+            this.text_box_search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.combo_box_select_search = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.button_give_book = new Guna.UI2.WinForms.Guna2Button();
+            this.button_return_book = new Guna.UI2.WinForms.Guna2Button();
+            this.butoon_booking = new Guna.UI2.WinForms.Guna2Button();
+            this.button_add_book = new Guna.UI2.WinForms.Guna2Button();
+            this.reminder_view = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.panel_navigation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.panel_main.SuspendLayout();
+            this.panel_reminder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_box_bell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reminder_view)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel_navigation
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.panel1.Controls.Add(this.guna2Button2);
-            this.panel1.Controls.Add(this.guna2Button1);
-            this.panel1.Controls.Add(this.guna2TextBox2);
-            this.panel1.Controls.Add(this.guna2TextBox1);
-            this.panel1.Controls.Add(this.guna2PictureBox1);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(-2, -2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1442, 127);
-            this.panel1.TabIndex = 0;
+            this.panel_navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.panel_navigation.Controls.Add(this.label_book);
+            this.panel_navigation.Controls.Add(this.label_haven);
+            this.panel_navigation.Controls.Add(this.button_home_nav);
+            this.panel_navigation.Controls.Add(this.button_personal_office_nav);
+            this.panel_navigation.Controls.Add(this.logo);
+            this.panel_navigation.Controls.Add(this.button_employee_nav);
+            this.panel_navigation.Controls.Add(this.button_booking_nav);
+            this.panel_navigation.Controls.Add(this.button_books_nav);
+            this.panel_navigation.Controls.Add(this.button_statistics_nav);
+            this.panel_navigation.Controls.Add(this.button_customer_nav);
+            this.panel_navigation.Controls.Add(this.button_storage_nav);
+            this.panel_navigation.Location = new System.Drawing.Point(-2, -2);
+            this.panel_navigation.Name = "panel_navigation";
+            this.panel_navigation.Size = new System.Drawing.Size(1442, 127);
+            this.panel_navigation.TabIndex = 0;
             // 
-            // guna2Button2
+            // label_book
             // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = global::library.Properties.Resources.Home;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(50, 50);
-            this.guna2Button2.Location = new System.Drawing.Point(1241, 32);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(65, 67);
-            this.guna2Button2.TabIndex = 17;
+            this.label_book.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.label_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.label_book.Location = new System.Drawing.Point(143, 14);
+            this.label_book.Name = "label_book";
+            this.label_book.Size = new System.Drawing.Size(148, 43);
+            this.label_book.TabIndex = 27;
+            this.label_book.Text = "Book";
+            this.label_book.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2Button1
+            // label_haven
             // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = global::library.Properties.Resources.User;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(50, 50);
-            this.guna2Button1.Location = new System.Drawing.Point(1336, 32);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(65, 67);
-            this.guna2Button1.TabIndex = 1;
+            this.label_haven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.label_haven.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_haven.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.label_haven.Location = new System.Drawing.Point(158, 57);
+            this.label_haven.Name = "label_haven";
+            this.label_haven.Size = new System.Drawing.Size(148, 43);
+            this.label_haven.TabIndex = 26;
+            this.label_haven.Text = "Haven";
+            this.label_haven.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2TextBox2
+            // button_home_nav
             // 
-            this.guna2TextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.guna2TextBox2.BorderThickness = 0;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "Haven";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(177, 61);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(9);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(149, 48);
-            this.guna2TextBox2.TabIndex = 15;
+            this.button_home_nav.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_home_nav.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_home_nav.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_home_nav.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_home_nav.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_home_nav.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_home_nav.ForeColor = System.Drawing.Color.White;
+            this.button_home_nav.Image = global::library.Properties.Resources.Home;
+            this.button_home_nav.ImageSize = new System.Drawing.Size(50, 50);
+            this.button_home_nav.Location = new System.Drawing.Point(1241, 32);
+            this.button_home_nav.Name = "button_home_nav";
+            this.button_home_nav.Size = new System.Drawing.Size(65, 67);
+            this.button_home_nav.TabIndex = 17;
             // 
-            // guna2TextBox1
+            // button_personal_office_nav
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.guna2TextBox1.BorderThickness = 0;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "Book";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(177, 20);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(9);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(126, 46);
-            this.guna2TextBox1.TabIndex = 14;
+            this.button_personal_office_nav.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_personal_office_nav.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_personal_office_nav.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_personal_office_nav.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_personal_office_nav.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_personal_office_nav.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_personal_office_nav.ForeColor = System.Drawing.Color.White;
+            this.button_personal_office_nav.Image = global::library.Properties.Resources.User;
+            this.button_personal_office_nav.ImageSize = new System.Drawing.Size(50, 50);
+            this.button_personal_office_nav.Location = new System.Drawing.Point(1336, 32);
+            this.button_personal_office_nav.Name = "button_personal_office_nav";
+            this.button_personal_office_nav.Size = new System.Drawing.Size(65, 67);
+            this.button_personal_office_nav.TabIndex = 1;
             // 
-            // guna2PictureBox1
+            // logo
             // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(44, 14);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(130, 95);
-            this.guna2PictureBox1.TabIndex = 13;
-            this.guna2PictureBox1.TabStop = false;
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.ImageRotate = 0F;
+            this.logo.Location = new System.Drawing.Point(44, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(130, 95);
+            this.logo.TabIndex = 13;
+            this.logo.TabStop = false;
             // 
-            // button13
+            // button_employee_nav
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.button13.Location = new System.Drawing.Point(1031, 46);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(165, 39);
-            this.button13.TabIndex = 12;
-            this.button13.Text = "Працівники";
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.button_employee_nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_employee_nav.FlatAppearance.BorderSize = 0;
+            this.button_employee_nav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_employee_nav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_employee_nav.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_employee_nav.Location = new System.Drawing.Point(1031, 46);
+            this.button_employee_nav.Name = "button_employee_nav";
+            this.button_employee_nav.Size = new System.Drawing.Size(165, 39);
+            this.button_employee_nav.TabIndex = 12;
+            this.button_employee_nav.Text = "Працівники";
+            this.button_employee_nav.UseVisualStyleBackColor = false;
+            this.button_employee_nav.Click += new System.EventHandler(this.button_employee_nav_Click);
             // 
-            // button9
+            // button_booking_nav
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.button9.Location = new System.Drawing.Point(466, 46);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(173, 39);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "Бронювання";
-            this.button9.UseVisualStyleBackColor = false;
+            this.button_booking_nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_booking_nav.FlatAppearance.BorderSize = 0;
+            this.button_booking_nav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_booking_nav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_booking_nav.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_booking_nav.Location = new System.Drawing.Point(466, 46);
+            this.button_booking_nav.Name = "button_booking_nav";
+            this.button_booking_nav.Size = new System.Drawing.Size(173, 39);
+            this.button_booking_nav.TabIndex = 8;
+            this.button_booking_nav.Text = "Бронювання";
+            this.button_booking_nav.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // button_books_nav
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.button10.Location = new System.Drawing.Point(645, 46);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(110, 39);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "Книги";
-            this.button10.UseVisualStyleBackColor = false;
+            this.button_books_nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_books_nav.FlatAppearance.BorderSize = 0;
+            this.button_books_nav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_books_nav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_books_nav.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_books_nav.Location = new System.Drawing.Point(645, 46);
+            this.button_books_nav.Name = "button_books_nav";
+            this.button_books_nav.Size = new System.Drawing.Size(110, 39);
+            this.button_books_nav.TabIndex = 9;
+            this.button_books_nav.Text = "Книги";
+            this.button_books_nav.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // button_statistics_nav
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.button12.Location = new System.Drawing.Point(873, 46);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(152, 39);
-            this.button12.TabIndex = 11;
-            this.button12.Text = "Статистика";
-            this.button12.UseVisualStyleBackColor = false;
+            this.button_statistics_nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_statistics_nav.FlatAppearance.BorderSize = 0;
+            this.button_statistics_nav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_statistics_nav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_statistics_nav.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_statistics_nav.Location = new System.Drawing.Point(873, 46);
+            this.button_statistics_nav.Name = "button_statistics_nav";
+            this.button_statistics_nav.Size = new System.Drawing.Size(152, 39);
+            this.button_statistics_nav.TabIndex = 11;
+            this.button_statistics_nav.Text = "Статистика";
+            this.button_statistics_nav.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // button_customer_nav
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.button11.Location = new System.Drawing.Point(761, 46);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(106, 39);
-            this.button11.TabIndex = 10;
-            this.button11.Text = "Клієнти";
-            this.button11.UseVisualStyleBackColor = false;
+            this.button_customer_nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_customer_nav.FlatAppearance.BorderSize = 0;
+            this.button_customer_nav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_customer_nav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_customer_nav.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_customer_nav.Location = new System.Drawing.Point(761, 46);
+            this.button_customer_nav.Name = "button_customer_nav";
+            this.button_customer_nav.Size = new System.Drawing.Size(106, 39);
+            this.button_customer_nav.TabIndex = 10;
+            this.button_customer_nav.Text = "Клієнти";
+            this.button_customer_nav.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // button_storage_nav
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.button1.Location = new System.Drawing.Point(338, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Склад";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button_storage_nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_storage_nav.FlatAppearance.BorderSize = 0;
+            this.button_storage_nav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_storage_nav.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_storage_nav.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_storage_nav.Location = new System.Drawing.Point(338, 46);
+            this.button_storage_nav.Name = "button_storage_nav";
+            this.button_storage_nav.Size = new System.Drawing.Size(122, 39);
+            this.button_storage_nav.TabIndex = 0;
+            this.button_storage_nav.Text = "Склад";
+            this.button_storage_nav.UseVisualStyleBackColor = false;
             // 
-            // guna2Panel5
+            // panel_main
             // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.guna2Panel5.Controls.Add(this.guna2Panel4);
-            this.guna2Panel5.Controls.Add(this.guna2Panel3);
-            this.guna2Panel5.Controls.Add(this.guna2Panel2);
-            this.guna2Panel5.Controls.Add(this.guna2Panel1);
-            this.guna2Panel5.Controls.Add(this.guna2TextBox3);
-            this.guna2Panel5.Controls.Add(this.guna2ComboBox1);
-            this.guna2Panel5.Controls.Add(this.guna2Button6);
-            this.guna2Panel5.Controls.Add(this.guna2Button5);
-            this.guna2Panel5.Controls.Add(this.guna2Button4);
-            this.guna2Panel5.Controls.Add(this.guna2Button3);
-            this.guna2Panel5.Location = new System.Drawing.Point(-2, 119);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(1442, 679);
-            this.guna2Panel5.TabIndex = 10;
+            this.panel_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.panel_main.Controls.Add(this.panel_reminder);
+            this.panel_main.Controls.Add(this.guna2Panel3);
+            this.panel_main.Controls.Add(this.guna2Panel2);
+            this.panel_main.Controls.Add(this.guna2Panel1);
+            this.panel_main.Controls.Add(this.text_box_search);
+            this.panel_main.Controls.Add(this.combo_box_select_search);
+            this.panel_main.Controls.Add(this.button_give_book);
+            this.panel_main.Controls.Add(this.button_return_book);
+            this.panel_main.Controls.Add(this.butoon_booking);
+            this.panel_main.Controls.Add(this.button_add_book);
+            this.panel_main.Location = new System.Drawing.Point(-2, 119);
+            this.panel_main.Name = "panel_main";
+            this.panel_main.Size = new System.Drawing.Size(1442, 679);
+            this.panel_main.TabIndex = 10;
             // 
-            // guna2Panel4
+            // panel_reminder
             // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2Panel4.Controls.Add(this.guna2Button9);
-            this.guna2Panel4.Controls.Add(this.guna2Button8);
-            this.guna2Panel4.Controls.Add(this.guna2Button7);
-            this.guna2Panel4.Controls.Add(this.label1);
-            this.guna2Panel4.Location = new System.Drawing.Point(981, 42);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(377, 326);
-            this.guna2Panel4.TabIndex = 17;
+            this.panel_reminder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.panel_reminder.Controls.Add(this.reminder_view);
+            this.panel_reminder.Controls.Add(this.picture_box_bell);
+            this.panel_reminder.Controls.Add(this.button_more_reminder);
+            this.panel_reminder.Controls.Add(this.label_reminder);
+            this.panel_reminder.Location = new System.Drawing.Point(981, 42);
+            this.panel_reminder.Name = "panel_reminder";
+            this.panel_reminder.Size = new System.Drawing.Size(377, 326);
+            this.panel_reminder.TabIndex = 17;
             // 
-            // guna2Button9
+            // picture_box_bell
             // 
-            this.guna2Button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2Button9.BorderRadius = 10;
-            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2Button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.guna2Button9.Location = new System.Drawing.Point(110, 250);
-            this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(155, 40);
-            this.guna2Button9.TabIndex = 10;
-            this.guna2Button9.Text = "Більше";
+            this.picture_box_bell.Image = global::library.Properties.Resources.bell;
+            this.picture_box_bell.ImageRotate = 0F;
+            this.picture_box_bell.Location = new System.Drawing.Point(271, 16);
+            this.picture_box_bell.Name = "picture_box_bell";
+            this.picture_box_bell.Size = new System.Drawing.Size(54, 39);
+            this.picture_box_bell.TabIndex = 21;
+            this.picture_box_bell.TabStop = false;
             // 
-            // guna2Button8
+            // button_more_reminder
             // 
-            this.guna2Button8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button8.ForeColor = System.Drawing.Color.White;
-            this.guna2Button8.Image = global::library.Properties.Resources.Add;
-            this.guna2Button8.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button8.Location = new System.Drawing.Point(271, 233);
-            this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.Size = new System.Drawing.Size(65, 67);
-            this.guna2Button8.TabIndex = 19;
-            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click_1);
+            this.button_more_reminder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_more_reminder.BorderRadius = 10;
+            this.button_more_reminder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_more_reminder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_more_reminder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_more_reminder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_more_reminder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button_more_reminder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_more_reminder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_more_reminder.Location = new System.Drawing.Point(110, 250);
+            this.button_more_reminder.Name = "button_more_reminder";
+            this.button_more_reminder.Size = new System.Drawing.Size(155, 40);
+            this.button_more_reminder.TabIndex = 10;
+            this.button_more_reminder.Text = "Додати";
+            this.button_more_reminder.Click += new System.EventHandler(this.button_more_reminder_Click);
             // 
-            // guna2Button7
+            // label_reminder
             // 
-            this.guna2Button7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button7.ForeColor = System.Drawing.Color.White;
-            this.guna2Button7.Image = global::library.Properties.Resources.bell;
-            this.guna2Button7.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button7.Location = new System.Drawing.Point(271, 16);
-            this.guna2Button7.Name = "guna2Button7";
-            this.guna2Button7.Size = new System.Drawing.Size(48, 39);
-            this.guna2Button7.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(91, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Нагадування";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_reminder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_reminder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.label_reminder.Location = new System.Drawing.Point(91, 16);
+            this.label_reminder.Name = "label_reminder";
+            this.label_reminder.Size = new System.Drawing.Size(174, 39);
+            this.label_reminder.TabIndex = 0;
+            this.label_reminder.Text = "Нагадування";
+            this.label_reminder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Panel3
             // 
@@ -374,122 +334,172 @@ namespace library
             this.guna2Panel1.Size = new System.Drawing.Size(377, 371);
             this.guna2Panel1.TabIndex = 16;
             // 
-            // guna2TextBox3
+            // text_box_search
             // 
-            this.guna2TextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2TextBox3.BorderRadius = 20;
-            this.guna2TextBox3.BorderThickness = 0;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.IconLeft = global::library.Properties.Resources.Search;
-            this.guna2TextBox3.Location = new System.Drawing.Point(85, 106);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.PlaceholderText = "Шукати";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(221, 44);
-            this.guna2TextBox3.TabIndex = 15;
+            this.text_box_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.text_box_search.BorderRadius = 20;
+            this.text_box_search.BorderThickness = 0;
+            this.text_box_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.text_box_search.DefaultText = "";
+            this.text_box_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.text_box_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.text_box_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.text_box_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.text_box_search.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.text_box_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_box_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.text_box_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_search.IconLeft = global::library.Properties.Resources.Search;
+            this.text_box_search.Location = new System.Drawing.Point(85, 106);
+            this.text_box_search.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.text_box_search.Name = "text_box_search";
+            this.text_box_search.PasswordChar = '\0';
+            this.text_box_search.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.text_box_search.PlaceholderText = "Шукати";
+            this.text_box_search.SelectedText = "";
+            this.text_box_search.Size = new System.Drawing.Size(221, 44);
+            this.text_box_search.TabIndex = 15;
             // 
-            // guna2ComboBox1
+            // combo_box_select_search
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 10;
-            this.guna2ComboBox1.BorderThickness = 0;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(74)))), ((int)(((byte)(232)))));
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
+            this.combo_box_select_search.BackColor = System.Drawing.Color.Transparent;
+            this.combo_box_select_search.BorderRadius = 10;
+            this.combo_box_select_search.BorderThickness = 0;
+            this.combo_box_select_search.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combo_box_select_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_box_select_search.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(74)))), ((int)(((byte)(232)))));
+            this.combo_box_select_search.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combo_box_select_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combo_box_select_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combo_box_select_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.combo_box_select_search.ItemHeight = 30;
+            this.combo_box_select_search.Items.AddRange(new object[] {
             "Книги",
             "Клієнти"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(85, 42);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.TabIndex = 14;
+            this.combo_box_select_search.Location = new System.Drawing.Point(85, 42);
+            this.combo_box_select_search.Name = "combo_box_select_search";
+            this.combo_box_select_search.Size = new System.Drawing.Size(140, 36);
+            this.combo_box_select_search.StartIndex = 0;
+            this.combo_box_select_search.TabIndex = 14;
             // 
-            // guna2Button6
+            // button_give_book
             // 
-            this.guna2Button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2Button6.BorderRadius = 10;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.guna2Button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.guna2Button6.Location = new System.Drawing.Point(103, 325);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(203, 54);
-            this.guna2Button6.TabIndex = 13;
-            this.guna2Button6.Text = "Видати книгу";
+            this.button_give_book.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_give_book.BorderRadius = 10;
+            this.button_give_book.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_give_book.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_give_book.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_give_book.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_give_book.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.button_give_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_give_book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_give_book.Location = new System.Drawing.Point(103, 325);
+            this.button_give_book.Name = "button_give_book";
+            this.button_give_book.Size = new System.Drawing.Size(203, 54);
+            this.button_give_book.TabIndex = 13;
+            this.button_give_book.Text = "Видати книгу";
             // 
-            // guna2Button5
+            // button_return_book
             // 
-            this.guna2Button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2Button5.BorderRadius = 10;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.guna2Button5.Location = new System.Drawing.Point(103, 400);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(203, 54);
-            this.guna2Button5.TabIndex = 12;
-            this.guna2Button5.Text = "Повернення";
+            this.button_return_book.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_return_book.BorderRadius = 10;
+            this.button_return_book.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_return_book.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_return_book.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_return_book.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_return_book.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.button_return_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_return_book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_return_book.Location = new System.Drawing.Point(103, 400);
+            this.button_return_book.Name = "button_return_book";
+            this.button_return_book.Size = new System.Drawing.Size(203, 54);
+            this.button_return_book.TabIndex = 12;
+            this.button_return_book.Text = "Повернення";
             // 
-            // guna2Button4
+            // butoon_booking
             // 
-            this.guna2Button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2Button4.BorderRadius = 10;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.guna2Button4.Location = new System.Drawing.Point(103, 177);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(203, 54);
-            this.guna2Button4.TabIndex = 11;
-            this.guna2Button4.Text = "Бронювання";
+            this.butoon_booking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.butoon_booking.BorderRadius = 10;
+            this.butoon_booking.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butoon_booking.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butoon_booking.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butoon_booking.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butoon_booking.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.butoon_booking.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butoon_booking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.butoon_booking.Location = new System.Drawing.Point(103, 177);
+            this.butoon_booking.Name = "butoon_booking";
+            this.butoon_booking.Size = new System.Drawing.Size(203, 54);
+            this.butoon_booking.TabIndex = 11;
+            this.butoon_booking.Text = "Бронювання";
             // 
-            // guna2Button3
+            // button_add_book
             // 
-            this.guna2Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.guna2Button3.BorderRadius = 10;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.guna2Button3.Location = new System.Drawing.Point(103, 248);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(203, 54);
-            this.guna2Button3.TabIndex = 10;
-            this.guna2Button3.Text = "Додати книгу";
+            this.button_add_book.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_add_book.BorderRadius = 10;
+            this.button_add_book.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_add_book.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_add_book.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_add_book.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_add_book.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.button_add_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_add_book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_add_book.Location = new System.Drawing.Point(103, 248);
+            this.button_add_book.Name = "button_add_book";
+            this.button_add_book.Size = new System.Drawing.Size(203, 54);
+            this.button_add_book.TabIndex = 10;
+            this.button_add_book.Text = "Додати книгу";
+            // 
+            // reminder_view
+            // 
+            this.reminder_view.AllowUserToAddRows = false;
+            this.reminder_view.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.reminder_view.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.reminder_view.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reminder_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.reminder_view.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.reminder_view.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reminder_view.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.reminder_view.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reminder_view.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.reminder_view.ColumnHeadersHeight = 50;
+            this.reminder_view.ColumnHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reminder_view.DefaultCellStyle = dataGridViewCellStyle3;
+            this.reminder_view.DoubleBuffered = true;
+            this.reminder_view.EnableHeadersVisualStyles = false;
+            this.reminder_view.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.reminder_view.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.reminder_view.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.reminder_view.Location = new System.Drawing.Point(36, 77);
+            this.reminder_view.Name = "reminder_view";
+            this.reminder_view.ReadOnly = true;
+            this.reminder_view.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.reminder_view.RowHeadersVisible = false;
+            this.reminder_view.RowHeadersWidth = 51;
+            this.reminder_view.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.reminder_view.RowTemplate.Height = 40;
+            this.reminder_view.RowTemplate.ReadOnly = true;
+            this.reminder_view.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.reminder_view.Size = new System.Drawing.Size(306, 150);
+            this.reminder_view.TabIndex = 0;
             // 
             // HomeForm
             // 
@@ -497,50 +507,52 @@ namespace library
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(1440, 800);
-            this.Controls.Add(this.guna2Panel5);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_main);
+            this.Controls.Add(this.panel_navigation);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomePage";
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel4.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.HomeForm_Load);
+            this.panel_navigation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.panel_main.ResumeLayout(false);
+            this.panel_reminder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picture_box_bell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reminder_view)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button9;
-        private Guna.UI2.WinForms.Guna2Button guna2Button8;
-        private Guna.UI2.WinForms.Guna2Button guna2Button7;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel_navigation;
+        private System.Windows.Forms.Button button_storage_nav;
+        private System.Windows.Forms.Button button_employee_nav;
+        private System.Windows.Forms.Button button_statistics_nav;
+        private System.Windows.Forms.Button button_customer_nav;
+        private System.Windows.Forms.Button button_books_nav;
+        private System.Windows.Forms.Button button_booking_nav;
+        private Guna.UI2.WinForms.Guna2PictureBox logo;
+        private Guna.UI2.WinForms.Guna2Button button_home_nav;
+        private Guna.UI2.WinForms.Guna2Button button_personal_office_nav;
+        private Guna.UI2.WinForms.Guna2Panel panel_main;
+        private Guna.UI2.WinForms.Guna2Panel panel_reminder;
+        private Guna.UI2.WinForms.Guna2Button button_more_reminder;
+        private System.Windows.Forms.Label label_reminder;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2TextBox text_box_search;
+        private Guna.UI2.WinForms.Guna2ComboBox combo_box_select_search;
+        private Guna.UI2.WinForms.Guna2Button button_give_book;
+        private Guna.UI2.WinForms.Guna2Button button_return_book;
+        private Guna.UI2.WinForms.Guna2Button butoon_booking;
+        private Guna.UI2.WinForms.Guna2Button button_add_book;
+        private System.Windows.Forms.Label label_book;
+        private System.Windows.Forms.Label label_haven;
+        private Guna.UI2.WinForms.Guna2PictureBox picture_box_bell;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid reminder_view;
     }
 }

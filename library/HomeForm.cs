@@ -14,24 +14,23 @@ namespace library
     public partial class HomeForm : Form
     {
         private PanelStateManager panelStateManager = new PanelStateManager();
+        private readonly HomeFormPresenter presenter;
 
         public HomeForm()
         {
             InitializeComponent();
+            presenter = new HomeFormPresenter(this);
+
+            LoadAllPanels();
         }
 
-        public void LoadFormOnPanel(Form childForm, Panel targetPanel)
+        private void LoadAllPanels()
         {
-            panelStateManager.SavePanelState(targetPanel);
-
-            targetPanel.Controls.Clear();
-
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-
-            targetPanel.Controls.Add(childForm);
-            childForm.Show();
+            panelStateManager.SavePanelState(guna2Panel1);
+            panelStateManager.SavePanelState(guna2Panel2);
+            panelStateManager.SavePanelState(guna2Panel3);
+            panelStateManager.SavePanelState(panel_reminder);
+            panelStateManager.SavePanelState(panel_main);
         }
 
         public void BackPanel(Panel targetPanel)
@@ -39,17 +38,54 @@ namespace library
             panelStateManager.RestorePanelState(targetPanel);
         }
 
-        
-        private void guna2Button8_Click_1(object sender, EventArgs e)
+        public void LoadFormOnPanel(Form childForm, Panel targetPanel)
         {
-            ReminderAddForm childForm = new ReminderAddForm(this, guna2Panel4);
-            LoadFormOnPanel(childForm, guna2Panel4);
+            targetPanel.Controls.Clear();
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            childForm.Size = targetPanel.Size;
+
+            childForm.AutoScaleMode = AutoScaleMode.None;
+            childForm.AutoSize = true;
+            childForm.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+            childForm.AutoScroll = false;
+
+            targetPanel.SizeChanged += (sender, e) =>
+            {
+                childForm.Size = targetPanel.Size;
+            };
+
+            targetPanel.Controls.Add(childForm);
+
+            childForm.Show();
+        }
+      
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+            presenter.MyToDoList.HomeForm_Load();
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        public DataGridView MyDataGridView
         {
-            EmployeeForm childForm = new EmployeeForm(this, guna2Panel5);
-            LoadFormOnPanel(childForm, guna2Panel5);
+            get { return reminder_view; }
         }
+
+        private void button_employee_nav_Click(object sender, EventArgs e)
+        {
+            EmployeeForm childForm = new EmployeeForm(this, panel_main);
+            LoadFormOnPanel(childForm, panel_main);
+        }
+
+        private void button_more_reminder_Click(object sender, EventArgs e)
+        {
+            ReminderAddForm childForm = new ReminderAddForm(this, panel_reminder, presenter.MyToDoList);
+            LoadFormOnPanel(childForm, panel_reminder);
+        }
+
+       
     }
 }
