@@ -1,43 +1,48 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace library
 {
-    internal class DataBaseHelper
+    internal class DataBaseHelper : IDisposable
     {
-        private readonly SqlConnection sqlConnection;
+        private readonly MySqlConnection sqlConnection;
+        private bool disposed = false;
 
         public DataBaseHelper()
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBLibrary.mdf;Integrated Security=True";
-            sqlConnection = new SqlConnection(connectionString);
+            string connStr = "server=localhost;user=root;database=library;port=3306;password=root";
+            sqlConnection = new MySqlConnection(connStr);
             try
             {
                 sqlConnection.Open();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Connection Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.ToString());
+                MessageBox.Show($"Database connection error: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public bool CheckUser(string login, string password)
         {
-            string sql = "SELECT COUNT(*) FROM [user] WHERE login = @Login AND password = @Password";
-            using (SqlCommand command = new SqlCommand(sql, sqlConnection))
+            string sql = "SELECT COUNT(*) FROM user WHERE login=@Login AND password=@Password";
+            using (MySqlCommand cmd = new MySqlCommand(sql, sqlConnection))
             {
-                command.Parameters.AddWithValue("@Login", login);
-                command.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@Login", login);
+                cmd.Parameters.AddWithValue("@Password", password);
+
                 try
                 {
-                    int count = (int)command.ExecuteScalar();
+                    long count = (long)cmd.ExecuteScalar();
                     return count > 0;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Query Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error checking user: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -45,8 +50,8 @@ namespace library
 
         public int GetUserId(string login)
         {
-            string sql = "SELECT id FROM [user] WHERE login = @Login";
-            using (SqlCommand command = new SqlCommand(sql, sqlConnection))
+            string sql = "SELECT id FROM user WHERE login = @Login";
+            using (MySqlCommand command = new MySqlCommand(sql, sqlConnection))
             {
                 command.Parameters.AddWithValue("@Login", login);
                 try
@@ -60,7 +65,8 @@ namespace library
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error getting user ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error getting user ID: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return -1;
                 }
             }
@@ -71,12 +77,13 @@ namespace library
             int userId = GetUserId(login);
             if (userId == -1)
             {
-                MessageBox.Show("User not found. Reminder cannot be saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("User not found. Reminder cannot be saved.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            string sql = "INSERT INTO [reminder] (title, description, userId) VALUES (@Title, @Description, @UserId)";
-            using (SqlCommand command = new SqlCommand(sql, sqlConnection))
+            string sql = "INSERT INTO reminder (title, description, userId) VALUES (@Title, @Description, @UserId)";
+            using (MySqlCommand command = new MySqlCommand(sql, sqlConnection))
             {
                 command.Parameters.AddWithValue("@Title", title);
                 command.Parameters.AddWithValue("@Description", description);
@@ -87,18 +94,21 @@ namespace library
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Reminder successfully saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Reminder successfully saved!", "Success",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return true;
                     }
                     else
                     {
-                        MessageBox.Show("Reminder was not saved. No rows affected.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Reminder was not saved. No rows affected.", "Warning",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error saving reminder: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error saving reminder: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -112,16 +122,28 @@ namespace library
             }
         }
 
-        ~DataBaseHelper()
+        protected virtual void Dispose(bool disposing)
         {
-            CloseConnection();
-            sqlConnection?.Dispose();
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    CloseConnection();
+                    sqlConnection?.Dispose();
+                }
+                disposed = true;
+            }
         }
 
         public void Dispose()
         {
-            CloseConnection();
-            sqlConnection?.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        ~DataBaseHelper()
+        {
+            Dispose(false);
         }
     }
 }
