@@ -28,15 +28,30 @@ namespace library
         {
             if (string.IsNullOrWhiteSpace(text_box_title.Text) || string.IsNullOrWhiteSpace(text_box_description.Text))
             {
-                MessageBox.Show("Будь ласка, заповніть всі поля!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Будь ласка, заповніть всі поля!", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            this.toDoList.MyDataTable.Rows.Add(text_box_title.Text, text_box_description.Text);
-            toDoList.SaveReminder(text_box_title.Text, text_box_description.Text);
+            try
+            {
+                toDoList.SaveReminder(text_box_title.Text, text_box_description.Text);
 
-            text_box_title.Text = "";
-            text_box_description.Text = "";
+                // Оновлюємо DataGridView після збереження
+                using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
+                {
+                    dataBaseHelper.LoadRemindersToDataGrid(parentForm, UserSession.UserId);
+                }
+
+                // Очищаємо поля введення
+                text_box_title.Text = "";
+                text_box_description.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка при додаванні нагадування: {ex.Message}", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void butoon_back_Click(object sender, EventArgs e)

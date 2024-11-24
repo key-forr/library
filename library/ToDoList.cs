@@ -17,6 +17,28 @@ namespace library
         public ToDoList(HomeForm view)
         {
             this.viewHome = view;
+            InitializeDataGridView();
+        }
+
+        public void InitializeDataGridView()
+        {
+            if (viewHome.MyDataGridView.Columns.Count == 0)
+            {
+                viewHome.MyDataGridView.Columns.Add("Назва", "Назва");
+                viewHome.MyDataGridView.Columns.Add("Опис", "Опис");
+
+                // Налаштування зовнішнього вигляду
+                viewHome.MyDataGridView.ColumnHeadersHeight = 40;
+                viewHome.MyDataGridView.RowTemplate.Height = 40;
+                viewHome.MyDataGridView.AllowUserToAddRows = false;
+                viewHome.MyDataGridView.AllowUserToDeleteRows = false;
+                viewHome.MyDataGridView.ReadOnly = true;
+
+                foreach (DataGridViewColumn column in viewHome.MyDataGridView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            }
         }
 
         public void HomeForm_Load()
@@ -27,10 +49,16 @@ namespace library
             viewHome.MyDataGridView.DataSource = dataTable;
         }
 
-        public void SaveReminder(string title, string discription)
+        public void SaveReminder(string title, string description)
         {
-            DataBaseHelper dataBaseHelper = new DataBaseHelper();
-            dataBaseHelper.SaveReminder(title, discription, UserSession.CurrentUserLogin);
+            using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
+            {
+                if (dataBaseHelper.SaveReminder(title, description, UserSession.CurrentUserLogin))
+                {
+                    // Оновлюємо дані після збереження
+                    dataBaseHelper.LoadRemindersToDataGrid(viewHome, UserSession.UserId);
+                }
+            }
         }
 
         public DataTable MyDataTable

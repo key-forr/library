@@ -114,6 +114,53 @@ namespace library
             }
         }
 
+        public void LoadRemindersToDataGrid(HomeForm homeForm, int userId)
+        {
+            string sql = "SELECT title, description FROM reminder WHERE userId = @UserId";
+
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(sql, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+
+                    DataTable dt = new DataTable();
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                    {
+                        adapter.Fill(dt);
+                    }
+
+                    homeForm.MyDataGridView.DataSource = null;
+                    homeForm.MyDataGridView.Columns.Clear();
+                    homeForm.MyDataGridView.DataSource = dt;
+
+                    // Налаштування стовпців
+                    if (homeForm.MyDataGridView.Columns.Count > 0)
+                    {
+                        // Налаштування заголовків стовпців
+                        homeForm.MyDataGridView.Columns["title"].HeaderText = "Заголовок";
+                        homeForm.MyDataGridView.Columns["description"].HeaderText = "Опис";
+
+                        // Налаштування ширини стовпців
+                        homeForm.MyDataGridView.Columns["title"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        homeForm.MyDataGridView.Columns["description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                        // Додаткові налаштування для кращого вигляду
+                        homeForm.MyDataGridView.ColumnHeadersHeight = 40;
+                        homeForm.MyDataGridView.RowTemplate.Height = 40;
+                        homeForm.MyDataGridView.AllowUserToAddRows = false;
+                        homeForm.MyDataGridView.AllowUserToDeleteRows = false;
+                        homeForm.MyDataGridView.ReadOnly = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading reminders: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public void CloseConnection()
         {
             if (sqlConnection != null && sqlConnection.State == ConnectionState.Open)

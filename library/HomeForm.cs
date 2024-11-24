@@ -22,6 +22,7 @@ namespace library
             presenter = new HomeFormPresenter(this);
 
             LoadAllPanels();
+            LoadReminders();
         }
 
         private void LoadAllPanels()
@@ -66,9 +67,16 @@ namespace library
       
         private void HomeForm_Load(object sender, EventArgs e)
         {
-            presenter.MyToDoList.HomeForm_Load();
+            presenter.MyToDoList.InitializeDataGridView();
         }
 
+        private void LoadReminders()
+        {
+            using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
+            {
+                dataBaseHelper.LoadRemindersToDataGrid(this, UserSession.UserId);
+            }
+        }
         public DataGridView MyDataGridView
         {
             get { return reminder_view; }
