@@ -48,6 +48,7 @@ namespace library
             this.panel_main = new Guna.UI2.WinForms.Guna2Panel();
             this.panel_reminder = new Guna.UI2.WinForms.Guna2Panel();
             this.button_trash_reminder = new Guna.UI2.WinForms.Guna2Button();
+            this.reminder_view = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.picture_box_bell = new Guna.UI2.WinForms.Guna2PictureBox();
             this.button_more_reminder = new Guna.UI2.WinForms.Guna2Button();
             this.label_reminder = new System.Windows.Forms.Label();
@@ -60,13 +61,12 @@ namespace library
             this.button_return_book = new Guna.UI2.WinForms.Guna2Button();
             this.butoon_booking = new Guna.UI2.WinForms.Guna2Button();
             this.button_add_book = new Guna.UI2.WinForms.Guna2Button();
-            this.reminder_view = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel_navigation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panel_main.SuspendLayout();
             this.panel_reminder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_box_bell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reminder_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_box_bell)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_navigation
@@ -283,12 +283,62 @@ namespace library
             this.button_trash_reminder.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button_trash_reminder.ForeColor = System.Drawing.Color.White;
             this.button_trash_reminder.Image = global::library.Properties.Resources.Trash;
-            this.button_trash_reminder.ImageSize = new System.Drawing.Size(50, 50);
+            this.button_trash_reminder.ImageSize = new System.Drawing.Size(40, 40);
             this.button_trash_reminder.Location = new System.Drawing.Point(277, 240);
             this.button_trash_reminder.Name = "button_trash_reminder";
             this.button_trash_reminder.Size = new System.Drawing.Size(65, 50);
             this.button_trash_reminder.TabIndex = 28;
             this.button_trash_reminder.Click += new System.EventHandler(this.button_trash_reminder_Click);
+            // 
+            // reminder_view
+            // 
+            this.reminder_view.AllowUserToAddRows = false;
+            this.reminder_view.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.reminder_view.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.reminder_view.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reminder_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.reminder_view.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.reminder_view.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reminder_view.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.reminder_view.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reminder_view.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.reminder_view.ColumnHeadersHeight = 50;
+            this.reminder_view.ColumnHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reminder_view.DefaultCellStyle = dataGridViewCellStyle3;
+            this.reminder_view.DoubleBuffered = true;
+            this.reminder_view.EnableHeadersVisualStyles = false;
+            this.reminder_view.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.reminder_view.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.reminder_view.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.reminder_view.Location = new System.Drawing.Point(36, 77);
+            this.reminder_view.Name = "reminder_view";
+            this.reminder_view.ReadOnly = true;
+            this.reminder_view.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.reminder_view.RowHeadersVisible = false;
+            this.reminder_view.RowHeadersWidth = 51;
+            this.reminder_view.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.reminder_view.RowTemplate.Height = 40;
+            this.reminder_view.RowTemplate.ReadOnly = true;
+            this.reminder_view.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.reminder_view.Size = new System.Drawing.Size(306, 150);
+            this.reminder_view.TabIndex = 0;
             // 
             // picture_box_bell
             // 
@@ -470,56 +520,6 @@ namespace library
             this.button_add_book.TabIndex = 10;
             this.button_add_book.Text = "Додати книгу";
             // 
-            // reminder_view
-            // 
-            this.reminder_view.AllowUserToAddRows = false;
-            this.reminder_view.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.reminder_view.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.reminder_view.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.reminder_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.reminder_view.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.reminder_view.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.reminder_view.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.reminder_view.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.reminder_view.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.reminder_view.ColumnHeadersHeight = 50;
-            this.reminder_view.ColumnHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reminder_view.DefaultCellStyle = dataGridViewCellStyle3;
-            this.reminder_view.DoubleBuffered = true;
-            this.reminder_view.EnableHeadersVisualStyles = false;
-            this.reminder_view.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.reminder_view.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.reminder_view.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.reminder_view.Location = new System.Drawing.Point(36, 77);
-            this.reminder_view.Name = "reminder_view";
-            this.reminder_view.ReadOnly = true;
-            this.reminder_view.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.reminder_view.RowHeadersVisible = false;
-            this.reminder_view.RowHeadersWidth = 51;
-            this.reminder_view.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.reminder_view.RowTemplate.Height = 40;
-            this.reminder_view.RowTemplate.ReadOnly = true;
-            this.reminder_view.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.reminder_view.Size = new System.Drawing.Size(306, 150);
-            this.reminder_view.TabIndex = 0;
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -538,8 +538,8 @@ namespace library
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panel_main.ResumeLayout(false);
             this.panel_reminder.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picture_box_bell)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reminder_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_box_bell)).EndInit();
             this.ResumeLayout(false);
 
         }
