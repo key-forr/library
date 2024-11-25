@@ -38,8 +38,13 @@ namespace library
             this.text_box_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.text_box_login = new Guna.UI2.WinForms.Guna2TextBox();
             this.check_show_pass = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             label_forget_pass = new System.Windows.Forms.Label();
             this.panel_signIn.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_forget_pass
@@ -119,6 +124,7 @@ namespace library
             // 
             // text_box_password
             // 
+            this.text_box_password.BorderColor = System.Drawing.Color.Transparent;
             this.text_box_password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_password.DefaultText = "";
             this.text_box_password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -141,6 +147,7 @@ namespace library
             // 
             // text_box_login
             // 
+            this.text_box_login.BorderColor = System.Drawing.Color.Transparent;
             this.text_box_login.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_login.DefaultText = "";
             this.text_box_login.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -175,12 +182,75 @@ namespace library
             this.check_show_pass.UseVisualStyleBackColor = true;
             this.check_show_pass.CheckedChanged += new System.EventHandler(this.check_box_checked_changed);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.iconButton3);
+            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.iconButton2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1440, 48);
+            this.panel1.TabIndex = 7;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.iconButton3.FlatAppearance.BorderSize = 0;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.ForeColor = System.Drawing.SystemColors.Control;
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.iconButton3.IconColor = System.Drawing.Color.White;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 24;
+            this.iconButton3.Location = new System.Drawing.Point(1230, 0);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(70, 48);
+            this.iconButton3.TabIndex = 10;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.Control;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Clone;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 24;
+            this.iconButton1.Location = new System.Drawing.Point(1300, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(70, 48);
+            this.iconButton1.TabIndex = 8;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.ForeColor = System.Drawing.SystemColors.Control;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.iconButton2.IconColor = System.Drawing.Color.White;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 24;
+            this.iconButton2.Location = new System.Drawing.Point(1370, 0);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(70, 48);
+            this.iconButton2.TabIndex = 9;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
             // AutorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(1440, 800);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_signIn);
             this.Controls.Add(this.label_signIn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -189,6 +259,7 @@ namespace library
             this.Text = "Form1";
             this.panel_signIn.ResumeLayout(false);
             this.panel_signIn.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +275,10 @@ namespace library
         private System.Windows.Forms.CheckBox check_show_pass;
         private Guna.UI2.WinForms.Guna2TextBox text_box_login;
         private Guna.UI2.WinForms.Guna2TextBox text_box_password;
+        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
 
