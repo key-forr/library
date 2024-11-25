@@ -29,16 +29,13 @@ namespace library
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.panel_navigation = new System.Windows.Forms.Panel();
             this.label_book = new System.Windows.Forms.Label();
             this.label_haven = new System.Windows.Forms.Label();
-            this.button_home_nav = new Guna.UI2.WinForms.Guna2Button();
-            this.button_personal_office_nav = new Guna.UI2.WinForms.Guna2Button();
-            this.logo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.button_employee_nav = new System.Windows.Forms.Button();
             this.button_booking_nav = new System.Windows.Forms.Button();
             this.button_books_nav = new System.Windows.Forms.Button();
@@ -47,25 +44,28 @@ namespace library
             this.button_storage_nav = new System.Windows.Forms.Button();
             this.panel_main = new Guna.UI2.WinForms.Guna2Panel();
             this.panel_reminder = new Guna.UI2.WinForms.Guna2Panel();
-            this.picture_box_bell = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.reminder_view = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.button_more_reminder = new Guna.UI2.WinForms.Guna2Button();
             this.label_reminder = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.text_box_search = new Guna.UI2.WinForms.Guna2TextBox();
             this.combo_box_select_search = new Guna.UI2.WinForms.Guna2ComboBox();
             this.button_give_book = new Guna.UI2.WinForms.Guna2Button();
             this.button_return_book = new Guna.UI2.WinForms.Guna2Button();
             this.butoon_booking = new Guna.UI2.WinForms.Guna2Button();
             this.button_add_book = new Guna.UI2.WinForms.Guna2Button();
-            this.reminder_view = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.picture_box_bell = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.text_box_search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.button_home_nav = new Guna.UI2.WinForms.Guna2Button();
+            this.button_personal_office_nav = new Guna.UI2.WinForms.Guna2Button();
+            this.logo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel_navigation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panel_main.SuspendLayout();
             this.panel_reminder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_box_bell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reminder_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_box_bell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_navigation
@@ -110,48 +110,6 @@ namespace library
             this.label_haven.TabIndex = 26;
             this.label_haven.Text = "Haven";
             this.label_haven.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button_home_nav
-            // 
-            this.button_home_nav.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_home_nav.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_home_nav.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_home_nav.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_home_nav.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button_home_nav.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button_home_nav.ForeColor = System.Drawing.Color.White;
-            this.button_home_nav.Image = global::library.Properties.Resources.Home;
-            this.button_home_nav.ImageSize = new System.Drawing.Size(50, 50);
-            this.button_home_nav.Location = new System.Drawing.Point(1241, 32);
-            this.button_home_nav.Name = "button_home_nav";
-            this.button_home_nav.Size = new System.Drawing.Size(65, 67);
-            this.button_home_nav.TabIndex = 17;
-            // 
-            // button_personal_office_nav
-            // 
-            this.button_personal_office_nav.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_personal_office_nav.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_personal_office_nav.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_personal_office_nav.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_personal_office_nav.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button_personal_office_nav.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button_personal_office_nav.ForeColor = System.Drawing.Color.White;
-            this.button_personal_office_nav.Image = global::library.Properties.Resources.User;
-            this.button_personal_office_nav.ImageSize = new System.Drawing.Size(50, 50);
-            this.button_personal_office_nav.Location = new System.Drawing.Point(1336, 32);
-            this.button_personal_office_nav.Name = "button_personal_office_nav";
-            this.button_personal_office_nav.Size = new System.Drawing.Size(65, 67);
-            this.button_personal_office_nav.TabIndex = 1;
-            // 
-            // logo
-            // 
-            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.ImageRotate = 0F;
-            this.logo.Location = new System.Drawing.Point(44, 14);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(130, 95);
-            this.logo.TabIndex = 13;
-            this.logo.TabStop = false;
             // 
             // button_employee_nav
             // 
@@ -271,15 +229,55 @@ namespace library
             this.panel_reminder.Size = new System.Drawing.Size(377, 326);
             this.panel_reminder.TabIndex = 17;
             // 
-            // picture_box_bell
+            // reminder_view
             // 
-            this.picture_box_bell.Image = global::library.Properties.Resources.bell;
-            this.picture_box_bell.ImageRotate = 0F;
-            this.picture_box_bell.Location = new System.Drawing.Point(271, 16);
-            this.picture_box_bell.Name = "picture_box_bell";
-            this.picture_box_bell.Size = new System.Drawing.Size(54, 39);
-            this.picture_box_bell.TabIndex = 21;
-            this.picture_box_bell.TabStop = false;
+            this.reminder_view.AllowUserToAddRows = false;
+            this.reminder_view.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.reminder_view.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.reminder_view.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reminder_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.reminder_view.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.reminder_view.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reminder_view.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.reminder_view.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reminder_view.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.reminder_view.ColumnHeadersHeight = 50;
+            this.reminder_view.ColumnHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reminder_view.DefaultCellStyle = dataGridViewCellStyle3;
+            this.reminder_view.DoubleBuffered = true;
+            this.reminder_view.EnableHeadersVisualStyles = false;
+            this.reminder_view.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.reminder_view.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.reminder_view.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.reminder_view.Location = new System.Drawing.Point(36, 77);
+            this.reminder_view.Name = "reminder_view";
+            this.reminder_view.ReadOnly = true;
+            this.reminder_view.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.reminder_view.RowHeadersVisible = false;
+            this.reminder_view.RowHeadersWidth = 51;
+            this.reminder_view.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.reminder_view.RowTemplate.Height = 40;
+            this.reminder_view.RowTemplate.ReadOnly = true;
+            this.reminder_view.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.reminder_view.Size = new System.Drawing.Size(306, 150);
+            this.reminder_view.TabIndex = 0;
             // 
             // button_more_reminder
             // 
@@ -333,33 +331,6 @@ namespace library
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(377, 371);
             this.guna2Panel1.TabIndex = 16;
-            // 
-            // text_box_search
-            // 
-            this.text_box_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.text_box_search.BorderRadius = 20;
-            this.text_box_search.BorderThickness = 0;
-            this.text_box_search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.text_box_search.DefaultText = "";
-            this.text_box_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.text_box_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.text_box_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_search.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.text_box_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_box_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.text_box_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_search.IconLeft = global::library.Properties.Resources.Search;
-            this.text_box_search.Location = new System.Drawing.Point(85, 106);
-            this.text_box_search.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.text_box_search.Name = "text_box_search";
-            this.text_box_search.PasswordChar = '\0';
-            this.text_box_search.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.text_box_search.PlaceholderText = "Шукати";
-            this.text_box_search.SelectedText = "";
-            this.text_box_search.Size = new System.Drawing.Size(221, 44);
-            this.text_box_search.TabIndex = 15;
             // 
             // combo_box_select_search
             // 
@@ -451,55 +422,85 @@ namespace library
             this.button_add_book.TabIndex = 10;
             this.button_add_book.Text = "Додати книгу";
             // 
-            // reminder_view
+            // picture_box_bell
             // 
-            this.reminder_view.AllowUserToAddRows = false;
-            this.reminder_view.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.reminder_view.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.reminder_view.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.reminder_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.reminder_view.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.reminder_view.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.reminder_view.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.reminder_view.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.reminder_view.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.reminder_view.ColumnHeadersHeight = 50;
-            this.reminder_view.ColumnHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reminder_view.DefaultCellStyle = dataGridViewCellStyle3;
-            this.reminder_view.DoubleBuffered = true;
-            this.reminder_view.EnableHeadersVisualStyles = false;
-            this.reminder_view.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.reminder_view.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.reminder_view.HeaderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.reminder_view.Location = new System.Drawing.Point(36, 77);
-            this.reminder_view.Name = "reminder_view";
-            this.reminder_view.ReadOnly = true;
-            this.reminder_view.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.reminder_view.RowHeadersVisible = false;
-            this.reminder_view.RowHeadersWidth = 51;
-            this.reminder_view.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.reminder_view.RowTemplate.Height = 40;
-            this.reminder_view.RowTemplate.ReadOnly = true;
-            this.reminder_view.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.reminder_view.Size = new System.Drawing.Size(306, 150);
-            this.reminder_view.TabIndex = 0;
+            this.picture_box_bell.Image = global::library.Properties.Resources.bell;
+            this.picture_box_bell.ImageRotate = 0F;
+            this.picture_box_bell.Location = new System.Drawing.Point(271, 16);
+            this.picture_box_bell.Name = "picture_box_bell";
+            this.picture_box_bell.Size = new System.Drawing.Size(54, 39);
+            this.picture_box_bell.TabIndex = 21;
+            this.picture_box_bell.TabStop = false;
+            // 
+            // text_box_search
+            // 
+            this.text_box_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.text_box_search.BorderRadius = 20;
+            this.text_box_search.BorderThickness = 0;
+            this.text_box_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.text_box_search.DefaultText = "";
+            this.text_box_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.text_box_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.text_box_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.text_box_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.text_box_search.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.text_box_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_box_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.text_box_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_search.IconLeft = global::library.Properties.Resources.Search;
+            this.text_box_search.Location = new System.Drawing.Point(85, 106);
+            this.text_box_search.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.text_box_search.Name = "text_box_search";
+            this.text_box_search.PasswordChar = '\0';
+            this.text_box_search.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.text_box_search.PlaceholderText = "Шукати";
+            this.text_box_search.SelectedText = "";
+            this.text_box_search.Size = new System.Drawing.Size(221, 44);
+            this.text_box_search.TabIndex = 15;
+            // 
+            // button_home_nav
+            // 
+            this.button_home_nav.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_home_nav.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_home_nav.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_home_nav.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_home_nav.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_home_nav.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_home_nav.ForeColor = System.Drawing.Color.White;
+            this.button_home_nav.Image = global::library.Properties.Resources.Home;
+            this.button_home_nav.ImageSize = new System.Drawing.Size(50, 50);
+            this.button_home_nav.Location = new System.Drawing.Point(1241, 32);
+            this.button_home_nav.Name = "button_home_nav";
+            this.button_home_nav.Size = new System.Drawing.Size(65, 67);
+            this.button_home_nav.TabIndex = 17;
+            // 
+            // button_personal_office_nav
+            // 
+            this.button_personal_office_nav.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_personal_office_nav.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_personal_office_nav.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_personal_office_nav.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_personal_office_nav.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_personal_office_nav.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_personal_office_nav.ForeColor = System.Drawing.Color.White;
+            this.button_personal_office_nav.Image = global::library.Properties.Resources.User;
+            this.button_personal_office_nav.ImageSize = new System.Drawing.Size(50, 50);
+            this.button_personal_office_nav.Location = new System.Drawing.Point(1336, 32);
+            this.button_personal_office_nav.Name = "button_personal_office_nav";
+            this.button_personal_office_nav.Size = new System.Drawing.Size(65, 67);
+            this.button_personal_office_nav.TabIndex = 1;
+            this.button_personal_office_nav.Click += new System.EventHandler(this.button_personal_office_nav_Click);
+            // 
+            // logo
+            // 
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.ImageRotate = 0F;
+            this.logo.Location = new System.Drawing.Point(44, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(130, 95);
+            this.logo.TabIndex = 13;
+            this.logo.TabStop = false;
             // 
             // HomeForm
             // 
@@ -516,11 +517,11 @@ namespace library
             this.Text = "HomePage";
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.panel_navigation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panel_main.ResumeLayout(false);
             this.panel_reminder.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picture_box_bell)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reminder_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_box_bell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }

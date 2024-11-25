@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace library
+{
+    internal class PersonalDataPresenter
+    {
+        private readonly PersonalDataForm view;
+
+        public PersonalDataPresenter(PersonalDataForm view)
+        {
+            this.view = view;
+        }
+
+        
+    }
+}

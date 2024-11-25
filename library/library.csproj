@@ -162,6 +162,13 @@
     </Compile>
     <Compile Include="HomeFormPresenter.cs" />
     <Compile Include="PanelStateManager.cs" />
+    <Compile Include="PersonalDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalDataForm.Designer.cs">
+      <DependentUpon>PersonalDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalDataPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReminderAddForm.cs">
@@ -180,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalDataForm.resx">
+      <DependentUpon>PersonalDataForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

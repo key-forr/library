@@ -104,5 +104,11 @@ namespace library
             var childForm = new ReminderAddForm(this, panel_reminder, presenter.ToDoList);
             EmbedFormInPanel(childForm, panel_reminder);
         }
+
+        private void button_personal_office_nav_Click(object sender, EventArgs e)
+        {
+            var childForm = new PersonalDataForm(this, panel_main);
+            EmbedFormInPanel(childForm, panel_main);
+        }
     }
 }
