@@ -20,7 +20,7 @@ namespace library
             this.viewHome = viewHome;
         }
 
-        public ToDoList MyToDoList
+        public ToDoList ToDoList
         {
             get { return toDoList; }
         }

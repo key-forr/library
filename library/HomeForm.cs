@@ -1,12 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace library
@@ -20,12 +14,11 @@ namespace library
         {
             InitializeComponent();
             presenter = new HomeFormPresenter(this);
-
-            LoadAllPanels();
-            LoadReminders();
+            InitializePanels();
+            RefreshRemindersList();
         }
 
-        private void LoadAllPanels()
+        private void InitializePanels()
         {
             panelStateManager.SavePanelState(guna2Panel1);
             panelStateManager.SavePanelState(guna2Panel2);
@@ -34,66 +27,82 @@ namespace library
             panelStateManager.SavePanelState(panel_main);
         }
 
-        public void BackPanel(Panel targetPanel)
+        public void RestorePreviousPanel(Panel targetPanel)
         {
             panelStateManager.RestorePanelState(targetPanel);
         }
 
-        public void LoadFormOnPanel(Form childForm, Panel targetPanel)
+        public void EmbedFormInPanel(Form childForm, Panel targetPanel)
         {
             targetPanel.Controls.Clear();
-
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-
             childForm.Size = targetPanel.Size;
-
             childForm.AutoScaleMode = AutoScaleMode.None;
             childForm.AutoSize = true;
             childForm.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-
             childForm.AutoScroll = false;
 
-            targetPanel.SizeChanged += (sender, e) =>
-            {
-                childForm.Size = targetPanel.Size;
-            };
+            targetPanel.SizeChanged += (sender, e) => childForm.Size = targetPanel.Size;
 
             targetPanel.Controls.Add(childForm);
-
             childForm.Show();
         }
-      
+
         private void HomeForm_Load(object sender, EventArgs e)
         {
-            presenter.MyToDoList.InitializeDataGridView();
+            ConfigureReminderDataGrid();
         }
 
-        private void LoadReminders()
+        private void RefreshRemindersList()
         {
-            using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
+            using (var dataBaseHelper = new DataBaseHelper())
             {
-                dataBaseHelper.LoadRemindersToDataGrid(this, UserSession.UserId);
+                dataBaseHelper.LoadRemindersIntoDataGrid(this, UserSession.UserId);
             }
         }
-        public DataGridView MyDataGridView
+
+        public void UpdateReminderDataGrid(DataTable reminderData)
+        {
+            DataGridToDoList.SuspendLayout();
+
+            DataGridToDoList.DataSource = null;
+            DataGridToDoList.Columns.Clear();
+
+            DataGridToDoList.DataSource = reminderData;
+            ConfigureReminderDataGrid();
+
+            DataGridToDoList.ResumeLayout();
+        }
+
+        public void ConfigureReminderDataGrid()
+        {
+            if (DataGridToDoList.Columns.Count > 0)
+            {
+                if (DataGridToDoList.Columns.Contains("title"))
+                    DataGridToDoList.Columns["title"].HeaderText = "Заголовок";
+
+                if (DataGridToDoList.Columns.Contains("description"))
+                    DataGridToDoList.Columns["description"].HeaderText = "Опис";
+            }
+        }
+
+        public DataGridView DataGridToDoList
         {
             get { return reminder_view; }
         }
 
         private void button_employee_nav_Click(object sender, EventArgs e)
         {
-            EmployeeForm childForm = new EmployeeForm(this, panel_main);
-            LoadFormOnPanel(childForm, panel_main);
+            var childForm = new EmployeeForm(this, panel_main);
+            EmbedFormInPanel(childForm, panel_main);
         }
 
         private void button_more_reminder_Click(object sender, EventArgs e)
         {
-            ReminderAddForm childForm = new ReminderAddForm(this, panel_reminder, presenter.MyToDoList);
-            LoadFormOnPanel(childForm, panel_reminder);
+            var childForm = new ReminderAddForm(this, panel_reminder, presenter.ToDoList);
+            EmbedFormInPanel(childForm, panel_reminder);
         }
-
-       
     }
 }

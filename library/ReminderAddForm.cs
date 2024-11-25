@@ -37,13 +37,11 @@ namespace library
             {
                 toDoList.SaveReminder(text_box_title.Text, text_box_description.Text);
 
-                // Оновлюємо DataGridView після збереження
                 using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
                 {
-                    dataBaseHelper.LoadRemindersToDataGrid(parentForm, UserSession.UserId);
+                    dataBaseHelper.LoadRemindersIntoDataGrid(parentForm, UserSession.UserId);
                 }
 
-                // Очищаємо поля введення
                 text_box_title.Text = "";
                 text_box_description.Text = "";
             }
@@ -57,9 +55,7 @@ namespace library
         private void butoon_back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            this.parentForm.BackPanel(this.targetPanel);
+            this.parentForm.RestorePreviousPanel(this.targetPanel);
         }
-
-        
     }
 }

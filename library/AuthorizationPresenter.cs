@@ -39,10 +39,5 @@ namespace library
                 view.ShowError("Неправильний логін або пароль!");
             }
         }
-
-        public string GetUserLogin()
-        {
-            return view.GetUserLogin();
-        }
     }
 }

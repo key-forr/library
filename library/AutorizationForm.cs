@@ -67,10 +67,5 @@ namespace library
             button_submit.FlatAppearance.BorderColor = Color.FromArgb(154, 73, 229);
             button_submit.FlatAppearance.BorderSize = 2;
         }
-
-        public string GetUserLogin()
-        {
-            return label_login.Text;
-        }
     }
 }

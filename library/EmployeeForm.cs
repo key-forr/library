@@ -25,7 +25,7 @@ namespace library
         private void button_back_home(object sender, EventArgs e)
         {
             this.Hide();
-            this.parentForm.BackPanel(this.targetPanel);
+            this.parentForm.RestorePreviousPanel(this.targetPanel);
         }
     }
 }
