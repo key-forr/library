@@ -47,6 +47,7 @@ namespace library
             this.button_storage_nav = new System.Windows.Forms.Button();
             this.panel_main = new Guna.UI2.WinForms.Guna2Panel();
             this.panel_reminder = new Guna.UI2.WinForms.Guna2Panel();
+            this.button_trash_reminder = new Guna.UI2.WinForms.Guna2Button();
             this.picture_box_bell = new Guna.UI2.WinForms.Guna2PictureBox();
             this.button_more_reminder = new Guna.UI2.WinForms.Guna2Button();
             this.label_reminder = new System.Windows.Forms.Label();
@@ -262,6 +263,7 @@ namespace library
             // panel_reminder
             // 
             this.panel_reminder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.panel_reminder.Controls.Add(this.button_trash_reminder);
             this.panel_reminder.Controls.Add(this.reminder_view);
             this.panel_reminder.Controls.Add(this.picture_box_bell);
             this.panel_reminder.Controls.Add(this.button_more_reminder);
@@ -270,6 +272,23 @@ namespace library
             this.panel_reminder.Name = "panel_reminder";
             this.panel_reminder.Size = new System.Drawing.Size(377, 326);
             this.panel_reminder.TabIndex = 17;
+            // 
+            // button_trash_reminder
+            // 
+            this.button_trash_reminder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_trash_reminder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_trash_reminder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_trash_reminder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_trash_reminder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_trash_reminder.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_trash_reminder.ForeColor = System.Drawing.Color.White;
+            this.button_trash_reminder.Image = global::library.Properties.Resources.Trash;
+            this.button_trash_reminder.ImageSize = new System.Drawing.Size(50, 50);
+            this.button_trash_reminder.Location = new System.Drawing.Point(277, 240);
+            this.button_trash_reminder.Name = "button_trash_reminder";
+            this.button_trash_reminder.Size = new System.Drawing.Size(65, 50);
+            this.button_trash_reminder.TabIndex = 28;
+            this.button_trash_reminder.Click += new System.EventHandler(this.button_trash_reminder_Click);
             // 
             // picture_box_bell
             // 
@@ -297,7 +316,7 @@ namespace library
             this.button_more_reminder.Size = new System.Drawing.Size(155, 40);
             this.button_more_reminder.TabIndex = 10;
             this.button_more_reminder.Text = "Додати";
-            this.button_more_reminder.Click += new System.EventHandler(this.button_more_reminder_Click);
+            this.button_more_reminder.Click += new System.EventHandler(this.button_add_reminder_Click);
             // 
             // label_reminder
             // 
@@ -553,6 +572,7 @@ namespace library
         private System.Windows.Forms.Label label_book;
         private System.Windows.Forms.Label label_haven;
         private Guna.UI2.WinForms.Guna2PictureBox picture_box_bell;
+        private Guna.UI2.WinForms.Guna2Button button_trash_reminder;
         private Bunifu.Framework.UI.BunifuCustomDataGrid reminder_view;
     }
 }

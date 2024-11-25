@@ -94,8 +94,6 @@ namespace library
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Reminder successfully saved!", "Success",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return true;
                     }
                     else
@@ -116,26 +114,59 @@ namespace library
 
         public void LoadRemindersIntoDataGrid(HomeForm homeForm, int userId)
         {
-            string sql = "SELECT title, description FROM reminder WHERE userId = @UserId";
+            string sql = "SELECT title, description FROM reminder WHERE userId = @UserId AND isActive = @IsActive";
 
             try
             {
                 using (var command = new MySqlCommand(sql, sqlConnection))
                 {
                     command.Parameters.AddWithValue("@UserId", userId);
+                    command.Parameters.AddWithValue("@IsActive", 1);
 
                     var reminderDataTable = new DataTable();
                     using (var adapter = new MySqlDataAdapter(command))
                     {
                         adapter.Fill(reminderDataTable);
                     }
-                    homeForm.UpdateReminderDataGrid(reminderDataTable);
+                    //homeForm.UpdateReminderDataGrid(reminderDataTable);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading reminders: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public bool DeactivateReminder(int reminderId)
+        {
+            string sql = "UPDATE reminder SET isActive = @IsActive WHERE id = @ReminderId";
+
+            using (MySqlCommand command = new MySqlCommand(sql, sqlConnection))
+            {
+                command.Parameters.AddWithValue("@IsActive", false);
+                command.Parameters.AddWithValue("@ReminderId", reminderId);
+
+                try
+                {
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No reminder found with the specified ID.", "Warning",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deactivating reminder: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
         }
 

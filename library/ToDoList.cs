@@ -17,7 +17,7 @@ namespace library
         public ToDoList(HomeForm view)
         {
             this.viewHome = view;
-            viewHome.ConfigureReminderDataGrid();
+            //viewHome.ConfigureReminderDataGrid();
         }
 
         public void SaveReminder(string title, string description)

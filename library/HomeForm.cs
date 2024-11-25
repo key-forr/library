@@ -1,4 +1,6 @@
 ﻿using Guna.UI2.WinForms;
+using Guna.UI2.WinForms.Suite;
+using MySqlX.XDevAPI.Common;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -52,7 +54,7 @@ namespace library
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
-            ConfigureReminderDataGrid();
+
         }
 
         private void RefreshRemindersList()
@@ -62,32 +64,7 @@ namespace library
                 dataBaseHelper.LoadRemindersIntoDataGrid(this, UserSession.UserId);
             }
         }
-
-        public void UpdateReminderDataGrid(DataTable reminderData)
-        {
-            DataGridToDoList.SuspendLayout();
-
-            DataGridToDoList.DataSource = null;
-            DataGridToDoList.Columns.Clear();
-
-            DataGridToDoList.DataSource = reminderData;
-            ConfigureReminderDataGrid();
-
-            DataGridToDoList.ResumeLayout();
-        }
-
-        public void ConfigureReminderDataGrid()
-        {
-            if (DataGridToDoList.Columns.Count > 0)
-            {
-                if (DataGridToDoList.Columns.Contains("title"))
-                    DataGridToDoList.Columns["title"].HeaderText = "Заголовок";
-
-                if (DataGridToDoList.Columns.Contains("description"))
-                    DataGridToDoList.Columns["description"].HeaderText = "Опис";
-            }
-        }
-
+       
         public DataGridView DataGridToDoList
         {
             get { return reminder_view; }
@@ -99,7 +76,12 @@ namespace library
             EmbedFormInPanel(childForm, panel_main);
         }
 
-        private void button_more_reminder_Click(object sender, EventArgs e)
+        private void button_trash_reminder_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button_add_reminder_Click(object sender, EventArgs e)
         {
             var childForm = new ReminderAddForm(this, panel_reminder, presenter.ToDoList);
             EmbedFormInPanel(childForm, panel_reminder);
