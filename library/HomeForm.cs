@@ -177,5 +177,114 @@ namespace library
             }
         }
 
+        private void panel_reminder_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label_book_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_haven_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_booking_nav_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_books_nav_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_statistics_nav_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_customer_nav_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_navigation_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_reminder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void combo_box_select_search_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_give_book_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_return_book_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butoon_booking_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

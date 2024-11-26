@@ -22,14 +22,19 @@ namespace library
 
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void iconButton3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
