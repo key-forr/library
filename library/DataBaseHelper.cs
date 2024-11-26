@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -130,27 +132,71 @@ namespace library
                         adapter.Fill(dt);
                     }
 
+                    // Об'єднати заголовок і опис в один стовпець
+                    DataTable formattedTable = new DataTable();
+                    formattedTable.Columns.Add("Reminder", typeof(string)); // Створення одного стовпця для тексту
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string title = row["title"].ToString();
+                        string description = row["description"].ToString();
+                        string combinedText = $"{title}\n{description}"; // Об'єднання заголовка й опису з перенесенням
+                        formattedTable.Rows.Add(combinedText);
+                    }
+
+                    // Прив'язати відформатовані дані до DataGridView
                     homeForm.MyDataGridView.DataSource = null;
                     homeForm.MyDataGridView.Columns.Clear();
-                    homeForm.MyDataGridView.DataSource = dt;
+                    homeForm.MyDataGridView.DataSource = formattedTable;
 
-                    // Налаштування стовпців
+                    // Налаштування DataGridView
                     if (homeForm.MyDataGridView.Columns.Count > 0)
                     {
-                        // Налаштування заголовків стовпців
-                        homeForm.MyDataGridView.Columns["title"].HeaderText = "Заголовок";
-                        homeForm.MyDataGridView.Columns["description"].HeaderText = "Опис";
+                        homeForm.MyDataGridView.Columns["Reminder"].HeaderText = "Нагадування";
+                        homeForm.MyDataGridView.Columns["Reminder"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-                        // Налаштування ширини стовпців
-                        homeForm.MyDataGridView.Columns["title"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        homeForm.MyDataGridView.Columns["description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        // Увімкнути багаторядковий текст
+                        homeForm.MyDataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-                        // Додаткові налаштування для кращого вигляду
+                        // Налаштування висоти рядків
+                        homeForm.MyDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                         homeForm.MyDataGridView.ColumnHeadersHeight = 40;
                         homeForm.MyDataGridView.RowTemplate.Height = 40;
                         homeForm.MyDataGridView.AllowUserToAddRows = false;
                         homeForm.MyDataGridView.AllowUserToDeleteRows = false;
                         homeForm.MyDataGridView.ReadOnly = true;
+
+                        // Подія для кастомного малювання тексту
+                        homeForm.MyDataGridView.CellPainting += (s, e) =>
+                        {
+                            if (e.ColumnIndex == homeForm.MyDataGridView.Columns["Reminder"].Index && e.RowIndex >= 0)
+                            {
+                                e.PaintBackground(e.ClipBounds, true);
+
+                                string[] lines = e.Value.ToString().Split('\n');
+                                if (lines.Length > 1)
+                                {
+                                    // Малюємо заголовок
+                                    e.Graphics.DrawString(
+                                        lines[0],
+                                        new Font("Arial", 14, FontStyle.Bold), // Стиль заголовка
+                                        Brushes.White,
+                                        e.CellBounds.X + 5,
+                                        e.CellBounds.Y + 5
+                                    );
+
+                                    // Малюємо опис
+                                    e.Graphics.DrawString(
+                                        string.Join("\n", lines.Skip(1)), // Залишаємо лише опис
+                                        new Font("Arial", 12, FontStyle.Regular), // Стиль опису
+                                        Brushes.LightGray,
+                                        e.CellBounds.X + 5,
+                                        e.CellBounds.Y + 25
+                                    );
+                                }
+                                e.Handled = true;
+                            }
+                        };
                     }
                 }
             }
@@ -160,6 +206,7 @@ namespace library
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         public void CloseConnection()
         {

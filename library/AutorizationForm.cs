@@ -80,7 +80,7 @@ namespace library
                 this.WindowState = FormWindowState.Normal;
                 this.StartPosition = FormStartPosition.CenterScreen;
             }
-            else { this.WindowState = FormWindowState.Maximized; }
+            else  this.WindowState = FormWindowState.Maximized; 
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

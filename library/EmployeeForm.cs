@@ -27,5 +27,24 @@ namespace library
             this.Hide();
             this.parentForm.BackPanel(this.targetPanel);
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            // Перевіряємо, чи панель містить дочірні елементи
+            if (targetPanel.Controls.Count > 0)
+            {
+                // Беремо перший (і єдиний) елемент як форму
+                Form activeForm = targetPanel.Controls[0] as Form;
+
+                // Якщо це дійсно форма, закриваємо її
+                if (activeForm != null)
+                {
+                    activeForm.Close(); // Закриває форму
+                }
+
+                // Очищаємо панель від усіх елементів
+                targetPanel.Controls.Clear();
+            }
+        }
     }
 }

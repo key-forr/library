@@ -95,16 +95,18 @@
             // text_box_title
             // 
             this.text_box_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_title.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.text_box_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.text_box_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.text_box_title.Location = new System.Drawing.Point(111, 78);
             this.text_box_title.Name = "text_box_title";
-            this.text_box_title.Size = new System.Drawing.Size(254, 30);
+            this.text_box_title.Size = new System.Drawing.Size(254, 23);
             this.text_box_title.TabIndex = 26;
             // 
             // text_box_description
             // 
             this.text_box_description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_description.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.text_box_description.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.text_box_description.Location = new System.Drawing.Point(17, 168);
             this.text_box_description.Multiline = true;

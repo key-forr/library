@@ -189,6 +189,12 @@
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeFormPresenter.cs" />
+    <Compile Include="ModalWindowUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalWindowUser.Designer.cs">
+      <DependentUpon>ModalWindowUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="PanelStateManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalWindowUser.resx">
+      <DependentUpon>ModalWindowUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
