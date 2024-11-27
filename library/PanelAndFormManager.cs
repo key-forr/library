@@ -7,6 +7,16 @@ namespace library
     {
         public static void EmbedFormInPanel(Form childForm, Panel targetPanel)
         {
+            // Перевірка, чи форма вже вбудована в панель
+            foreach (Control control in targetPanel.Controls)
+            {
+                if (control.GetType() == childForm.GetType()) // Перевіряємо тип форми
+                {
+                    return ;
+                }
+            }
+
+            // Якщо форма ще не вбудована
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -15,5 +25,6 @@ namespace library
             childForm.BringToFront();
             childForm.Show();
         }
+
     }
 }

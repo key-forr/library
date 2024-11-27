@@ -20,7 +20,7 @@ namespace library
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -36,7 +36,12 @@ namespace library
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
+        }
+
+        private void text_box_phone_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

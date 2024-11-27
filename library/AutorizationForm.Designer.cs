@@ -32,7 +32,6 @@ namespace library
             System.Windows.Forms.Label label_forget_pass;
             this.lable_password = new System.Windows.Forms.Label();
             this.label_login = new System.Windows.Forms.Label();
-            this.button_submit = new System.Windows.Forms.Button();
             this.label_signIn = new System.Windows.Forms.Label();
             this.panel_signIn = new System.Windows.Forms.Panel();
             this.check_show_pass = new System.Windows.Forms.CheckBox();
@@ -42,6 +41,7 @@ namespace library
             this.button_collapse = new FontAwesome.Sharp.IconButton();
             this.button_window_state = new FontAwesome.Sharp.IconButton();
             this.button_close = new FontAwesome.Sharp.IconButton();
+            this.button_submit = new System.Windows.Forms.Button();
             label_forget_pass = new System.Windows.Forms.Label();
             this.panel_signIn.SuspendLayout();
             this.panel_window_navigation.SuspendLayout();
@@ -51,7 +51,7 @@ namespace library
             // 
             label_forget_pass.AutoSize = true;
             label_forget_pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            label_forget_pass.Location = new System.Drawing.Point(371, 325);
+            label_forget_pass.Location = new System.Drawing.Point(367, 318);
             label_forget_pass.Name = "label_forget_pass";
             label_forget_pass.Size = new System.Drawing.Size(118, 16);
             label_forget_pass.TabIndex = 6;
@@ -79,30 +79,12 @@ namespace library
             this.label_login.TabIndex = 4;
             this.label_login.Text = "Login";
             // 
-            // button_submit
-            // 
-            this.button_submit.AutoSize = true;
-            this.button_submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
-            this.button_submit.FlatAppearance.BorderSize = 0;
-            this.button_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_submit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.button_submit.Location = new System.Drawing.Point(188, 380);
-            this.button_submit.Name = "button_submit";
-            this.button_submit.Size = new System.Drawing.Size(153, 58);
-            this.button_submit.TabIndex = 2;
-            this.button_submit.Text = "Submit";
-            this.button_submit.UseVisualStyleBackColor = false;
-            this.button_submit.Click += new System.EventHandler(this.button_autorization);
-            this.button_submit.MouseEnter += new System.EventHandler(this.button_submit_mouse_enter);
-            this.button_submit.MouseLeave += new System.EventHandler(this.button_submit_mouse_leave);
-            // 
             // label_signIn
             // 
             this.label_signIn.AutoSize = true;
             this.label_signIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_signIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.label_signIn.Location = new System.Drawing.Point(598, 228);
+            this.label_signIn.Location = new System.Drawing.Point(620, 235);
             this.label_signIn.Name = "label_signIn";
             this.label_signIn.Size = new System.Drawing.Size(218, 69);
             this.label_signIn.TabIndex = 0;
@@ -115,9 +97,9 @@ namespace library
             this.panel_signIn.Controls.Add(this.check_show_pass);
             this.panel_signIn.Controls.Add(this.text_box_password);
             this.panel_signIn.Controls.Add(this.text_box_login);
+            this.panel_signIn.Controls.Add(this.button_submit);
             this.panel_signIn.Controls.Add(label_forget_pass);
             this.panel_signIn.Controls.Add(this.label_login);
-            this.panel_signIn.Controls.Add(this.button_submit);
             this.panel_signIn.Controls.Add(this.lable_password);
             this.panel_signIn.Location = new System.Drawing.Point(450, 338);
             this.panel_signIn.Name = "panel_signIn";
@@ -130,7 +112,7 @@ namespace library
             this.check_show_pass.FlatAppearance.BorderSize = 0;
             this.check_show_pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.check_show_pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.check_show_pass.Location = new System.Drawing.Point(49, 314);
+            this.check_show_pass.Location = new System.Drawing.Point(62, 314);
             this.check_show_pass.Name = "check_show_pass";
             this.check_show_pass.Size = new System.Drawing.Size(120, 20);
             this.check_show_pass.TabIndex = 16;
@@ -141,6 +123,9 @@ namespace library
             // text_box_password
             // 
             this.text_box_password.AutoSize = true;
+            this.text_box_password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.text_box_password.BorderRadius = 16;
+            this.text_box_password.BorderThickness = 3;
             this.text_box_password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_password.DefaultText = "";
             this.text_box_password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -148,14 +133,17 @@ namespace library
             this.text_box_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.text_box_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.text_box_password.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.text_box_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_password.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.text_box_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_box_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.text_box_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_password.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.text_box_password.Location = new System.Drawing.Point(49, 249);
             this.text_box_password.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.text_box_password.Name = "text_box_password";
             this.text_box_password.PasswordChar = '●';
+            this.text_box_password.PlaceholderForeColor = System.Drawing.Color.Transparent;
             this.text_box_password.PlaceholderText = "";
             this.text_box_password.SelectedText = "";
             this.text_box_password.Size = new System.Drawing.Size(447, 56);
@@ -164,6 +152,9 @@ namespace library
             // text_box_login
             // 
             this.text_box_login.AutoSize = true;
+            this.text_box_login.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.text_box_login.BorderRadius = 16;
+            this.text_box_login.BorderThickness = 3;
             this.text_box_login.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_login.DefaultText = "";
             this.text_box_login.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -171,14 +162,17 @@ namespace library
             this.text_box_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.text_box_login.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.text_box_login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.text_box_login.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_login.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_login.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.text_box_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_box_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.text_box_login.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_login.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_login.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.text_box_login.Location = new System.Drawing.Point(49, 109);
             this.text_box_login.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.text_box_login.Name = "text_box_login";
             this.text_box_login.PasswordChar = '\0';
+            this.text_box_login.PlaceholderForeColor = System.Drawing.Color.Transparent;
             this.text_box_login.PlaceholderText = "";
             this.text_box_login.SelectedText = "";
             this.text_box_login.Size = new System.Drawing.Size(447, 56);
@@ -244,6 +238,24 @@ namespace library
             this.button_close.UseVisualStyleBackColor = true;
             this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
+            // button_submit
+            // 
+            this.button_submit.AutoSize = true;
+            this.button_submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.button_submit.FlatAppearance.BorderSize = 0;
+            this.button_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_submit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_submit.Location = new System.Drawing.Point(182, 373);
+            this.button_submit.Name = "button_submit";
+            this.button_submit.Size = new System.Drawing.Size(153, 58);
+            this.button_submit.TabIndex = 2;
+            this.button_submit.Text = "Submit";
+            this.button_submit.UseVisualStyleBackColor = false;
+            this.button_submit.Click += new System.EventHandler(this.button_autorization);
+            //this.button_submit.MouseEnter += new System.EventHandler(this.button_submit_mouse_enter);
+            //this.button_submit.MouseLeave += new System.EventHandler(this.button_submit_mouse_leave);
+            // 
             // AutorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -270,7 +282,6 @@ namespace library
 
         private System.Windows.Forms.Label lable_password;
         private System.Windows.Forms.Label label_login;
-        private System.Windows.Forms.Button button_submit;
         private System.Windows.Forms.Label label_signIn;
         private System.Windows.Forms.Panel panel_signIn;
         private Guna.UI2.WinForms.Guna2TextBox text_box_login;
@@ -280,6 +291,7 @@ namespace library
         private FontAwesome.Sharp.IconButton button_window_state;
         private FontAwesome.Sharp.IconButton button_close;
         private System.Windows.Forms.CheckBox check_show_pass;
+        private System.Windows.Forms.Button button_submit;
     }
 }
 

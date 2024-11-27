@@ -10,6 +10,7 @@ namespace library
     {
         private readonly HomeFormPresenter presenter;
 
+        public string activeForm = null;
         public HomeForm()
         {
             InitializeComponent();
@@ -58,9 +59,12 @@ namespace library
 
         private void button_employee_nav_Click(object sender, EventArgs e)
         {
+
+            // Якщо форма ще не вбудована
             var childForm = new EmployeeForm();
             PanelAndFormManager.EmbedFormInPanel(childForm, panel_main);
         }
+
 
         private void button_personal_office_nav_Click(object sender, EventArgs e)
         {
