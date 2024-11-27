@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
 
 namespace library
@@ -122,27 +123,131 @@ namespace library
                     {
                         while (rdr.Read())
                         {
-                            string Name     = rdr.GetString(0);
-                            string Phone    = rdr.GetString(1);
+                            string Name = rdr.GetString(0);
+                            string Phone = rdr.GetString(1);
                             string Password = rdr.GetString(2);
                             string roleName = rdr.GetString(3);
-                            string Surname  = rdr.GetString(4);
-                            int    id       = rdr.GetInt32(5);
+                            string Surname = rdr.GetString(4);
+                            int id = rdr.GetInt32(5);
 
-                            UserSession.Name     = Name;
-                            UserSession.Phone    = Phone;
+                            UserSession.Name = Name;
+                            UserSession.Phone = Phone;
                             UserSession.Password = Password;
                             UserSession.RoleName = roleName;
-                            UserSession.Surname  = Surname;
-                            UserSession.Id       = id;
+                            UserSession.Surname = Surname;
+                            UserSession.Id = id;
                         }
                     }
-                  
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error getting user ID: {ex.Message}", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        public void LoadGenreIntoComboBox(ComboBox comboBox)
+        {
+            string query = "SELECT name FROM genre";
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            comboBox.Items.Add(reader["name"].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка завантаження жанрів: {ex.Message}", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public bool AddBook(string name, string author, int year, string publishing, int quantity, string photoPath, int genreId)
+        {
+            string sql = "INSERT INTO book (name, author, year, publishing, quantity, photo, genre_id) " +
+                         "VALUES (@Name, @Author, @Year, @Publishing, @Quantity, @Photo, @GenreId)";
+
+            try
+            {
+                using (MySqlCommand cmd = new MySqlCommand(sql, sqlConnection))
+                {
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    cmd.Parameters.AddWithValue("@Author", author);
+                    cmd.Parameters.AddWithValue("@Year", year);
+                    cmd.Parameters.AddWithValue("@Publishing", publishing);
+                    cmd.Parameters.AddWithValue("@Quantity", quantity);
+                    cmd.Parameters.AddWithValue("@Photo", photoPath);
+                    cmd.Parameters.AddWithValue("@GenreId", genreId);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding book: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        public void LoadBooksFromDatabase(Form form)
+        {
+            // MySQL query to retrieve book information
+            string query = @"
+        SELECT 
+            name,
+            author,
+            quantity,
+            photo
+    FROM book";
+
+            using (MySqlCommand command = new MySqlCommand(query, sqlConnection)) // Assuming mySqlConnection is your MySqlConnection
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    int x = 50;  
+                    int y = 50;  
+                    int bookCount = 0;
+
+                    while (reader.Read())
+                    {
+                        // Extracting book data
+                        string bookTitle = reader["name"].ToString();
+                        string author = reader["author"].ToString();
+                        int count = Convert.ToInt32(reader["quantity"]);
+                        string imagePath = reader["photo"].ToString();
+
+                        // Creating GroupBox for the book
+                        Guna.UI2.WinForms.Guna2GroupBox bookCard = CreateSomeTool.CreateBookCard(
+                            bookTitle,
+                            author,
+                            count,
+                            x,
+                            y,
+                            imagePath
+                        );
+
+                        form.Controls.Add(bookCard);
+
+                        x += 400;  
+                        bookCount++;
+
+                        if (bookCount % 2 == 0)
+                        {
+                            x = 50;       
+                            y += 200;     
+                        }
+                    }
                 }
             }
         }

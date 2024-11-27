@@ -153,6 +153,12 @@
     <Compile Include="AccountOptionsForm.Designer.cs">
       <DependentUpon>AccountOptionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBookForm.Designer.cs">
+      <DependentUpon>AddBookForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AuthorizationPresenter.cs" />
     <Compile Include="AutorizationForm.cs">
       <SubType>Form</SubType>
@@ -160,6 +166,19 @@
     <Compile Include="AutorizationForm.Designer.cs">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookListForm.Designer.cs">
+      <DependentUpon>BookListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BooksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BooksForm.Designer.cs">
+      <DependentUpon>BooksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateSomeTool.cs" />
     <Compile Include="DataBaseHelper.cs" />
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -195,8 +214,17 @@
     <EmbeddedResource Include="AccountOptionsForm.resx">
       <DependentUpon>AccountOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddBookForm.resx">
+      <DependentUpon>AddBookForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AutorizationForm.resx">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookListForm.resx">
+      <DependentUpon>BookListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BooksForm.resx">
+      <DependentUpon>BooksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
