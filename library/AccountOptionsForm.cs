@@ -23,7 +23,7 @@ namespace library
 
         private void button_personal_data_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             var childForm = new PersonalDataForm();
             PanelAndFormManager.EmbedFormInPanel(childForm, viewHome.MainPanel);
         }
@@ -38,7 +38,7 @@ namespace library
 
         private void button_close_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }

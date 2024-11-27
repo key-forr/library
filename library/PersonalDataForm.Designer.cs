@@ -121,7 +121,6 @@
             this.text_box_password.SelectedText = "";
             this.text_box_password.Size = new System.Drawing.Size(285, 38);
             this.text_box_password.TabIndex = 14;
-            this.text_box_password.UseSystemPasswordChar = true;
             // 
             // text_box_login
             // 

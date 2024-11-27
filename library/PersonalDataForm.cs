@@ -30,7 +30,8 @@ namespace library
 
         private void check_show_pass_CheckedChanged(object sender, EventArgs e)
         {
-            text_box_password.UseSystemPasswordChar = !check_show_pass.Checked;
+            if (check_show_pass.Checked) text_box_password.PasswordChar = '\0';
+            else text_box_password.PasswordChar = '●';
         }
 
         private void button_back_Click(object sender, EventArgs e)

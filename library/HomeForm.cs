@@ -104,5 +104,7 @@ namespace library
             var childForm = new ReminderAddForm(presenter.ToDoList);
             PanelAndFormManager.EmbedFormInPanel(childForm, panel_reminder);
         }
+
+      
     }
 }

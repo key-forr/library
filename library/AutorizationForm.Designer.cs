@@ -35,13 +35,13 @@ namespace library
             this.button_submit = new System.Windows.Forms.Button();
             this.label_signIn = new System.Windows.Forms.Label();
             this.panel_signIn = new System.Windows.Forms.Panel();
+            this.check_show_pass = new System.Windows.Forms.CheckBox();
             this.text_box_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.text_box_login = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel_window_navigation = new System.Windows.Forms.Panel();
             this.button_collapse = new FontAwesome.Sharp.IconButton();
             this.button_window_state = new FontAwesome.Sharp.IconButton();
             this.button_close = new FontAwesome.Sharp.IconButton();
-            this.check_show_pass = new System.Windows.Forms.CheckBox();
             label_forget_pass = new System.Windows.Forms.Label();
             this.panel_signIn.SuspendLayout();
             this.panel_window_navigation.SuspendLayout();
@@ -124,6 +124,20 @@ namespace library
             this.panel_signIn.Size = new System.Drawing.Size(545, 498);
             this.panel_signIn.TabIndex = 6;
             // 
+            // check_show_pass
+            // 
+            this.check_show_pass.AutoSize = true;
+            this.check_show_pass.FlatAppearance.BorderSize = 0;
+            this.check_show_pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.check_show_pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.check_show_pass.Location = new System.Drawing.Point(49, 314);
+            this.check_show_pass.Name = "check_show_pass";
+            this.check_show_pass.Size = new System.Drawing.Size(120, 20);
+            this.check_show_pass.TabIndex = 16;
+            this.check_show_pass.Text = "Show password";
+            this.check_show_pass.UseVisualStyleBackColor = true;
+            this.check_show_pass.CheckedChanged += new System.EventHandler(this.check_show_pass_CheckedChanged);
+            // 
             // text_box_password
             // 
             this.text_box_password.AutoSize = true;
@@ -146,7 +160,6 @@ namespace library
             this.text_box_password.SelectedText = "";
             this.text_box_password.Size = new System.Drawing.Size(447, 56);
             this.text_box_password.TabIndex = 9;
-            this.text_box_password.UseSystemPasswordChar = true;
             // 
             // text_box_login
             // 
@@ -230,20 +243,6 @@ namespace library
             this.button_close.TabIndex = 0;
             this.button_close.UseVisualStyleBackColor = true;
             this.button_close.Click += new System.EventHandler(this.button_close_Click);
-            // 
-            // check_show_pass
-            // 
-            this.check_show_pass.AutoSize = true;
-            this.check_show_pass.FlatAppearance.BorderSize = 0;
-            this.check_show_pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.check_show_pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.check_show_pass.Location = new System.Drawing.Point(49, 314);
-            this.check_show_pass.Name = "check_show_pass";
-            this.check_show_pass.Size = new System.Drawing.Size(120, 20);
-            this.check_show_pass.TabIndex = 16;
-            this.check_show_pass.Text = "Show password";
-            this.check_show_pass.UseVisualStyleBackColor = true;
-            this.check_show_pass.CheckedChanged += new System.EventHandler(this.check_show_pass_CheckedChanged);
             // 
             // AutorizationForm
             // 
