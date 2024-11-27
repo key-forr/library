@@ -28,34 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_back = new Guna.UI2.WinForms.Guna2Button();
+            this.button_back = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // button_back
             // 
-            this.button_back.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_back.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_back.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_back.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_back.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.button_back.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button_back.ForeColor = System.Drawing.Color.White;
-            this.button_back.Image = global::library.Properties.Resources.Back;
-            this.button_back.ImageSize = new System.Drawing.Size(40, 40);
-            this.button_back.Location = new System.Drawing.Point(27, 25);
+            this.button_back.FlatAppearance.BorderSize = 0;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_back.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            this.button_back.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button_back.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.button_back.Location = new System.Drawing.Point(12, 12);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(55, 53);
-            this.button_back.TabIndex = 19;
-            this.button_back.Click += new System.EventHandler(this.button_back_home);
+            this.button_back.Size = new System.Drawing.Size(55, 46);
+            this.button_back.TabIndex = 20;
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // EmployeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(1442, 679);
+            this.ClientSize = new System.Drawing.Size(1422, 686);
             this.Controls.Add(this.button_back);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
             this.ResumeLayout(false);
@@ -63,7 +60,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Button button_back;
+        private FontAwesome.Sharp.IconButton button_back;
     }
 }

@@ -30,8 +30,8 @@ namespace library
             DataBaseHelper dataBaseHelper = new DataBaseHelper();
             if (dataBaseHelper.CheckUser(login, password))
             {
-                UserSession.CurrentUserLogin = login;
-                UserSession.UserId = dataBaseHelper.GetUserId(login);
+                UserSession.Login = login;
+                dataBaseHelper.GetUserData(login);
                 view.NavigateToHome();
             }
             else

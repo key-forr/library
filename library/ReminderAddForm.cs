@@ -12,15 +12,11 @@ namespace library
 {
     public partial class ReminderAddForm : Form
     {
-        private HomeForm parentForm; 
-        private Panel targetPanel; 
         private ToDoList toDoList;
 
-        public ReminderAddForm(HomeForm parentForm, Panel targetPanel, ToDoList toDoList)
+        public ReminderAddForm(ToDoList toDoList)
         {
             InitializeComponent();
-            this.parentForm = parentForm;
-            this.targetPanel = targetPanel;
             this.toDoList = toDoList;
         }
 
@@ -39,7 +35,7 @@ namespace library
 
                 using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
                 {
-                    dataBaseHelper.LoadRemindersIntoDataGrid(parentForm, UserSession.UserId);
+                    dataBaseHelper.LoadRemindersIntoDataGrid(new HomeForm(), UserSession.Id);
                 }
 
                 text_box_title.Text = "";
@@ -52,10 +48,11 @@ namespace library
             }
         }
 
-        private void butoon_back_Click(object sender, EventArgs e)
+        
+
+        private void button_back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            this.parentForm.RestorePreviousPanel(this.targetPanel);
         }
     }
 }

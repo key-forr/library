@@ -12,20 +12,15 @@ namespace library
 {
     public partial class EmployeeForm : Form
     {
-        private HomeForm parentForm;
-        private Panel targetPanel;
 
-        public EmployeeForm(HomeForm parentForm, Panel targetPanel)
+        public EmployeeForm()
         {
             InitializeComponent();
-            this.parentForm = parentForm;
-            this.targetPanel = targetPanel;
         }
 
-        private void button_back_home(object sender, EventArgs e)
+        private void button_back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            this.parentForm.RestorePreviousPanel(this.targetPanel);
         }
     }
 }

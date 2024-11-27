@@ -12,34 +12,30 @@ namespace library
 {
     public partial class PersonalDataForm : Form
     {
-        private HomeForm parentForm;
-        private Panel targetPanel;
-        private readonly PersonalDataPresenter presenter;
-
-        public PersonalDataForm(HomeForm parentForm, Panel targetPanel)
+        public PersonalDataForm()
         {
             InitializeComponent();
-            this.parentForm = parentForm;
-            this.targetPanel = targetPanel;
             LoadUser();
-
         }
 
         public void LoadUser()
         {
-            guna2TextBox4.Text = UserSession.CurrentUserLogin;
+            text_box_login.Text = UserSession.Login;
+            text_box_name.Text = UserSession.Name;
+            text_box_surname.Text = UserSession.Surname;
+            text_box_phone.Text = UserSession.Phone;
+            text_box_role_name.Text = UserSession.RoleName;
+            text_box_password.Text = UserSession.Password;
+        }
+
+        private void check_show_pass_CheckedChanged(object sender, EventArgs e)
+        {
+            text_box_password.UseSystemPasswordChar = !check_show_pass.Checked;
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            this.parentForm.RestorePreviousPanel(this.targetPanel);
-        }
-
-        private void check_show_pass_CheckedChanged(object sender, EventArgs e)
-        {
-            if (check_show_pass.Checked) guna2TextBox5.PasswordChar = '\0';
-            else guna2TextBox5.PasswordChar = '*';
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -48,46 +50,14 @@ namespace library
             }
         }
 
-        public int GetUserId(string login)
-        {
-            string sql = "SELECT id FROM user WHERE login = @Login";
-            using (MySqlCommand command = new MySqlCommand(sql, sqlConnection))
-            {
-                command.Parameters.AddWithValue("@Login", login);
-                try
-                {
-                    object result = command.ExecuteScalar();
-                    if (result != null && result != DBNull.Value)
-                    {
-                        return Convert.ToInt32(result);
-                    }
-                    return -1;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error getting user ID: {ex.Message}", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return -1;
-                }
-            }
-        }
-
         public bool SaveReminder(string title, string description, string login)
         {
-            int userId = GetUserId(login);
-            if (userId == -1)
-            {
-                MessageBox.Show("User not found. Reminder cannot be saved.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
             string sql = "INSERT INTO reminder (title, description, userId) VALUES (@Title, @Description, @UserId)";
             using (MySqlCommand command = new MySqlCommand(sql, sqlConnection))
             {
                 command.Parameters.AddWithValue("@Title", title);
                 command.Parameters.AddWithValue("@Description", description);
-                command.Parameters.AddWithValue("@UserId", userId);
+                command.Parameters.AddWithValue("@UserId", UserSession.Id);
 
                 try
                 {
@@ -136,6 +106,44 @@ namespace library
             {
                 MessageBox.Show($"Error loading reminders: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void GetUserData(string login)
+        {
+            string sql = "SELECT user.name, user.phone, user.password, role.name, ifnull(user.surname, ''), user.id FROM user LEFT JOIN role ON role.id = user.roleId WHERE user.login = @login";
+
+            using (MySqlCommand command = new MySqlCommand(sql, sqlConnection))
+            {
+                command.Parameters.AddWithValue("@Login", login);
+                try
+                {
+                    using (MySqlDataReader rdr = command.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            string Name     = rdr.GetString(0);
+                            string Phone    = rdr.GetString(1);
+                            string Password = rdr.GetString(2);
+                            string roleName = rdr.GetString(3);
+                            string Surname  = rdr.GetString(4);
+                            int    id       = rdr.GetInt32(5);
+
+                            UserSession.Name     = Name;
+                            UserSession.Phone    = Phone;
+                            UserSession.Password = Password;
+                            UserSession.RoleName = roleName;
+                            UserSession.Surname  = Surname;
+                            UserSession.Id       = id;
+                        }
+                    }
+                  
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error getting user ID: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

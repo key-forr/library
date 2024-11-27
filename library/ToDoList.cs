@@ -24,9 +24,9 @@ namespace library
         {
             using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
             {
-                if (dataBaseHelper.SaveReminder(title, description, UserSession.CurrentUserLogin))
+                if (dataBaseHelper.SaveReminder(title, description, UserSession.Login))
                 {
-                    dataBaseHelper.LoadRemindersIntoDataGrid(viewHome, UserSession.UserId);
+                    dataBaseHelper.LoadRemindersIntoDataGrid(viewHome, UserSession.Id);
                 }
             }
         }
