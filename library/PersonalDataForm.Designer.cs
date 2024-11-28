@@ -54,12 +54,8 @@
             this.button_back.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
             this.button_back.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(169)))), ((int)(((byte)(118)))));
             this.button_back.IconFont = FontAwesome.Sharp.IconFont.Auto;
-<<<<<<< HEAD
-            this.button_back.Location = new System.Drawing.Point(12, 12);
-=======
             this.button_back.IconSize = 32;
             this.button_back.Location = new System.Drawing.Point(22, 28);
->>>>>>> 7f9592e53a4bcc03e4191fd5acca31c2eb419e5c
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(53, 48);
             this.button_back.TabIndex = 25;
