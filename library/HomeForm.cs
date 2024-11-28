@@ -10,6 +10,7 @@ namespace library
     {
         private readonly HomeFormPresenter presenter;
 
+        public string activeForm = null;
         public HomeForm()
         {
             InitializeComponent();
@@ -56,11 +57,18 @@ namespace library
             }
         }
 
+<<<<<<< HEAD
+      
+=======
         private void button_employee_nav_Click(object sender, EventArgs e)
         {
+
+            // Якщо форма ще не вбудована
             var childForm = new EmployeeForm();
             PanelAndFormManager.EmbedFormInPanel(childForm, panel_main);
         }
+>>>>>>> 7f9592e53a4bcc03e4191fd5acca31c2eb419e5c
+
 
         private void button_personal_office_nav_Click(object sender, EventArgs e)
         {
@@ -105,6 +113,16 @@ namespace library
             PanelAndFormManager.EmbedFormInPanel(childForm, panel_reminder);
         }
 
-      
+        private void button_books_navigation_Click(object sender, EventArgs e)
+        {
+            var childForm = new BooksForm();
+            PanelAndFormManager.EmbedFormInPanel(childForm, panel_main);
+        }
+
+        private void button_employee_navigation_Click(object sender, EventArgs e)
+        {
+            var childForm = new EmployeeForm();
+            PanelAndFormManager.EmbedFormInPanel(childForm, panel_main);
+        }
     }
 }

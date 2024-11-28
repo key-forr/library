@@ -10,17 +10,23 @@ using System.Windows.Forms;
 
 namespace library
 {
-    public partial class EmployeeForm : Form
+    public partial class BooksForm : Form
     {
-
-        public EmployeeForm()
+        public BooksForm()
         {
             InitializeComponent();
+            PanelAndFormManager.EmbedFormInPanel(new BookListForm(), panel_main);
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_add_book_Click(object sender, EventArgs e)
+        {
+            var childForm = new AddBookForm();
+            PanelAndFormManager.EmbedFormInPanel(childForm, panel_main);
         }
     }
 }

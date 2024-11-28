@@ -10,17 +10,20 @@ using System.Windows.Forms;
 
 namespace library
 {
-    public partial class EmployeeForm : Form
+    public partial class BookListForm : Form
     {
-
-        public EmployeeForm()
+        public BookListForm()
         {
             InitializeComponent();
         }
 
-        private void button_back_Click(object sender, EventArgs e)
+        private void BookListForm_Load(object sender, EventArgs e)
         {
-            this.Close();
+
+            using (var dataBaseHelper = new DataBaseHelper())
+            {
+                dataBaseHelper.LoadBooksFromDatabase(this);
+            }
         }
     }
 }
