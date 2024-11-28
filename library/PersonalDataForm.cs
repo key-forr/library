@@ -37,14 +37,6 @@ namespace library
         private void button_back_Click(object sender, EventArgs e)
         {
             this.Close();
-<<<<<<< HEAD
-=======
-        }
-
-        private void text_box_phone_TextChanged(object sender, EventArgs e)
-        {
-
->>>>>>> 7f9592e53a4bcc03e4191fd5acca31c2eb419e5c
         }
     }
 }
