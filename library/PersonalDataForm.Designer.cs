@@ -52,9 +52,14 @@
             this.button_back.FlatAppearance.BorderSize = 0;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.button_back.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button_back.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(169)))), ((int)(((byte)(118)))));
             this.button_back.IconFont = FontAwesome.Sharp.IconFont.Auto;
+<<<<<<< HEAD
             this.button_back.Location = new System.Drawing.Point(12, 12);
+=======
+            this.button_back.IconSize = 32;
+            this.button_back.Location = new System.Drawing.Point(22, 28);
+>>>>>>> 7f9592e53a4bcc03e4191fd5acca31c2eb419e5c
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(53, 48);
             this.button_back.TabIndex = 25;
@@ -89,7 +94,7 @@
             this.check_show_pass.FlatAppearance.BorderSize = 0;
             this.check_show_pass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.check_show_pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.check_show_pass.Location = new System.Drawing.Point(55, 547);
+            this.check_show_pass.Location = new System.Drawing.Point(55, 554);
             this.check_show_pass.Name = "check_show_pass";
             this.check_show_pass.Size = new System.Drawing.Size(120, 20);
             this.check_show_pass.TabIndex = 15;
@@ -99,7 +104,8 @@
             // 
             // text_box_password
             // 
-            this.text_box_password.BorderRadius = 10;
+            this.text_box_password.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_password.BorderRadius = 16;
             this.text_box_password.BorderThickness = 0;
             this.text_box_password.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_password.DefaultText = "";
@@ -107,24 +113,26 @@
             this.text_box_password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.text_box_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_password.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.text_box_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_password.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_password.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.text_box_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_box_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.text_box_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_password.Location = new System.Drawing.Point(55, 500);
+            this.text_box_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_password.Location = new System.Drawing.Point(44, 500);
             this.text_box_password.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.text_box_password.Name = "text_box_password";
             this.text_box_password.PasswordChar = '●';
             this.text_box_password.PlaceholderText = "";
             this.text_box_password.ReadOnly = true;
             this.text_box_password.SelectedText = "";
-            this.text_box_password.Size = new System.Drawing.Size(285, 38);
+            this.text_box_password.Size = new System.Drawing.Size(305, 45);
             this.text_box_password.TabIndex = 14;
             // 
             // text_box_login
             // 
-            this.text_box_login.BorderRadius = 10;
+            this.text_box_login.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_login.BorderRadius = 16;
             this.text_box_login.BorderThickness = 0;
             this.text_box_login.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_login.DefaultText = "";
@@ -132,24 +140,26 @@
             this.text_box_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.text_box_login.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.text_box_login.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_login.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_login.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.text_box_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_box_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.text_box_login.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_login.Location = new System.Drawing.Point(55, 420);
+            this.text_box_login.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_login.Location = new System.Drawing.Point(44, 420);
             this.text_box_login.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.text_box_login.Name = "text_box_login";
             this.text_box_login.PasswordChar = '\0';
             this.text_box_login.PlaceholderText = "";
             this.text_box_login.ReadOnly = true;
             this.text_box_login.SelectedText = "";
-            this.text_box_login.Size = new System.Drawing.Size(285, 38);
+            this.text_box_login.Size = new System.Drawing.Size(305, 45);
             this.text_box_login.TabIndex = 13;
             // 
             // text_box_role_name
             // 
-            this.text_box_role_name.BorderRadius = 10;
+            this.text_box_role_name.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_role_name.BorderRadius = 16;
             this.text_box_role_name.BorderThickness = 0;
             this.text_box_role_name.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_role_name.DefaultText = "";
@@ -157,24 +167,26 @@
             this.text_box_role_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_role_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.text_box_role_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_role_name.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.text_box_role_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_role_name.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_role_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_role_name.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.text_box_role_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_box_role_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.text_box_role_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_role_name.Location = new System.Drawing.Point(55, 340);
+            this.text_box_role_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_role_name.Location = new System.Drawing.Point(44, 340);
             this.text_box_role_name.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.text_box_role_name.Name = "text_box_role_name";
             this.text_box_role_name.PasswordChar = '\0';
             this.text_box_role_name.PlaceholderText = "";
             this.text_box_role_name.ReadOnly = true;
             this.text_box_role_name.SelectedText = "";
-            this.text_box_role_name.Size = new System.Drawing.Size(285, 38);
+            this.text_box_role_name.Size = new System.Drawing.Size(305, 45);
             this.text_box_role_name.TabIndex = 12;
             // 
             // text_box_phone
             // 
-            this.text_box_phone.BorderRadius = 10;
+            this.text_box_phone.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_phone.BorderRadius = 16;
             this.text_box_phone.BorderThickness = 0;
             this.text_box_phone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_phone.DefaultText = "";
@@ -182,24 +194,27 @@
             this.text_box_phone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_phone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.text_box_phone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_phone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.text_box_phone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_phone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_phone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_phone.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.text_box_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_box_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.text_box_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_phone.Location = new System.Drawing.Point(55, 260);
+            this.text_box_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_phone.Location = new System.Drawing.Point(44, 260);
             this.text_box_phone.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.text_box_phone.Name = "text_box_phone";
             this.text_box_phone.PasswordChar = '\0';
             this.text_box_phone.PlaceholderText = "";
             this.text_box_phone.ReadOnly = true;
             this.text_box_phone.SelectedText = "";
-            this.text_box_phone.Size = new System.Drawing.Size(285, 38);
+            this.text_box_phone.Size = new System.Drawing.Size(305, 45);
             this.text_box_phone.TabIndex = 11;
+            this.text_box_phone.TextChanged += new System.EventHandler(this.text_box_phone_TextChanged);
             // 
             // text_box_surname
             // 
-            this.text_box_surname.BorderRadius = 10;
+            this.text_box_surname.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_surname.BorderRadius = 16;
             this.text_box_surname.BorderThickness = 0;
             this.text_box_surname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_surname.DefaultText = "";
@@ -207,24 +222,26 @@
             this.text_box_surname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_surname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.text_box_surname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_surname.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.text_box_surname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_surname.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_surname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_surname.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.text_box_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_box_surname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.text_box_surname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_surname.Location = new System.Drawing.Point(55, 180);
+            this.text_box_surname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_surname.Location = new System.Drawing.Point(44, 180);
             this.text_box_surname.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.text_box_surname.Name = "text_box_surname";
             this.text_box_surname.PasswordChar = '\0';
             this.text_box_surname.PlaceholderText = "";
             this.text_box_surname.ReadOnly = true;
             this.text_box_surname.SelectedText = "";
-            this.text_box_surname.Size = new System.Drawing.Size(285, 38);
+            this.text_box_surname.Size = new System.Drawing.Size(305, 45);
             this.text_box_surname.TabIndex = 10;
             // 
             // text_box_name
             // 
-            this.text_box_name.BorderRadius = 10;
+            this.text_box_name.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_name.BorderRadius = 16;
             this.text_box_name.BorderThickness = 0;
             this.text_box_name.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_name.DefaultText = "";
@@ -232,26 +249,27 @@
             this.text_box_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.text_box_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_name.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.text_box_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_name.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_name.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.text_box_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_box_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.text_box_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_name.Location = new System.Drawing.Point(55, 100);
+            this.text_box_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.text_box_name.Location = new System.Drawing.Point(44, 100);
             this.text_box_name.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.text_box_name.Name = "text_box_name";
             this.text_box_name.PasswordChar = '\0';
             this.text_box_name.PlaceholderText = "";
             this.text_box_name.ReadOnly = true;
             this.text_box_name.SelectedText = "";
-            this.text_box_name.Size = new System.Drawing.Size(285, 38);
+            this.text_box_name.Size = new System.Drawing.Size(305, 45);
             this.text_box_name.TabIndex = 9;
             // 
             // label_password
             // 
-            this.label_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_password.ForeColor = System.Drawing.Color.DimGray;
-            this.label_password.Location = new System.Drawing.Point(51, 464);
+            this.label_password.Location = new System.Drawing.Point(51, 471);
             this.label_password.Name = "label_password";
             this.label_password.Size = new System.Drawing.Size(87, 30);
             this.label_password.TabIndex = 7;
@@ -260,9 +278,9 @@
             // 
             // label_login
             // 
-            this.label_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_login.ForeColor = System.Drawing.Color.DimGray;
-            this.label_login.Location = new System.Drawing.Point(51, 384);
+            this.label_login.Location = new System.Drawing.Point(51, 391);
             this.label_login.Name = "label_login";
             this.label_login.Size = new System.Drawing.Size(87, 30);
             this.label_login.TabIndex = 6;
@@ -271,9 +289,9 @@
             // 
             // label_role_name
             // 
-            this.label_role_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_role_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_role_name.ForeColor = System.Drawing.Color.DimGray;
-            this.label_role_name.Location = new System.Drawing.Point(51, 304);
+            this.label_role_name.Location = new System.Drawing.Point(51, 311);
             this.label_role_name.Name = "label_role_name";
             this.label_role_name.Size = new System.Drawing.Size(71, 30);
             this.label_role_name.TabIndex = 5;
@@ -282,9 +300,9 @@
             // 
             // label_phone
             // 
-            this.label_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_phone.ForeColor = System.Drawing.Color.DimGray;
-            this.label_phone.Location = new System.Drawing.Point(51, 224);
+            this.label_phone.Location = new System.Drawing.Point(51, 231);
             this.label_phone.Name = "label_phone";
             this.label_phone.Size = new System.Drawing.Size(173, 30);
             this.label_phone.TabIndex = 4;
@@ -293,9 +311,9 @@
             // 
             // label_surname
             // 
-            this.label_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_surname.ForeColor = System.Drawing.Color.DimGray;
-            this.label_surname.Location = new System.Drawing.Point(51, 144);
+            this.label_surname.Location = new System.Drawing.Point(51, 151);
             this.label_surname.Name = "label_surname";
             this.label_surname.Size = new System.Drawing.Size(104, 30);
             this.label_surname.TabIndex = 3;
@@ -304,9 +322,9 @@
             // 
             // label_name
             // 
-            this.label_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_name.ForeColor = System.Drawing.Color.DimGray;
-            this.label_name.Location = new System.Drawing.Point(51, 64);
+            this.label_name.Location = new System.Drawing.Point(51, 71);
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(63, 30);
             this.label_name.TabIndex = 2;

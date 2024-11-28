@@ -49,19 +49,7 @@ namespace library
             this.Hide();
         }
 
-        private void button_submit_mouse_leave(object sender, EventArgs e)
-        {
-            button_submit.FlatAppearance.BorderSize = 0;
-            button_submit.BackColor = Color.FromArgb(154, 73, 229);
-        }
 
-        private void button_submit_mouse_enter(object sender, EventArgs e)
-        {
-            button_submit.FlatStyle = FlatStyle.Flat;
-            button_submit.BackColor = Color.FromArgb(22, 26, 50);
-            button_submit.FlatAppearance.BorderColor = Color.FromArgb(154, 73, 229);
-            button_submit.FlatAppearance.BorderSize = 2;
-        }
 
         private void button_collapse_Click(object sender, EventArgs e)
         {
@@ -87,6 +75,11 @@ namespace library
         {
             if (check_show_pass.Checked) text_box_password.PasswordChar = '\0';
             else text_box_password.PasswordChar = '●';
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            presenter.HandleLogin(text_box_login.Text, text_box_password.Text);
         }
     }
 }
