@@ -18,17 +18,18 @@ namespace library
             InitializeComponent();
         }
 
-        private void LoadGenres()
-        {
-            using (DataBaseHelper dbHelper = new DataBaseHelper())
-            {
-                dbHelper.LoadGenreIntoComboBox(combo_box_genre);
-            }
-        }
-
         private void AddBookForm_Load(object sender, EventArgs e)
         {
             LoadGenres();
+        }
+
+        private void LoadGenres()
+        {
+            GenreListManager genreListManager = new GenreListManager();
+            foreach (var genre in genreListManager.Genres)
+            {
+                combo_box_genre.Items.Add(genre.Name);
+            }
         }
 
         private void button_browse_photo_Click(object sender, EventArgs e)

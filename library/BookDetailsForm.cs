@@ -14,14 +14,15 @@ namespace library
 {
     public partial class BookDetailsForm : Form
     {
-        private BookCardConfig bookCardConfig;
-        public BookDetailsForm(BookCardConfig bookCardConfig)
+        private BookConfig bookCardConfig;
+        private BooksForm booksForm; 
+
+        public BookDetailsForm(BookConfig bookCardConfig, BooksForm booksForm)
         {
             InitializeComponent();
             this.bookCardConfig = bookCardConfig;
+            this.booksForm = booksForm;
         }
-
-       
 
         private void button_back_Click(object sender, EventArgs e)
         {
@@ -33,12 +34,13 @@ namespace library
             using (DataBaseHelper dbHelper = new DataBaseHelper())
             {
                 bookCardConfig = dbHelper.LoadBookDetails(bookCardConfig.Id);
+
                 text_box_author.Text = bookCardConfig.Author;
-                label_name.Text = bookCardConfig.Title;
-                picure_box_book.Image = ImageUtils.LoadAndScaleImage(bookCardConfig.ImagePath, new Size(263, 403));
-                text_box_genre.Text = bookCardConfig.Genre;
+                label_name.Text = bookCardConfig.Name;
+                picure_box_book.Image = ImageUtils.LoadAndScaleImage(bookCardConfig.ImagePath, new Size(263, 403)); 
+                text_box_genre.Text = new GenreListManager().Genres.FirstOrDefault(g => g.Id == bookCardConfig.GenreId)?.Name ?? "Жанр не знайдено";
                 text_box_publishing.Text = bookCardConfig.Publishing;
-                text_box_quantity.Text = bookCardConfig.Count.ToString();
+                text_box_quantity.Text = bookCardConfig.Quantity.ToString();
                 text_box_year.Text = bookCardConfig.Year.ToString();
             }
         }
@@ -48,13 +50,14 @@ namespace library
             using (DataBaseHelper dbHelper = new DataBaseHelper())
             {
                 bookCardConfig.Author = text_box_author.Text;
-                bookCardConfig.Title = label_name.Text;
-                bookCardConfig.Genre = text_box_genre.Text;
+                bookCardConfig.Name = label_name.Text; 
+                bookCardConfig.GenreId = new GenreListManager().Genres.FirstOrDefault(g => g.Name.Equals(text_box_genre.Text, StringComparison.OrdinalIgnoreCase)).Id;
                 bookCardConfig.Publishing = text_box_publishing.Text  ;
-                bookCardConfig.Count = string.IsNullOrEmpty(text_box_quantity.Text) ? 0 : Convert.ToInt32(text_box_quantity.Text);
+                bookCardConfig.Quantity = string.IsNullOrEmpty(text_box_quantity.Text) ? 0 : Convert.ToInt32(text_box_quantity.Text);
                 bookCardConfig.Year = string.IsNullOrEmpty(text_box_year.Text) ? 0 : Convert.ToInt32(text_box_year.Text);
                 dbHelper.UpdateBook(bookCardConfig);
             }
+            booksForm.UpdateBookListForm();
         }
     }
 }

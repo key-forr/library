@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace library
@@ -7,11 +8,12 @@ namespace library
     {
         public static void EmbedFormInPanel(Form childForm, Panel targetPanel)
         {
-            foreach (Control control in targetPanel.Controls)
+            foreach (var control in targetPanel.Controls.OfType<Form>().ToList())
             {
                 if (control.GetType() == childForm.GetType())
                 {
-                    return;
+                    targetPanel.Controls.Remove(control);
+                    control.Close();
                 }
             }
 

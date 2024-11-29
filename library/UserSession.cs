@@ -8,12 +8,12 @@ namespace library
 {
     public static class UserSession
     {
-        public static string Login { get; set; }
+        public static int Id { get; set; }
         public static string Name { get; set; }
         public static string Surname { get; set; }
-        public static string Password { get; set; }
         public static string Phone { get; set; }
-        public static string RoleName { get; set; }
-        public static int Id { get; set; }
+        public static string Password { get; set; }
+        public static string Login { get; set; }
+        public static int RoleId { get; set; }
     }
 }

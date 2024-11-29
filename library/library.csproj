@@ -178,6 +178,7 @@
     <Compile Include="BookListForm.Designer.cs">
       <DependentUpon>BookListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookListManager.cs" />
     <Compile Include="BooksForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +186,8 @@
       <DependentUpon>BooksForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CardFactory.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="GenreListManager.cs" />
     <Compile Include="DataBaseHelper.cs" />
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -220,6 +223,8 @@
     <Compile Include="ReminderListForm.Designer.cs">
       <DependentUpon>ReminderListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReminderListManager.cs" />
+    <Compile Include="RoleListManager.cs" />
     <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="AccountOptionsForm.resx">
       <DependentUpon>AccountOptionsForm.cs</DependentUpon>

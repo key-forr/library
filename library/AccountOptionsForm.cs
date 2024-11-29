@@ -17,9 +17,14 @@ namespace library
         public AccountOptionsForm(HomeForm homeForm)
         {
             InitializeComponent();
+            InitializeInfo();
+            this.viewHome = homeForm;
+        }
+
+        private void InitializeInfo()
+        {
             label_phone.Text = UserSession.Phone;
             label_name_surname.Text = (UserSession.Name ?? "") + " " + (UserSession.Surname ?? "");
-            this.viewHome = homeForm;
         }
 
         private void button_personal_data_Click(object sender, EventArgs e)

@@ -13,10 +13,22 @@ namespace library
 {
     public partial class BooksForm : Form
     {
+        private BookListManager bookListManager;
+        private BookListForm bookListForm;
+
         public BooksForm()
         {
             InitializeComponent();
-            PanelAndFormManager.EmbedFormInPanel(new BookListForm(this), panel_main);
+            bookListForm = new BookListForm(this);
+            PanelAndFormManager.EmbedFormInPanel(bookListForm, panel_main);
+        }
+
+        public void UpdateBookListForm()
+        {
+            panel_main.Controls.Clear();
+
+            bookListForm = new BookListForm(this);
+            PanelAndFormManager.EmbedFormInPanel(bookListForm, panel_main);
         }
 
         private void button_add_book_Click(object sender, EventArgs e)
@@ -40,9 +52,9 @@ namespace library
             text_box_search.PlaceholderText = string.Empty;
         }
 
-        public void OpenBookDetatils(BookCardConfig bookCardConfig)
+        public void OpenBookDetails(BookConfig bookCardConfig)
         {
-            var childForm = new BookDetailsForm(bookCardConfig);
+            var childForm = new BookDetailsForm(bookCardConfig, this);
             PanelAndFormManager.EmbedFormInPanel(childForm, panel);
         }
     }

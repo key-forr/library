@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.HtmlControls;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
@@ -14,10 +15,11 @@ namespace library
 {
     public partial class ReminderAddForm : Form
     {
-
-        public ReminderAddForm()
+        private HomeForm homeForm;
+        public ReminderAddForm(HomeForm homeForm)
         {
             InitializeComponent();
+            this.homeForm = homeForm;
         }
 
         private void button_add_Click(object sender, EventArgs e)
@@ -35,6 +37,8 @@ namespace library
                 {
                     dataBaseHelper.SaveReminder(text_box_title.Text, text_box_description.Text, UserSession.Login);
                 }
+                homeForm.UpdateReminderListForm();
+
                 text_box_title.Text = "";
                 text_box_description.Text = "";
             }

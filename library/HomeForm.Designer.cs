@@ -31,8 +31,11 @@ namespace library
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.panel_navigation = new System.Windows.Forms.Panel();
+            this.button_home_navigation = new FontAwesome.Sharp.IconButton();
             this.label_book = new System.Windows.Forms.Label();
             this.label_haven = new System.Windows.Forms.Label();
+            this.button_personal_office_nav = new Guna.UI2.WinForms.Guna2Button();
+            this.logo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.button_employee_navigation = new System.Windows.Forms.Button();
             this.button_statistics_navigation = new System.Windows.Forms.Button();
             this.button_booking_navigation = new System.Windows.Forms.Button();
@@ -41,23 +44,20 @@ namespace library
             this.button_storage_navigation = new System.Windows.Forms.Button();
             this.panel_main = new Guna.UI2.WinForms.Guna2Panel();
             this.panel_reminder = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel_reminder_list = new System.Windows.Forms.Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.button_add_reminder = new Guna.UI2.WinForms.Guna2Button();
             this.label_reminder = new System.Windows.Forms.Label();
             this.panel_window_navigation = new System.Windows.Forms.Panel();
-            this.button_home_navigation = new FontAwesome.Sharp.IconButton();
-            this.button_personal_office_nav = new Guna.UI2.WinForms.Guna2Button();
-            this.logo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.button_collapse = new FontAwesome.Sharp.IconButton();
             this.button_window_state = new FontAwesome.Sharp.IconButton();
             this.button_close = new FontAwesome.Sharp.IconButton();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.panel_reminder_list = new System.Windows.Forms.Panel();
             this.panel_navigation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panel_main.SuspendLayout();
             this.panel_reminder.SuspendLayout();
-            this.panel_window_navigation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.panel_window_navigation.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_navigation
@@ -79,6 +79,19 @@ namespace library
             this.panel_navigation.Name = "panel_navigation";
             this.panel_navigation.Size = new System.Drawing.Size(1440, 123);
             this.panel_navigation.TabIndex = 0;
+            // 
+            // button_home_navigation
+            // 
+            this.button_home_navigation.FlatAppearance.BorderSize = 0;
+            this.button_home_navigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_home_navigation.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
+            this.button_home_navigation.IconColor = System.Drawing.Color.White;
+            this.button_home_navigation.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.button_home_navigation.Location = new System.Drawing.Point(1281, 37);
+            this.button_home_navigation.Name = "button_home_navigation";
+            this.button_home_navigation.Size = new System.Drawing.Size(50, 50);
+            this.button_home_navigation.TabIndex = 20;
+            this.button_home_navigation.UseVisualStyleBackColor = true;
             // 
             // label_book
             // 
@@ -103,6 +116,35 @@ namespace library
             this.label_haven.TabIndex = 26;
             this.label_haven.Text = "Haven";
             this.label_haven.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button_personal_office_nav
+            // 
+            this.button_personal_office_nav.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_personal_office_nav.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_personal_office_nav.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_personal_office_nav.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_personal_office_nav.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_personal_office_nav.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_personal_office_nav.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_personal_office_nav.ForeColor = System.Drawing.Color.White;
+            this.button_personal_office_nav.Image = global::library.Properties.Resources.User;
+            this.button_personal_office_nav.ImageSize = new System.Drawing.Size(45, 45);
+            this.button_personal_office_nav.Location = new System.Drawing.Point(1348, 37);
+            this.button_personal_office_nav.Name = "button_personal_office_nav";
+            this.button_personal_office_nav.Size = new System.Drawing.Size(71, 50);
+            this.button_personal_office_nav.TabIndex = 1;
+            this.button_personal_office_nav.Click += new System.EventHandler(this.button_personal_office_nav_Click);
+            // 
+            // logo
+            // 
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.ImageRotate = 0F;
+            this.logo.Location = new System.Drawing.Point(12, 25);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(75, 75);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.logo.TabIndex = 13;
+            this.logo.TabStop = false;
             // 
             // button_employee_navigation
             // 
@@ -217,6 +259,24 @@ namespace library
             this.panel_reminder.Size = new System.Drawing.Size(377, 400);
             this.panel_reminder.TabIndex = 17;
             // 
+            // panel_reminder_list
+            // 
+            this.panel_reminder_list.Location = new System.Drawing.Point(0, 58);
+            this.panel_reminder_list.Name = "panel_reminder_list";
+            this.panel_reminder_list.Size = new System.Drawing.Size(377, 263);
+            this.panel_reminder_list.TabIndex = 15;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::library.Properties.Resources.bell;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(271, 15);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.guna2PictureBox1.TabIndex = 14;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // button_add_reminder
             // 
             this.button_add_reminder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
@@ -256,48 +316,6 @@ namespace library
             this.panel_window_navigation.Name = "panel_window_navigation";
             this.panel_window_navigation.Size = new System.Drawing.Size(1440, 35);
             this.panel_window_navigation.TabIndex = 20;
-            // 
-            // button_home_navigation
-            // 
-            this.button_home_navigation.FlatAppearance.BorderSize = 0;
-            this.button_home_navigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_home_navigation.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            this.button_home_navigation.IconColor = System.Drawing.Color.White;
-            this.button_home_navigation.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.button_home_navigation.Location = new System.Drawing.Point(1281, 37);
-            this.button_home_navigation.Name = "button_home_navigation";
-            this.button_home_navigation.Size = new System.Drawing.Size(50, 50);
-            this.button_home_navigation.TabIndex = 20;
-            this.button_home_navigation.UseVisualStyleBackColor = true;
-            // 
-            // button_personal_office_nav
-            // 
-            this.button_personal_office_nav.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_personal_office_nav.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_personal_office_nav.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_personal_office_nav.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_personal_office_nav.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_personal_office_nav.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button_personal_office_nav.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button_personal_office_nav.ForeColor = System.Drawing.Color.White;
-            this.button_personal_office_nav.Image = global::library.Properties.Resources.User;
-            this.button_personal_office_nav.ImageSize = new System.Drawing.Size(45, 45);
-            this.button_personal_office_nav.Location = new System.Drawing.Point(1348, 37);
-            this.button_personal_office_nav.Name = "button_personal_office_nav";
-            this.button_personal_office_nav.Size = new System.Drawing.Size(71, 50);
-            this.button_personal_office_nav.TabIndex = 1;
-            this.button_personal_office_nav.Click += new System.EventHandler(this.button_personal_office_nav_Click);
-            // 
-            // logo
-            // 
-            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.ImageRotate = 0F;
-            this.logo.Location = new System.Drawing.Point(12, 25);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(75, 75);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.logo.TabIndex = 13;
-            this.logo.TabStop = false;
             // 
             // button_collapse
             // 
@@ -347,24 +365,6 @@ namespace library
             this.button_close.UseVisualStyleBackColor = true;
             this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::library.Properties.Resources.bell;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(271, 15);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.guna2PictureBox1.TabIndex = 14;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // panel_reminder_list
-            // 
-            this.panel_reminder_list.Location = new System.Drawing.Point(0, 58);
-            this.panel_reminder_list.Name = "panel_reminder_list";
-            this.panel_reminder_list.Size = new System.Drawing.Size(377, 263);
-            this.panel_reminder_list.TabIndex = 15;
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -379,13 +379,12 @@ namespace library
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomePage";
-            this.Load += new System.EventHandler(this.HomeForm_Load);
             this.panel_navigation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panel_main.ResumeLayout(false);
             this.panel_reminder.ResumeLayout(false);
-            this.panel_window_navigation.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.panel_window_navigation.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

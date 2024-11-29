@@ -24,7 +24,7 @@ namespace library
             text_box_name.Text = UserSession.Name;
             text_box_surname.Text = UserSession.Surname;
             text_box_phone.Text = UserSession.Phone;
-            text_box_role_name.Text = UserSession.RoleName;
+            text_box_role_name.Text = new RoleListManager().Roles.FirstOrDefault(g => g.Id == UserSession.RoleId)?.Name ?? "Роль не знайдено";
             text_box_password.Text = UserSession.Password;
         }
 

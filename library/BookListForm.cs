@@ -13,33 +13,32 @@ namespace library
 {
     public partial class BookListForm : Form
     {
-        private List<BookCardConfig> books;
-        private BooksForm booksForm;
-        public BookListForm(BooksForm booksForm)
+        private BookListManager bookListManager;
+        private BooksForm parentForm;
+
+        public BookListForm(BooksForm parentForm)
         {
             InitializeComponent();
-            this.booksForm = booksForm;
+            bookListManager = new BookListManager();
+            this.parentForm = parentForm;
         }
 
         private void BookListForm_Load(object sender, EventArgs e)
         {
-            using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
-            {
-                books = dataBaseHelper.LoadBookDataForCard();
-                DisplayBooks();
-            }
+            DisplayBooks();
         }
 
         public void DisplayBooks()
         {
+            this.Controls.Clear(); 
             int x = 30;
             int y = 30;
             int bookCount = 0;
 
-            foreach (var book in books)
+            foreach (var book in bookListManager.Books)
             {
-                BookCardFactory bookCardFactory = new BookCardFactory(booksForm);
-                Guna.UI2.WinForms.Guna2GroupBox bookCard = bookCardFactory.CreateBookCard(book, x, y);
+                BookCardFactory bookCardFactory = new BookCardFactory(parentForm);
+                var bookCard = bookCardFactory.CreateBookCard(book, x, y);
 
                 this.Controls.Add(bookCard);
 
