@@ -8,55 +8,16 @@ namespace library
 {
     public partial class HomeForm : Form
     {
-        private readonly HomeFormPresenter presenter;
 
         public HomeForm()
         {
             InitializeComponent();
-            presenter = new HomeFormPresenter(this);
-
-            RefreshRemindersList();
+            PanelAndFormManager.EmbedFormInPanel(new ReminderListForm(), panel_reminder_list);
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
-            ConfigureReminderDataGrid();
         }
-
-        private void RefreshRemindersList()
-        {
-            using (var dataBaseHelper = new DataBaseHelper())
-            {
-                dataBaseHelper.LoadRemindersIntoDataGrid(this, UserSession.Id);
-            }
-        }
-
-        public void UpdateReminderDataGrid(DataTable reminderData)
-        {
-            reminder_view.SuspendLayout();
-
-            reminder_view.DataSource = null;
-            reminder_view.Columns.Clear();
-
-            reminder_view.DataSource = reminderData;
-            ConfigureReminderDataGrid();
-
-            reminder_view.ResumeLayout();
-        }
-
-        public void ConfigureReminderDataGrid()
-        {
-            if (reminder_view.Columns.Count > 0)
-            {
-                if (reminder_view.Columns.Contains("title"))
-                    reminder_view.Columns["title"].HeaderText = "Заголовок";
-
-                if (reminder_view.Columns.Contains("description"))
-                    reminder_view.Columns["description"].HeaderText = "Опис";
-            }
-        }
-
-      
 
         private void button_personal_office_nav_Click(object sender, EventArgs e)
         {
@@ -97,7 +58,7 @@ namespace library
 
         private void button_add_reminder_Click(object sender, EventArgs e)
         {
-            var childForm = new ReminderAddForm(presenter.ToDoList);
+            var childForm = new ReminderAddForm();
             PanelAndFormManager.EmbedFormInPanel(childForm, panel_reminder);
         }
 

@@ -9,7 +9,7 @@ namespace library
         {
             foreach (Control control in targetPanel.Controls)
             {
-                if (control.GetType() == childForm.GetType()) // Перевіряємо тип форми
+                if (control.GetType() == childForm.GetType())
                 {
                     return;
                 }

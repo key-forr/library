@@ -47,7 +47,7 @@
             this.button_add.ForeColor = System.Drawing.Color.White;
             this.button_add.Image = global::library.Properties.Resources.Add;
             this.button_add.ImageSize = new System.Drawing.Size(40, 40);
-            this.button_add.Location = new System.Drawing.Point(310, 248);
+            this.button_add.Location = new System.Drawing.Point(292, 290);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(55, 51);
             this.button_add.TabIndex = 23;
@@ -82,17 +82,19 @@
             this.text_box_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.text_box_title.Location = new System.Drawing.Point(111, 78);
             this.text_box_title.Name = "text_box_title";
-            this.text_box_title.Size = new System.Drawing.Size(254, 30);
+            this.text_box_title.Size = new System.Drawing.Size(236, 30);
             this.text_box_title.TabIndex = 26;
             // 
             // text_box_description
             // 
             this.text_box_description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.text_box_description.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.text_box_description.Location = new System.Drawing.Point(17, 168);
+            this.text_box_description.MaxLength = 100;
             this.text_box_description.Multiline = true;
             this.text_box_description.Name = "text_box_description";
-            this.text_box_description.Size = new System.Drawing.Size(259, 131);
+            this.text_box_description.Size = new System.Drawing.Size(259, 173);
             this.text_box_description.TabIndex = 27;
             // 
             // button_back
@@ -114,7 +116,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(377, 326);
+            this.ClientSize = new System.Drawing.Size(359, 353);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.text_box_description);
             this.Controls.Add(this.text_box_title);

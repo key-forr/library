@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms.Suite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,17 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace library
 {
     public partial class ReminderAddForm : Form
     {
-        private ToDoList toDoList;
 
-        public ReminderAddForm(ToDoList toDoList)
+        public ReminderAddForm()
         {
             InitializeComponent();
-            this.toDoList = toDoList;
         }
 
         private void button_add_Click(object sender, EventArgs e)
@@ -31,13 +31,10 @@ namespace library
 
             try
             {
-                toDoList.SaveReminder(text_box_title.Text, text_box_description.Text);
-
                 using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
                 {
-                    dataBaseHelper.LoadRemindersIntoDataGrid(new HomeForm(), UserSession.Id);
+                    dataBaseHelper.SaveReminder(text_box_title.Text, text_box_description.Text, UserSession.Login);
                 }
-
                 text_box_title.Text = "";
                 text_box_description.Text = "";
             }
@@ -47,8 +44,6 @@ namespace library
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        
 
         private void button_back_Click(object sender, EventArgs e)
         {

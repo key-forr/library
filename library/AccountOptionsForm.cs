@@ -13,6 +13,7 @@ namespace library
     public partial class AccountOptionsForm : Form
     {
         private readonly HomeForm viewHome;
+
         public AccountOptionsForm(HomeForm homeForm)
         {
             InitializeComponent();
@@ -33,8 +34,6 @@ namespace library
             Application.Exit();
             System.Diagnostics.Process.Start(Application.ExecutablePath);
         }
-
-       
 
         private void button_close_Click(object sender, EventArgs e)
         {

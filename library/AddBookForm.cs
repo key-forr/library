@@ -47,12 +47,11 @@ namespace library
 
         private void button_add_reminder_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(text_box_book_name.Text) 
+            if (string.IsNullOrWhiteSpace(text_box_book_name.Text)
                 || string.IsNullOrWhiteSpace(text_box_author.Text)
-                || string.IsNullOrWhiteSpace(text_box_year.Text) 
+                || string.IsNullOrWhiteSpace(text_box_year.Text)
                 || string.IsNullOrWhiteSpace(text_box_publishing.Text)
-                || string.IsNullOrWhiteSpace(text_box_quantity.Text) 
-                || string.IsNullOrWhiteSpace(text_box_photo.Text)
+                || string.IsNullOrWhiteSpace(text_box_quantity.Text)
                 || string.IsNullOrWhiteSpace(combo_box_genre.Text))
             {
                 MessageBox.Show("Будь ласка, заповніть всі поля!", "Помилка",
@@ -62,13 +61,13 @@ namespace library
 
             try
             {
-                string name       = text_box_book_name.Text;
-                string author     = text_box_author.Text;
-                int year          = int.Parse(text_box_year.Text);
+                string name = text_box_book_name.Text;
+                string author = text_box_author.Text;
+                int year = int.Parse(text_box_year.Text);
                 string publishing = text_box_publishing.Text;
-                int quantity      = int.Parse(text_box_quantity.Text);
-                string photoPath  = text_box_photo.Text;
-                int genreId       = combo_box_genre.SelectedIndex + 1;
+                int quantity = int.Parse(text_box_quantity.Text);
+                string photoPath = text_box_photo.Text;
+                int genreId = combo_box_genre.SelectedIndex + 1;
 
                 using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
                 {

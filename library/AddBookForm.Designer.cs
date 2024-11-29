@@ -52,9 +52,9 @@
             this.label_add_book.AutoSize = true;
             this.label_add_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_add_book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.label_add_book.Location = new System.Drawing.Point(262, 23);
+            this.label_add_book.Location = new System.Drawing.Point(282, 36);
             this.label_add_book.Name = "label_add_book";
-            this.label_add_book.Size = new System.Drawing.Size(242, 39);
+            this.label_add_book.Size = new System.Drawing.Size(235, 38);
             this.label_add_book.TabIndex = 0;
             this.label_add_book.Text = "Додати книгу";
             // 
@@ -63,7 +63,7 @@
             this.label_book_name.AutoSize = true;
             this.label_book_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_book_name.ForeColor = System.Drawing.Color.DimGray;
-            this.label_book_name.Location = new System.Drawing.Point(54, 90);
+            this.label_book_name.Location = new System.Drawing.Point(74, 103);
             this.label_book_name.Name = "label_book_name";
             this.label_book_name.Size = new System.Drawing.Size(113, 20);
             this.label_book_name.TabIndex = 1;
@@ -74,7 +74,7 @@
             this.label_author.AutoSize = true;
             this.label_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_author.ForeColor = System.Drawing.Color.DimGray;
-            this.label_author.Location = new System.Drawing.Point(54, 155);
+            this.label_author.Location = new System.Drawing.Point(74, 168);
             this.label_author.Name = "label_author";
             this.label_author.Size = new System.Drawing.Size(61, 20);
             this.label_author.TabIndex = 2;
@@ -85,7 +85,7 @@
             this.label_publishing.AutoSize = true;
             this.label_publishing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_publishing.ForeColor = System.Drawing.Color.DimGray;
-            this.label_publishing.Location = new System.Drawing.Point(265, 220);
+            this.label_publishing.Location = new System.Drawing.Point(285, 233);
             this.label_publishing.Name = "label_publishing";
             this.label_publishing.Size = new System.Drawing.Size(123, 20);
             this.label_publishing.TabIndex = 3;
@@ -96,7 +96,7 @@
             this.label_quantity.AutoSize = true;
             this.label_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_quantity.ForeColor = System.Drawing.Color.DimGray;
-            this.label_quantity.Location = new System.Drawing.Point(54, 347);
+            this.label_quantity.Location = new System.Drawing.Point(74, 360);
             this.label_quantity.Name = "label_quantity";
             this.label_quantity.Size = new System.Drawing.Size(86, 20);
             this.label_quantity.TabIndex = 4;
@@ -107,7 +107,7 @@
             this.label_genre.AutoSize = true;
             this.label_genre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_genre.ForeColor = System.Drawing.Color.DimGray;
-            this.label_genre.Location = new System.Drawing.Point(62, 285);
+            this.label_genre.Location = new System.Drawing.Point(82, 298);
             this.label_genre.Name = "label_genre";
             this.label_genre.Size = new System.Drawing.Size(53, 20);
             this.label_genre.TabIndex = 5;
@@ -118,7 +118,7 @@
             this.label_photo.AutoSize = true;
             this.label_photo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_photo.ForeColor = System.Drawing.Color.DimGray;
-            this.label_photo.Location = new System.Drawing.Point(265, 347);
+            this.label_photo.Location = new System.Drawing.Point(285, 360);
             this.label_photo.Name = "label_photo";
             this.label_photo.Size = new System.Drawing.Size(55, 20);
             this.label_photo.TabIndex = 6;
@@ -129,7 +129,7 @@
             this.label_year.AutoSize = true;
             this.label_year.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_year.ForeColor = System.Drawing.Color.DimGray;
-            this.label_year.Location = new System.Drawing.Point(57, 220);
+            this.label_year.Location = new System.Drawing.Point(77, 233);
             this.label_year.Name = "label_year";
             this.label_year.Size = new System.Drawing.Size(110, 20);
             this.label_year.TabIndex = 7;
@@ -148,8 +148,8 @@
             this.text_box_book_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.text_box_book_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.text_box_book_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_book_name.Location = new System.Drawing.Point(58, 115);
-            this.text_box_book_name.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.text_box_book_name.Location = new System.Drawing.Point(78, 128);
+            this.text_box_book_name.Margin = new System.Windows.Forms.Padding(5);
             this.text_box_book_name.Name = "text_box_book_name";
             this.text_box_book_name.PasswordChar = '\0';
             this.text_box_book_name.PlaceholderText = "";
@@ -170,7 +170,7 @@
             this.text_box_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.text_box_author.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.text_box_author.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_author.Location = new System.Drawing.Point(58, 180);
+            this.text_box_author.Location = new System.Drawing.Point(78, 193);
             this.text_box_author.Margin = new System.Windows.Forms.Padding(5);
             this.text_box_author.Name = "text_box_author";
             this.text_box_author.PasswordChar = '\0';
@@ -192,7 +192,7 @@
             this.text_box_year.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.text_box_year.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.text_box_year.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_year.Location = new System.Drawing.Point(58, 245);
+            this.text_box_year.Location = new System.Drawing.Point(78, 258);
             this.text_box_year.Margin = new System.Windows.Forms.Padding(5);
             this.text_box_year.Name = "text_box_year";
             this.text_box_year.PasswordChar = '\0';
@@ -215,7 +215,7 @@
             this.text_box_publishing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.text_box_publishing.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.text_box_publishing.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_publishing.Location = new System.Drawing.Point(269, 245);
+            this.text_box_publishing.Location = new System.Drawing.Point(289, 258);
             this.text_box_publishing.Margin = new System.Windows.Forms.Padding(5);
             this.text_box_publishing.Name = "text_box_publishing";
             this.text_box_publishing.PasswordChar = '\0';
@@ -236,7 +236,7 @@
             this.combo_box_genre.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.combo_box_genre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.combo_box_genre.ItemHeight = 30;
-            this.combo_box_genre.Location = new System.Drawing.Point(58, 308);
+            this.combo_box_genre.Location = new System.Drawing.Point(78, 321);
             this.combo_box_genre.Name = "combo_box_genre";
             this.combo_box_genre.Size = new System.Drawing.Size(695, 36);
             this.combo_box_genre.TabIndex = 13;
@@ -255,7 +255,7 @@
             this.text_box_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.text_box_quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.text_box_quantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_quantity.Location = new System.Drawing.Point(58, 372);
+            this.text_box_quantity.Location = new System.Drawing.Point(78, 385);
             this.text_box_quantity.Margin = new System.Windows.Forms.Padding(5);
             this.text_box_quantity.Name = "text_box_quantity";
             this.text_box_quantity.PasswordChar = '\0';
@@ -278,7 +278,7 @@
             this.text_box_photo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.text_box_photo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.text_box_photo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_photo.Location = new System.Drawing.Point(269, 372);
+            this.text_box_photo.Location = new System.Drawing.Point(289, 385);
             this.text_box_photo.Margin = new System.Windows.Forms.Padding(5);
             this.text_box_photo.Name = "text_box_photo";
             this.text_box_photo.PasswordChar = '\0';
@@ -299,7 +299,7 @@
             this.button_add_book.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.button_add_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_add_book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.button_add_book.Location = new System.Drawing.Point(269, 430);
+            this.button_add_book.Location = new System.Drawing.Point(289, 463);
             this.button_add_book.Name = "button_add_book";
             this.button_add_book.Size = new System.Drawing.Size(235, 49);
             this.button_add_book.TabIndex = 16;
@@ -317,7 +317,7 @@
             this.button_browse_photo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
             this.button_browse_photo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button_browse_photo.ForeColor = System.Drawing.Color.White;
-            this.button_browse_photo.Location = new System.Drawing.Point(601, 415);
+            this.button_browse_photo.Location = new System.Drawing.Point(621, 428);
             this.button_browse_photo.Name = "button_browse_photo";
             this.button_browse_photo.Size = new System.Drawing.Size(152, 35);
             this.button_browse_photo.TabIndex = 17;
@@ -329,7 +329,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(797, 503);
+            this.ClientSize = new System.Drawing.Size(844, 570);
             this.Controls.Add(this.button_browse_photo);
             this.Controls.Add(this.button_add_book);
             this.Controls.Add(this.text_box_photo);
