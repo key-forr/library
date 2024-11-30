@@ -13,6 +13,7 @@ namespace library
     public partial class AccountOptionsForm : Form
     {
         private readonly HomeForm viewHome;
+        public PersonalDataForm PersonalDataForm { get; set; }
 
         public AccountOptionsForm(HomeForm homeForm)
         {
@@ -30,8 +31,8 @@ namespace library
         private void button_personal_data_Click(object sender, EventArgs e)
         {
             this.Close();
-            var childForm = new PersonalDataForm();
-            PanelAndFormManager.EmbedFormInPanel(childForm, viewHome.MainPanel);
+            PersonalDataForm = new PersonalDataForm();
+            PanelAndFormManager.EmbedFormInPanel(PersonalDataForm, viewHome.MainPanel);
         }
 
         private void button_logout_Click(object sender, EventArgs e)

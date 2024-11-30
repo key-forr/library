@@ -22,6 +22,11 @@ namespace library
             this.homeForm = homeForm;
         }
 
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void button_add_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(text_box_title.Text) || string.IsNullOrWhiteSpace(text_box_description.Text))
@@ -47,11 +52,6 @@ namespace library
                 MessageBox.Show($"Помилка при додаванні нагадування: {ex.Message}", "Помилка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void button_back_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

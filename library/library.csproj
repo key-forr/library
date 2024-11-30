@@ -172,6 +172,12 @@
     <Compile Include="BookDetailsForm.Designer.cs">
       <DependentUpon>BookDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingForm.Designer.cs">
+      <DependentUpon>BookingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,8 +191,15 @@
     <Compile Include="BooksForm.Designer.cs">
       <DependentUpon>BooksForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ButtonUtils.cs" />
     <Compile Include="CardFactory.cs" />
     <Compile Include="Configuration.cs" />
+    <Compile Include="CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenreListManager.cs" />
     <Compile Include="DataBaseHelper.cs" />
     <Compile Include="EmployeeForm.cs">
@@ -225,6 +238,18 @@
     </Compile>
     <Compile Include="ReminderListManager.cs" />
     <Compile Include="RoleListManager.cs" />
+    <Compile Include="StatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticsForm.Designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StorageForm.Designer.cs">
+      <DependentUpon>StorageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="AccountOptionsForm.resx">
       <DependentUpon>AccountOptionsForm.cs</DependentUpon>
@@ -238,11 +263,17 @@
     <EmbeddedResource Include="BookDetailsForm.resx">
       <DependentUpon>BookDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BookingForm.resx">
+      <DependentUpon>BookingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BookListForm.resx">
       <DependentUpon>BookListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BooksForm.resx">
       <DependentUpon>BooksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
@@ -268,6 +299,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReminderListForm.resx">
       <DependentUpon>ReminderListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StorageForm.resx">
+      <DependentUpon>StorageForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -302,9 +339,6 @@
     <None Include="Resources\Back.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bell.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="image\defaultBookForCard.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -315,6 +349,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PinNotHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
