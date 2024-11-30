@@ -65,7 +65,7 @@ namespace library
             }
         }
 
-        private static Image CreatePlaceholderImage(Size size)
+        public static Image CreatePlaceholderImage(Size size)
         {
             Bitmap bmp = new Bitmap(size.Width, size.Height);
 

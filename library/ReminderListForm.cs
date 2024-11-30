@@ -27,8 +27,8 @@ namespace library
 
         public void DisplayReminder()
         {
-            this.Controls.Clear();
-            int x = 15;
+            this.Controls.Clear(); 
+            int x = 15; 
             int y = 15;
 
             foreach (var reminder in reminderListManager.Reminder)
@@ -38,7 +38,7 @@ namespace library
 
                 this.Controls.Add(reminderCard);
 
-                y += 130;
+                y += reminderCard.Height + 10; 
             }
         }
     }

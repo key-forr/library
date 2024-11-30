@@ -28,15 +28,15 @@ namespace library
             text_box_password.Text = UserSession.Password;
         }
 
-        private void check_show_pass_CheckedChanged(object sender, EventArgs e)
-        {
-            if (check_show_pass.Checked) text_box_password.PasswordChar = '\0';
-            else text_box_password.PasswordChar = '●';
-        }
-
         private void button_back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checked_show_password_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checked_show_password.Checked) text_box_password.PasswordChar = '\0';
+            else text_box_password.PasswordChar = '●';
         }
     }
 }

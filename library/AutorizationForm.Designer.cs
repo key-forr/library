@@ -34,6 +34,7 @@ namespace library
             this.label_login = new System.Windows.Forms.Label();
             this.label_signIn = new System.Windows.Forms.Label();
             this.panel_signIn = new System.Windows.Forms.Panel();
+            this.checked_show_password = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.button_submit = new Guna.UI2.WinForms.Guna2Button();
             this.text_box_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.text_box_login = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,7 +42,6 @@ namespace library
             this.button_collapse = new FontAwesome.Sharp.IconButton();
             this.button_window_state = new FontAwesome.Sharp.IconButton();
             this.button_close = new FontAwesome.Sharp.IconButton();
-            this.checked_show_password = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             label_forget_pass = new System.Windows.Forms.Label();
             this.panel_signIn.SuspendLayout();
             this.panel_window_navigation.SuspendLayout();
@@ -106,9 +106,28 @@ namespace library
             this.panel_signIn.Size = new System.Drawing.Size(545, 498);
             this.panel_signIn.TabIndex = 6;
             // 
+            // checked_show_password
+            // 
+            this.checked_show_password.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.checked_show_password.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.checked_show_password.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.checked_show_password.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.checked_show_password.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checked_show_password.Location = new System.Drawing.Point(49, 315);
+            this.checked_show_password.Name = "checked_show_password";
+            this.checked_show_password.Size = new System.Drawing.Size(35, 20);
+            this.checked_show_password.TabIndex = 10;
+            this.checked_show_password.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checked_show_password.UncheckedState.BorderThickness = 1;
+            this.checked_show_password.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.checked_show_password.UncheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.checked_show_password.UncheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.checked_show_password.CheckedChanged += new System.EventHandler(this.checked_show_password_CheckedChanged);
+            // 
             // button_submit
             // 
             this.button_submit.BorderRadius = 20;
+            this.button_submit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_submit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.button_submit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.button_submit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -186,6 +205,7 @@ namespace library
             // 
             // button_collapse
             // 
+            this.button_collapse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_collapse.Dock = System.Windows.Forms.DockStyle.Right;
             this.button_collapse.FlatAppearance.BorderSize = 0;
             this.button_collapse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -203,6 +223,7 @@ namespace library
             // 
             // button_window_state
             // 
+            this.button_window_state.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_window_state.Dock = System.Windows.Forms.DockStyle.Right;
             this.button_window_state.FlatAppearance.BorderSize = 0;
             this.button_window_state.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -219,6 +240,7 @@ namespace library
             // 
             // button_close
             // 
+            this.button_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_close.Dock = System.Windows.Forms.DockStyle.Right;
             this.button_close.FlatAppearance.BorderSize = 0;
             this.button_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -233,23 +255,6 @@ namespace library
             this.button_close.TabIndex = 0;
             this.button_close.UseVisualStyleBackColor = true;
             this.button_close.Click += new System.EventHandler(this.button_close_Click);
-            // 
-            // checked_show_password
-            // 
-            this.checked_show_password.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.checked_show_password.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
-            this.checked_show_password.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.checked_show_password.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.checked_show_password.Location = new System.Drawing.Point(49, 315);
-            this.checked_show_password.Name = "checked_show_password";
-            this.checked_show_password.Size = new System.Drawing.Size(35, 20);
-            this.checked_show_password.TabIndex = 10;
-            this.checked_show_password.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.checked_show_password.UncheckedState.BorderThickness = 1;
-            this.checked_show_password.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.checked_show_password.UncheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
-            this.checked_show_password.UncheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
-            this.checked_show_password.CheckedChanged += new System.EventHandler(this.checked_show_password_CheckedChanged);
             // 
             // AutorizationForm
             // 

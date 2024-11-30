@@ -107,6 +107,7 @@ namespace library
             // button_employee_navigation
             // 
             this.button_employee_navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_employee_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_employee_navigation.FlatAppearance.BorderSize = 0;
             this.button_employee_navigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_employee_navigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,6 +125,7 @@ namespace library
             // button_statistics_navigation
             // 
             this.button_statistics_navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_statistics_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_statistics_navigation.FlatAppearance.BorderSize = 0;
             this.button_statistics_navigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_statistics_navigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,6 +143,7 @@ namespace library
             // button_booking_navigation
             // 
             this.button_booking_navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_booking_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_booking_navigation.FlatAppearance.BorderSize = 0;
             this.button_booking_navigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_booking_navigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,6 +161,7 @@ namespace library
             // button_books_navigation
             // 
             this.button_books_navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_books_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_books_navigation.FlatAppearance.BorderSize = 0;
             this.button_books_navigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_books_navigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,6 +179,7 @@ namespace library
             // button_customer_navigation
             // 
             this.button_customer_navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_customer_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_customer_navigation.FlatAppearance.BorderSize = 0;
             this.button_customer_navigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_customer_navigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,6 +197,7 @@ namespace library
             // button_storage_navigation
             // 
             this.button_storage_navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_storage_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_storage_navigation.FlatAppearance.BorderSize = 0;
             this.button_storage_navigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_storage_navigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,6 +250,7 @@ namespace library
             // 
             this.button_add_reminder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.button_add_reminder.BorderRadius = 10;
+            this.button_add_reminder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_add_reminder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.button_add_reminder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.button_add_reminder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -285,6 +292,7 @@ namespace library
             // 
             // button_personal_office_navigation
             // 
+            this.button_personal_office_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_personal_office_navigation.FlatAppearance.BorderSize = 0;
             this.button_personal_office_navigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_personal_office_navigation.IconChar = FontAwesome.Sharp.IconChar.UserCheck;
@@ -301,7 +309,10 @@ namespace library
             // 
             // button_home_navigation
             // 
+            this.button_home_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_home_navigation.FlatAppearance.BorderSize = 0;
+            this.button_home_navigation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_home_navigation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.button_home_navigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_home_navigation.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
             this.button_home_navigation.IconColor = System.Drawing.Color.White;
@@ -328,11 +339,12 @@ namespace library
             // 
             // button_collapse
             // 
+            this.button_collapse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_collapse.Dock = System.Windows.Forms.DockStyle.Right;
             this.button_collapse.FlatAppearance.BorderSize = 0;
             this.button_collapse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_collapse.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.button_collapse.IconColor = System.Drawing.Color.DimGray;
+            this.button_collapse.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
             this.button_collapse.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.button_collapse.IconSize = 30;
             this.button_collapse.Location = new System.Drawing.Point(1281, 0);
@@ -344,11 +356,12 @@ namespace library
             // 
             // button_window_state
             // 
+            this.button_window_state.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_window_state.Dock = System.Windows.Forms.DockStyle.Right;
             this.button_window_state.FlatAppearance.BorderSize = 0;
             this.button_window_state.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_window_state.IconChar = FontAwesome.Sharp.IconChar.Clone;
-            this.button_window_state.IconColor = System.Drawing.Color.DimGray;
+            this.button_window_state.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
             this.button_window_state.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.button_window_state.IconSize = 30;
             this.button_window_state.Location = new System.Drawing.Point(1334, 0);
@@ -360,11 +373,12 @@ namespace library
             // 
             // button_close
             // 
+            this.button_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_close.Dock = System.Windows.Forms.DockStyle.Right;
             this.button_close.FlatAppearance.BorderSize = 0;
             this.button_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_close.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.button_close.IconColor = System.Drawing.Color.DimGray;
+            this.button_close.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
             this.button_close.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.button_close.IconSize = 25;
             this.button_close.Location = new System.Drawing.Point(1387, 0);

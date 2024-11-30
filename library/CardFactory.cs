@@ -14,7 +14,6 @@ namespace library
         Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y);
     }
 
-    
 
     public class ReminderCardFactory : ICardFactory
     {
@@ -29,6 +28,7 @@ namespace library
         {
             throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
         }
+
         public Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y)
         {
             var group_box = new Guna.UI2.WinForms.Guna2GroupBox()
@@ -46,67 +46,87 @@ namespace library
                 Tag = false
             };
 
-            var label_title = new Label()
+            var text_box_title = new Guna.UI2.WinForms.Guna2TextBox()
             {
-                AutoSize = true,
-                BackColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold),
+                BorderThickness = 0,
+                DefaultText = reminderCardConfig.Title,
+                FillColor = Color.FromArgb(36, 42, 78),
+                Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold),
                 ForeColor = Color.White,
+                Multiline = true,
+                ReadOnly = true,
                 Location = new Point(3, 6),
-                Name = "label_title",
-                Text = reminderCardConfig.Title
+                Size = new Size(230, 40),
+                Padding = new Padding(5, 5, 5, 5),
+                TextAlign = HorizontalAlignment.Left
             };
+
+            using (Graphics g = text_box_title.CreateGraphics())
+            {
+                SizeF textSize = g.MeasureString(text_box_title.Text, text_box_title.Font, text_box_title.Width);
+                int adjustedHeight = (int)Math.Ceiling(textSize.Height) + 10;
+                text_box_title.Size = new Size(text_box_title.Width, adjustedHeight);
+            }
 
             var text_box_description = new Guna.UI2.WinForms.Guna2TextBox()
             {
-                BackColor = Color.FromArgb(36, 42, 78),
                 BorderThickness = 0,
                 DefaultText = reminderCardConfig.Description,
                 FillColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI", 9F),
+                Font = new Font("Segoe UI", 12F),
                 ForeColor = Color.DarkGray,
-                Location = new Point(4, 44),
                 Multiline = true,
                 ReadOnly = true,
-                Size = new Size(264, 60)
+                Location = new Point(4, text_box_title.Bottom + 5),
+                Size = new Size(280, 60),
+                Padding = new Padding(5, 5, 5, 5),
+                TextAlign = HorizontalAlignment.Left
             };
+
+            using (Graphics g = text_box_description.CreateGraphics())
+            {
+                SizeF textSize = g.MeasureString(text_box_description.Text, text_box_description.Font, text_box_description.Width);
+                int adjustedHeight = (int)Math.Ceiling(textSize.Height) + 10;
+                text_box_description.Size = new Size(text_box_description.Width, adjustedHeight);
+            }
 
             var text_box_date = new Guna.UI2.WinForms.Guna2TextBox()
             {
-                BackColor = Color.FromArgb(36, 42, 78),
                 BorderThickness = 0,
-                DefaultText = "",
+                DefaultText = reminderCardConfig.ReminderDate.ToString(),
                 FillColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI", 12F),
-                ForeColor = Color.DimGray,
-                Location = new Point(206, 3),
+                Font = new Font("Segoe UI", 10F),
+                ForeColor = Color.White,
                 Multiline = true,
                 ReadOnly = true,
-                Size = new Size(126, 43)
+                Location = new Point(group_box.Width - 110, 6),
+                Size = new Size(120, 40),
+                Padding = new Padding(5, 5, 5, 5),
+                TextAlign = HorizontalAlignment.Center
             };
+
+            group_box.Size = new Size(group_box.Width, text_box_description.Bottom + 10);
 
             var button_attach = new Guna.UI2.WinForms.Guna2Button()
             {
-                BackColor = Color.FromArgb(36, 42, 78),
                 FillColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI", 9F),
+                Font = new Font("Segoe UI", 12F),
                 ForeColor = Color.White,
                 Image = global::library.Properties.Resources.PinNotHover,
                 ImageSize = new Size(35, 35),
-                Location = new Point(289, 52),
+                Location = new Point(289, group_box.Height - 48),
                 Size = new Size(43, 37)
             };
 
-            group_box.Controls.Add(label_title);
+            group_box.Controls.Add(text_box_title);
             group_box.Controls.Add(text_box_description);
-            group_box.Controls.Add(text_box_date);
+            group_box.Controls.Add(text_box_date);  // Додаємо текстове поле з датою
             group_box.Controls.Add(button_attach);
 
             return group_box;
         }
     }
 
-   
 
     public class BookCardFactory : ICardFactory
     {
@@ -205,3 +225,4 @@ namespace library
         }
     }
 }
+

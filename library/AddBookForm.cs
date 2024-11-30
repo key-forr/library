@@ -21,6 +21,7 @@ namespace library
         private void AddBookForm_Load(object sender, EventArgs e)
         {
             LoadGenres();
+            picture_box_photo.Image = ImageUtils.CreatePlaceholderImage(new Size(285, 335));
         }
 
         private void LoadGenres()
@@ -41,19 +42,19 @@ namespace library
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    text_box_photo.Text = openFileDialog.FileName;
+                    picture_box_photo.Image = ImageUtils.LoadAndScaleImage(openFileDialog.FileName, new Size(285, 335));
                 }
             }
         }
 
-        private void button_add_reminder_Click(object sender, EventArgs e)
+        private void button_add_book_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(text_box_book_name.Text)
-                || string.IsNullOrWhiteSpace(text_box_author.Text)
-                || string.IsNullOrWhiteSpace(text_box_year.Text)
-                || string.IsNullOrWhiteSpace(text_box_publishing.Text)
-                || string.IsNullOrWhiteSpace(text_box_quantity.Text)
-                || string.IsNullOrWhiteSpace(combo_box_genre.Text))
+               || string.IsNullOrWhiteSpace(text_box_author.Text)
+               || string.IsNullOrWhiteSpace(text_box_year.Text)
+               || string.IsNullOrWhiteSpace(text_box_publishing.Text)
+               || string.IsNullOrWhiteSpace(text_box_quantity.Text)
+               || string.IsNullOrWhiteSpace(combo_box_genre.Text))
             {
                 MessageBox.Show("Будь ласка, заповніть всі поля!", "Помилка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -67,7 +68,7 @@ namespace library
                 int year = int.Parse(text_box_year.Text);
                 string publishing = text_box_publishing.Text;
                 int quantity = int.Parse(text_box_quantity.Text);
-                string photoPath = text_box_photo.Text;
+                string photoPath = picture_box_photo.Text;
                 int genreId = combo_box_genre.SelectedIndex + 1;
 
                 using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
@@ -81,8 +82,10 @@ namespace library
                 text_box_year.Text = "";
                 text_box_publishing.Text = "";
                 text_box_quantity.Text = "";
-                text_box_photo.Text = "";
-                combo_box_genre.Text = "";
+                picture_box_photo.Image = ImageUtils.CreatePlaceholderImage(new Size(285, 335));
+                combo_box_genre.SelectedIndex = -1;
+
+
             }
             catch (Exception ex)
             {
@@ -106,5 +109,17 @@ namespace library
                 e.Handled = true;
             }
         }
+
+        private void button_add_book_MouseEnter(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateButtonOnHover(button_add_book, true, Color.FromArgb(72, 169, 118), 5);
+        }
+
+        private void button_add_book_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateButtonOnHover(button_add_book, false, Color.FromArgb(72, 169, 118), 5);
+        }
+
+
     }
 }

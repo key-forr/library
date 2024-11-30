@@ -33,7 +33,8 @@
             this.text_box_title = new System.Windows.Forms.TextBox();
             this.text_box_description = new System.Windows.Forms.TextBox();
             this.button_back = new FontAwesome.Sharp.IconButton();
-            this.button_add = new Guna.UI2.WinForms.Guna2Button();
+            this.date_picker = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.button_add = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // label_title
@@ -83,10 +84,11 @@
             // 
             // button_back
             // 
+            this.button_back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_back.FlatAppearance.BorderSize = 0;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.button_back.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button_back.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(169)))), ((int)(((byte)(118)))));
             this.button_back.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.button_back.Location = new System.Drawing.Point(17, 12);
             this.button_back.Name = "button_back";
@@ -94,24 +96,40 @@
             this.button_back.TabIndex = 28;
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            this.button_back.MouseEnter += new System.EventHandler(this.button_back_MouseEnter);
+            this.button_back.MouseLeave += new System.EventHandler(this.button_back_MouseLeave);
+            // 
+            // date_picker
+            // 
+            this.date_picker.Checked = true;
+            this.date_picker.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
+            this.date_picker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.date_picker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.date_picker.Location = new System.Drawing.Point(17, 300);
+            this.date_picker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.date_picker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.date_picker.Name = "date_picker";
+            this.date_picker.Size = new System.Drawing.Size(216, 41);
+            this.date_picker.TabIndex = 30;
+            this.date_picker.Value = new System.DateTime(2024, 11, 30, 18, 28, 23, 256);
             // 
             // button_add
             // 
-            this.button_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button_add.BorderRadius = 10;
-            this.button_add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_add.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.button_add.Location = new System.Drawing.Point(192, 299);
+            this.button_add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_add.FlatAppearance.BorderSize = 0;
+            this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_add.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.button_add.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(169)))), ((int)(((byte)(118)))));
+            this.button_add.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.button_add.IconSize = 50;
+            this.button_add.Location = new System.Drawing.Point(270, 299);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(155, 42);
-            this.button_add.TabIndex = 29;
-            this.button_add.Text = "Додати";
+            this.button_add.Size = new System.Drawing.Size(48, 42);
+            this.button_add.TabIndex = 31;
+            this.button_add.UseVisualStyleBackColor = true;
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            this.button_add.MouseEnter += new System.EventHandler(this.button_add_MouseEnter);
+            this.button_add.MouseLeave += new System.EventHandler(this.button_add_MouseLeave);
             // 
             // ReminderAddForm
             // 
@@ -120,6 +138,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(359, 353);
             this.Controls.Add(this.button_add);
+            this.Controls.Add(this.date_picker);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.text_box_description);
             this.Controls.Add(this.text_box_title);
@@ -139,6 +158,7 @@
         private System.Windows.Forms.TextBox text_box_title;
         private System.Windows.Forms.TextBox text_box_description;
         private FontAwesome.Sharp.IconButton button_back;
-        private Guna.UI2.WinForms.Guna2Button button_add;
+        private Guna.UI2.WinForms.Guna2DateTimePicker date_picker;
+        private FontAwesome.Sharp.IconButton button_add;
     }
 }

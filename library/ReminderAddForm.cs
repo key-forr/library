@@ -26,7 +26,7 @@ namespace library
         {
             this.Close();
         }
-
+        
         private void button_add_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(text_box_title.Text) || string.IsNullOrWhiteSpace(text_box_description.Text))
@@ -40,7 +40,7 @@ namespace library
             {
                 using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
                 {
-                    dataBaseHelper.SaveReminder(text_box_title.Text, text_box_description.Text, UserSession.Login);
+                    dataBaseHelper.SaveReminder(date_picker.Value, text_box_title.Text, text_box_description.Text, UserSession.Login);
                 }
                 homeForm.UpdateReminderListForm();
 
@@ -52,6 +52,26 @@ namespace library
                 MessageBox.Show($"Помилка при додаванні нагадування: {ex.Message}", "Помилка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button_back_MouseEnter(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateNavigationButton(button_back, false, Color.White, Color.FromArgb(22, 26, 50));
+        }
+
+        private void button_back_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateNavigationButton(button_back, false, Color.White, Color.FromArgb(22, 26, 50));
+        }
+
+        private void button_add_MouseEnter(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateNavigationButton(button_add, true, Color.White, Color.FromArgb(22, 26, 50));
+        }
+
+        private void button_add_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateNavigationButton(button_add, false, Color.White, Color.FromArgb(22, 26, 50));
         }
     }
 }

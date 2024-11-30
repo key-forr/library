@@ -54,11 +54,12 @@
             // button_personal_data
             // 
             this.button_personal_data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_personal_data.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_personal_data.FlatAppearance.BorderSize = 0;
             this.button_personal_data.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_personal_data.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_personal_data.ForeColor = System.Drawing.Color.White;
             this.button_personal_data.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.button_personal_data.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.button_personal_data.IconColor = System.Drawing.Color.White;
             this.button_personal_data.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.button_personal_data.IconSize = 24;
             this.button_personal_data.Location = new System.Drawing.Point(0, 151);
@@ -76,11 +77,12 @@
             // 
             this.button_logout.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_logout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_logout.FlatAppearance.BorderSize = 0;
             this.button_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_logout.ForeColor = System.Drawing.Color.White;
             this.button_logout.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
-            this.button_logout.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.button_logout.IconColor = System.Drawing.Color.White;
             this.button_logout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.button_logout.IconSize = 24;
             this.button_logout.Location = new System.Drawing.Point(-1, 242);
@@ -108,7 +110,10 @@
             // 
             // button_close
             // 
+            this.button_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_close.FlatAppearance.BorderSize = 0;
+            this.button_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
+            this.button_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
             this.button_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(169)))), ((int)(((byte)(118)))));
             this.button_close.IconChar = FontAwesome.Sharp.IconChar.X;
@@ -126,7 +131,7 @@
             // 
             this.label_employee.AutoSize = true;
             this.label_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_employee.ForeColor = System.Drawing.Color.Snow;
+            this.label_employee.ForeColor = System.Drawing.Color.White;
             this.label_employee.Location = new System.Drawing.Point(20, 22);
             this.label_employee.Name = "label_employee";
             this.label_employee.Size = new System.Drawing.Size(150, 32);

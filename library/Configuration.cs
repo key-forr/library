@@ -35,12 +35,14 @@ namespace library
         public int UserId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public DateTime? ReminderDate { get; set; }  
 
-        public ReminderConfig(int userId, string title, string description)
+        public ReminderConfig(int userId, string title, string description, DateTime? reminderDate)
         {
             UserId = userId;
             Title = title;
             Description = description;
+            ReminderDate = reminderDate;  
         }
     }
 

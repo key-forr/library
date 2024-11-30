@@ -230,7 +230,6 @@ namespace library
             }
         }
 
-
         private void button_add_reminder_MouseEnter(object sender, EventArgs e)
         {
             ButtonUtils.AnimateButtonOnHover(button_add_reminder, true, Color.FromArgb(72, 169, 118), 5);
@@ -341,7 +340,7 @@ namespace library
         {
             if (!IsButtonActive(button_home_navigation))
             {
-                ButtonUtils.AnimateNavigationButton(button_home_navigation, true, Color.White, Color.FromArgb(22, 26, 50));
+                ButtonUtils.AnimateNavigationIconButton(button_home_navigation, true, Color.White, Color.FromArgb(22, 26, 50));
             }
         }
 
@@ -349,7 +348,7 @@ namespace library
         {
             if (!IsButtonActive(button_home_navigation))
             {
-                ButtonUtils.AnimateNavigationButton(button_home_navigation, false, Color.White, Color.FromArgb(22, 26, 50));
+                ButtonUtils.AnimateNavigationIconButton(button_home_navigation, false, Color.White, Color.FromArgb(22, 26, 50));
             }
         }
 
@@ -357,7 +356,7 @@ namespace library
         {
             if (!IsButtonActive(button_personal_office_navigation))
             {
-                ButtonUtils.AnimateNavigationButton(button_personal_office_navigation, true, Color.White, Color.FromArgb(22, 26, 50));
+                ButtonUtils.AnimateNavigationIconButton(button_personal_office_navigation, true, Color.White, Color.FromArgb(22, 26, 50));
             }
         }
 
@@ -365,7 +364,7 @@ namespace library
         {
             if (!IsButtonActive(button_personal_office_navigation))
             {
-                ButtonUtils.AnimateNavigationButton(button_personal_office_navigation, false, Color.White, Color.FromArgb(22, 26, 50));
+                ButtonUtils.AnimateNavigationIconButton(button_personal_office_navigation, false, Color.White, Color.FromArgb(22, 26, 50));
             }
         }
     }

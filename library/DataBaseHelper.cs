@@ -58,15 +58,16 @@ namespace library
             }
         }
 
-        public bool SaveReminder(string title, string description, string login)
+        public bool SaveReminder(DateTime date, string title, string description, string login)
         {
-            string query = "INSERT INTO reminder (title, description, userId) VALUES (@Title, @Description, @UserId)";
+            string query = "INSERT INTO reminder (title, description, userId, date) VALUES (@Title, @Description, @UserId, @Date)";
 
             using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
             {
                 command.Parameters.AddWithValue("@Title", title);
                 command.Parameters.AddWithValue("@Description", description);
                 command.Parameters.AddWithValue("@UserId", UserSession.Id);
+                command.Parameters.AddWithValue("@Date", date);
 
                 try
                 {
@@ -214,6 +215,12 @@ namespace library
 
                     int rowsAffected = command.ExecuteNonQuery();
 
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Book successfully add!", "Success",
+                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                     return rowsAffected > 0;
                 }
             }
@@ -290,7 +297,7 @@ namespace library
 
         public List<ReminderConfig> LoadReminder()
         {
-            string query = @"SELECT id, title, description FROM reminder WHERE userId = @userId";
+            string query = @"SELECT id, title, description, date FROM reminder WHERE userId = @userId";
 
             List<ReminderConfig> reminderCards = new List<ReminderConfig>();
 
@@ -302,11 +309,14 @@ namespace library
                 {
                     while (reader.Read())
                     {
+                        DateTime? reminderDate = reader.IsDBNull(3) ? (DateTime?)null : reader.GetDateTime(3);
+
                         ReminderConfig reminderCardConfig = new ReminderConfig
                         (
                             Convert.ToInt32(reader["id"]),
                             reader["title"].ToString(),
-                            reader["description"].ToString()
+                            reader["description"].ToString(),
+                            reminderDate 
                         );
 
                         reminderCards.Add(reminderCardConfig);
@@ -320,32 +330,47 @@ namespace library
         public void UpdateBook(BookConfig bookCardConfig)
         {
             string query = @"UPDATE book 
-                     SET name = @bookName, 
+                     SET name = @name, 
                          author = @author, 
                          genreId = @genreId, 
                          year = @year, 
                          publishing = @publishing, 
-                         quantity = @quantity 
+                         quantity = @quantity, 
+                         photo = @photo
                      WHERE id = @bookId";
 
             try
             {
                 using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
                 {
-                    command.Parameters.AddWithValue("@bookName", bookCardConfig.Name);
+                    command.Parameters.AddWithValue("@name", bookCardConfig.Name);
                     command.Parameters.AddWithValue("@author", bookCardConfig.Author);
-                    command.Parameters.AddWithValue("@genreId", bookCardConfig.GenreId = 1);
+                    command.Parameters.AddWithValue("@genreId", bookCardConfig.GenreId);
                     command.Parameters.AddWithValue("@year", bookCardConfig.Year);
                     command.Parameters.AddWithValue("@publishing", bookCardConfig.Publishing);
                     command.Parameters.AddWithValue("@quantity", bookCardConfig.Quantity);
+
+                    // Перевірка на NULL для photo
+                    if (string.IsNullOrEmpty(bookCardConfig.ImagePath))
+                    {
+                        command.Parameters.AddWithValue("@photo", DBNull.Value); // Якщо пусто, встановити NULL
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@photo", bookCardConfig.ImagePath); // Встановити шлях до фото
+                    }
+
                     command.Parameters.AddWithValue("@bookId", bookCardConfig.Id);
 
                     command.ExecuteNonQuery();
+
+                    MessageBox.Show("Book successfully updated!", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error update book: {ex.Message}",
+                MessageBox.Show($"Error updating book: {ex.Message}",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -54,8 +54,33 @@ namespace library
 
         public void OpenBookDetails(BookConfig bookCardConfig)
         {
-            var childForm = new BookDetailsForm(bookCardConfig, this);
+            var childForm = new BookManageForm(bookCardConfig, this);
             PanelAndFormManager.EmbedFormInPanel(childForm, panel);
+        }
+
+        private void button_list_book_Click(object sender, EventArgs e)
+        {
+            bookListForm = new BookListForm(this);
+            PanelAndFormManager.EmbedFormInPanel(bookListForm, panel_main);
+        }
+        private void button_list_book_MouseEnter(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateButtonOnHover(button_list_book, true, Color.FromArgb(36, 42, 78), 5);
+        }
+
+        private void button_list_book_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateButtonOnHover(button_list_book, false, Color.FromArgb(36, 42, 78), 5);
+        }
+
+        private void button_add_book_MouseEnter(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateButtonOnHover(button_add_book, true, Color.FromArgb(36, 42, 78), 5);
+        }
+
+        private void button_add_book_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateButtonOnHover(button_add_book, false, Color.FromArgb(36, 42, 78), 5);
         }
     }
 }

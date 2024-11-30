@@ -34,10 +34,13 @@
             // button_back
             // 
             this.button_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.button_back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_back.FlatAppearance.BorderSize = 0;
+            this.button_back.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.button_back.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.button_back.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button_back.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(169)))), ((int)(((byte)(118)))));
             this.button_back.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.button_back.Location = new System.Drawing.Point(12, 12);
             this.button_back.Name = "button_back";
