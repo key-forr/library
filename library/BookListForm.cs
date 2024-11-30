@@ -42,7 +42,7 @@ namespace library
 
                 this.Controls.Add(bookCard);
 
-                x += 400;
+                x += 500;
                 bookCount++;
 
                 if (bookCount % 2 == 0)

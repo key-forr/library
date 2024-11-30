@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace library
@@ -32,15 +27,19 @@ namespace library
         {
             using (DataBaseHelper dbHelper = new DataBaseHelper())
             {
-                bookManageForm.bookCardConfig.Name = label_name.Text;
+                bookManageForm.bookCardConfig.Name = text_box_name.Text;
                 bookManageForm.bookCardConfig.Author = text_box_author.Text;
-                bookManageForm.bookCardConfig.GenreId = new GenreListManager().Genres.FirstOrDefault(g => g.Name.Equals(combo_box_genre.Text, StringComparison.OrdinalIgnoreCase)).Id;
+                bookManageForm.bookCardConfig.GenreId = new GenreListManager()
+                    .Genres.FirstOrDefault(g => g.Name.Equals(combo_box_genre.Text, StringComparison.OrdinalIgnoreCase))?.Id ?? 0;
                 bookManageForm.bookCardConfig.Publishing = text_box_publishing.Text;
                 bookManageForm.bookCardConfig.Quantity = string.IsNullOrEmpty(text_box_quantity.Text) ? 0 : Convert.ToInt32(text_box_quantity.Text);
                 bookManageForm.bookCardConfig.Year = string.IsNullOrEmpty(text_box_year.Text) ? 0 : Convert.ToInt32(text_box_year.Text);
-                bookManageForm.bookCardConfig.ImagePath = string.IsNullOrEmpty(text_box_photo.Text) ? null : text_box_photo.Text;
+
+                bookManageForm.bookCardConfig.ImagePath = picure_box_book.Image != null ? text_box_photo.Text : null;
+
                 dbHelper.UpdateBook(bookManageForm.bookCardConfig);
             }
+
             booksForm.UpdateBookListForm();
             bookManageForm.UpdateBookInfoForm();
         }
@@ -54,7 +53,8 @@ namespace library
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    text_box_photo.Text = openFileDialog.FileName;
+                    picure_box_book.Image = ImageUtils.LoadAndScaleImage(openFileDialog.FileName, new Size(232, 243));
+                    text_box_photo.Text = openFileDialog.FileName; 
                 }
             }
         }
@@ -72,8 +72,14 @@ namespace library
         {
             text_box_author.Text = bookManageForm.bookCardConfig.Author;
             text_box_name.Text = bookManageForm.bookCardConfig.Name;
+
+           
+            picure_box_book.Image = ImageUtils.LoadAndScaleImage(bookManageForm.bookCardConfig.ImagePath, new Size(232, 243));
             text_box_photo.Text = bookManageForm.bookCardConfig.ImagePath;
-            combo_box_genre.Text = new GenreListManager().Genres.FirstOrDefault(g => g.Id == bookManageForm.bookCardConfig.GenreId)?.Name ?? "Жанр не знайдено";
+            
+
+            combo_box_genre.Text = new GenreListManager()
+                .Genres.FirstOrDefault(g => g.Id == bookManageForm.bookCardConfig.GenreId)?.Name ?? "Жанр не знайдено";
             text_box_publishing.Text = bookManageForm.bookCardConfig.Publishing;
             text_box_quantity.Text = bookManageForm.bookCardConfig.Quantity.ToString();
             text_box_year.Text = bookManageForm.bookCardConfig.Year.ToString();

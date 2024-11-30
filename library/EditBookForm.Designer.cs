@@ -36,15 +36,16 @@
             this.label_genre = new System.Windows.Forms.Label();
             this.label_year = new System.Windows.Forms.Label();
             this.label_edit_book = new System.Windows.Forms.Label();
-            this.label_photo = new System.Windows.Forms.Label();
             this.text_box_quantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.text_box_publishing = new Guna.UI2.WinForms.Guna2TextBox();
             this.text_box_year = new Guna.UI2.WinForms.Guna2TextBox();
             this.text_box_author = new Guna.UI2.WinForms.Guna2TextBox();
             this.text_box_name = new Guna.UI2.WinForms.Guna2TextBox();
             this.combo_box_genre = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.text_box_photo = new Guna.UI2.WinForms.Guna2TextBox();
             this.button_browse_photo = new Guna.UI2.WinForms.Guna2Button();
+            this.picure_box_book = new System.Windows.Forms.PictureBox();
+            this.text_box_photo = new Guna.UI2.WinForms.Guna2TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picure_box_book)).BeginInit();
             this.SuspendLayout();
             // 
             // button_save_book
@@ -147,17 +148,6 @@
             this.label_edit_book.Text = "Редагування";
             this.label_edit_book.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_photo
-            // 
-            this.label_photo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_photo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.label_photo.Location = new System.Drawing.Point(12, 364);
-            this.label_photo.Name = "label_photo";
-            this.label_photo.Size = new System.Drawing.Size(95, 30);
-            this.label_photo.TabIndex = 48;
-            this.label_photo.Text = "Фото:";
-            this.label_photo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // text_box_quantity
             // 
             this.text_box_quantity.BorderThickness = 0;
@@ -178,7 +168,7 @@
             this.text_box_quantity.PasswordChar = '\0';
             this.text_box_quantity.PlaceholderText = "";
             this.text_box_quantity.SelectedText = "";
-            this.text_box_quantity.Size = new System.Drawing.Size(309, 30);
+            this.text_box_quantity.Size = new System.Drawing.Size(213, 30);
             this.text_box_quantity.TabIndex = 53;
             this.text_box_quantity.WordWrap = false;
             // 
@@ -226,7 +216,7 @@
             this.text_box_year.PasswordChar = '\0';
             this.text_box_year.PlaceholderText = "";
             this.text_box_year.SelectedText = "";
-            this.text_box_year.Size = new System.Drawing.Size(284, 30);
+            this.text_box_year.Size = new System.Drawing.Size(188, 30);
             this.text_box_year.TabIndex = 50;
             this.text_box_year.WordWrap = false;
             // 
@@ -296,33 +286,9 @@
             this.combo_box_genre.ItemHeight = 30;
             this.combo_box_genre.Location = new System.Drawing.Point(94, 270);
             this.combo_box_genre.Name = "combo_box_genre";
-            this.combo_box_genre.Size = new System.Drawing.Size(327, 36);
+            this.combo_box_genre.Size = new System.Drawing.Size(253, 36);
             this.combo_box_genre.TabIndex = 55;
             this.combo_box_genre.ValueMember = "id";
-            // 
-            // text_box_photo
-            // 
-            this.text_box_photo.BorderThickness = 0;
-            this.text_box_photo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.text_box_photo.DefaultText = "";
-            this.text_box_photo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.text_box_photo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.text_box_photo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_photo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_photo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.text_box_photo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_photo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.text_box_photo.ForeColor = System.Drawing.Color.White;
-            this.text_box_photo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_photo.Location = new System.Drawing.Point(94, 364);
-            this.text_box_photo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.text_box_photo.Name = "text_box_photo";
-            this.text_box_photo.PasswordChar = '\0';
-            this.text_box_photo.PlaceholderText = "";
-            this.text_box_photo.SelectedText = "";
-            this.text_box_photo.Size = new System.Drawing.Size(527, 30);
-            this.text_box_photo.TabIndex = 56;
-            this.text_box_photo.WordWrap = false;
             // 
             // button_browse_photo
             // 
@@ -336,12 +302,45 @@
             this.button_browse_photo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
             this.button_browse_photo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.button_browse_photo.ForeColor = System.Drawing.Color.White;
-            this.button_browse_photo.Location = new System.Drawing.Point(17, 401);
+            this.button_browse_photo.Location = new System.Drawing.Point(469, 481);
             this.button_browse_photo.Name = "button_browse_photo";
             this.button_browse_photo.Size = new System.Drawing.Size(152, 35);
             this.button_browse_photo.TabIndex = 57;
             this.button_browse_photo.Text = "Вибрати";
             this.button_browse_photo.Click += new System.EventHandler(this.button_browse_photo_Click);
+            // 
+            // picure_box_book
+            // 
+            this.picure_box_book.Location = new System.Drawing.Point(389, 223);
+            this.picure_box_book.Name = "picure_box_book";
+            this.picure_box_book.Size = new System.Drawing.Size(232, 243);
+            this.picure_box_book.TabIndex = 58;
+            this.picure_box_book.TabStop = false;
+            // 
+            // text_box_photo
+            // 
+            this.text_box_photo.BorderThickness = 0;
+            this.text_box_photo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.text_box_photo.DefaultText = "";
+            this.text_box_photo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.text_box_photo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.text_box_photo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.text_box_photo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.text_box_photo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.text_box_photo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_photo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_box_photo.ForeColor = System.Drawing.Color.White;
+            this.text_box_photo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_photo.Location = new System.Drawing.Point(405, 330);
+            this.text_box_photo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.text_box_photo.Name = "text_box_photo";
+            this.text_box_photo.PasswordChar = '\0';
+            this.text_box_photo.PlaceholderText = "";
+            this.text_box_photo.SelectedText = "";
+            this.text_box_photo.Size = new System.Drawing.Size(188, 30);
+            this.text_box_photo.TabIndex = 59;
+            this.text_box_photo.Visible = false;
+            this.text_box_photo.WordWrap = false;
             // 
             // EditBookForm
             // 
@@ -349,15 +348,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(633, 603);
-            this.Controls.Add(this.button_browse_photo);
             this.Controls.Add(this.text_box_photo);
+            this.Controls.Add(this.picure_box_book);
+            this.Controls.Add(this.button_browse_photo);
             this.Controls.Add(this.combo_box_genre);
             this.Controls.Add(this.text_box_name);
             this.Controls.Add(this.text_box_quantity);
             this.Controls.Add(this.text_box_publishing);
             this.Controls.Add(this.text_box_year);
             this.Controls.Add(this.text_box_author);
-            this.Controls.Add(this.label_photo);
             this.Controls.Add(this.label_edit_book);
             this.Controls.Add(this.label_quantity);
             this.Controls.Add(this.label_publishing);
@@ -369,6 +368,7 @@
             this.Name = "EditBookForm";
             this.Text = "EditBookForm";
             this.Load += new System.EventHandler(this.EditBookForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picure_box_book)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,14 +384,14 @@
         private System.Windows.Forms.Label label_genre;
         private System.Windows.Forms.Label label_year;
         private System.Windows.Forms.Label label_edit_book;
-        private System.Windows.Forms.Label label_photo;
         private Guna.UI2.WinForms.Guna2TextBox text_box_quantity;
         private Guna.UI2.WinForms.Guna2TextBox text_box_publishing;
         private Guna.UI2.WinForms.Guna2TextBox text_box_year;
         private Guna.UI2.WinForms.Guna2TextBox text_box_author;
         private Guna.UI2.WinForms.Guna2TextBox text_box_name;
         private Guna.UI2.WinForms.Guna2ComboBox combo_box_genre;
-        private Guna.UI2.WinForms.Guna2TextBox text_box_photo;
         private Guna.UI2.WinForms.Guna2Button button_browse_photo;
+        private System.Windows.Forms.PictureBox picure_box_book;
+        private Guna.UI2.WinForms.Guna2TextBox text_box_photo;
     }
 }

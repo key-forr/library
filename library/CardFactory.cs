@@ -141,75 +141,105 @@ namespace library
         {
             var book_card = new Guna.UI2.WinForms.Guna2GroupBox()
             {
-                BackColor = Color.FromArgb(22, 26, 50),
-                BorderRadius = 20,
-                BorderThickness = 3,
-                CustomBorderColor = Color.FromArgb(0, 64, 0),
+                BorderColor = Color.White,
+                BorderRadius = 30,
+                BorderThickness = 1,
+                CustomBorderThickness = new Padding(0, 0, 0, 0),
                 FillColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI", 11F),
+                Font = new Font("Segoe UI", 9F),
                 ForeColor = Color.FromArgb(125, 137, 149),
                 Location = new Point(x, y),
-                Size = new Size(350, 150)
+                Size = new Size(441, 166),
+                Cursor = Cursors.Hand
             };
 
-            var titleText = config.Name.Length > 14 ? config.Name.Substring(0, 14) + "..." : config.Name;
+            var titleText = config.Name.Length > 12 ? config.Name.Substring(0, 12) + "..." : config.Name;
             var titleLabel = new Label()
             {
                 AutoSize = true,
                 BackColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold),
+                Font = new Font("Segoe UI", 14F, FontStyle.Bold),
                 ForeColor = Color.White,
-                Location = new Point(13, 16),
-                Text = titleText
+                Location = new Point(28, 20),
+                Text = titleText,
+                Cursor = Cursors.Hand 
             };
 
-            var authorText = config.Author.Length > 20 ? config.Author.Substring(0, 17) + "..." : config.Author;
-            var authorLabel = new Label()
+            var authorText = config.Author.Length > 20 ? config.Author.Substring(0, 20) + "..." : config.Author;
+            var authorLabel = new Guna.UI2.WinForms.Guna2TextBox()
             {
-                AutoSize = true,
-                BackColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI Light", 10F),
-                ForeColor = Color.DimGray,
-                Location = new Point(13, 55),
-                Text = authorText
+                BorderThickness = 0,
+                FillColor = Color.FromArgb(36, 42, 78),
+                Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular),
+                ForeColor = Color.White,
+                Location = new Point(28, 60),
+                Size = new Size(256, 45),
+                Text = authorText,
+                ReadOnly = true,
+                Cursor = Cursors.Hand
             };
 
             var availabilityText = config.Quantity > 0
-                ? $"В наявності ({config.Quantity} шт.)"
+                ? $"В наявності: ({config.Quantity} шт.)"
                 : "Немає в наявності";
-
-            var availabilityLabel = new Label()
+            var availabilityLabel = new Guna.UI2.WinForms.Guna2TextBox()
             {
-                AutoSize = true,
-                BackColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold),
-                ForeColor = config.Quantity > 0 ? Color.FromArgb(0, 64, 0) : Color.Red,
-                Location = new Point(13, 90),
-                Text = availabilityText
+                BorderThickness = 0,
+                FillColor = Color.FromArgb(36, 42, 78),
+                Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold),
+                ForeColor = config.Quantity > 0 ? Color.FromArgb(72, 169, 118) : Color.Red,
+                Location = new Point(28, 115),
+                Size = new Size(205, 30),
+                Text = availabilityText,
+                ReadOnly = true,
+                Cursor = Cursors.Hand
             };
 
             var pictureBox = new PictureBox()
             {
-                Location = new Point(210, 10),
-                Size = new Size(120, 130),
+                Location = new Point(291, 19),
+                Size = new Size(120, 132),
                 SizeMode = PictureBoxSizeMode.StretchImage,
-                Image = ImageUtils.LoadAndScaleImage(config.ImagePath, new Size(120, 80))
+                Image = ImageUtils.LoadAndScaleImage(config.ImagePath, new Size(120, 130)),
+                Cursor = Cursors.Hand 
             };
 
-            book_card.MouseEnter += (sender, e) =>
+            EventHandler hoverEffect = (sender, e) =>
             {
-                book_card.BorderColor = Color.FromArgb(0, 64, 0);
+                book_card.BorderThickness = 3;
+                book_card.BorderColor = Color.FromArgb(72, 169, 118);
             };
 
-            book_card.MouseLeave += (sender, e) =>
+            EventHandler resetEffect = (sender, e) =>
             {
+                book_card.BorderThickness = 1;
                 book_card.BorderColor = Color.White;
             };
 
-            book_card.DoubleClick += (sender, e) =>
+            EventHandler openDetails = (sender, e) =>
             {
                 parentForm.OpenBookDetails(config);
             };
+
+            book_card.MouseEnter += hoverEffect;
+            book_card.MouseLeave += resetEffect;
+            book_card.DoubleClick += openDetails;
+
+            titleLabel.MouseEnter += hoverEffect;
+            titleLabel.MouseLeave += resetEffect;
+            titleLabel.DoubleClick += openDetails;
+
+            authorLabel.MouseEnter += hoverEffect;
+            authorLabel.MouseLeave += resetEffect;
+            authorLabel.DoubleClick += openDetails;
+
+            availabilityLabel.MouseEnter += hoverEffect;
+            availabilityLabel.MouseLeave += resetEffect;
+            availabilityLabel.DoubleClick += openDetails;
+
+            pictureBox.MouseEnter += hoverEffect;
+            pictureBox.MouseLeave += resetEffect;
+            pictureBox.DoubleClick += openDetails;
 
             book_card.Controls.Add(titleLabel);
             book_card.Controls.Add(authorLabel);

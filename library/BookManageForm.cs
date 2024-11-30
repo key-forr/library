@@ -28,11 +28,6 @@ namespace library
             PanelAndFormManager.EmbedFormInPanel(bookDetailsForm, panel_book_info);
         }
 
-        public Panel PanelBookInfo
-        {
-            get { return panel_book_info; }
-        }
-
         public Panel PanelBookInteraction
         {
             get { return panel_book_interaction; }
