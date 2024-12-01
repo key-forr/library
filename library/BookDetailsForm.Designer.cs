@@ -56,7 +56,7 @@
             this.button_edit_book.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button_edit_book.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
             this.button_edit_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_edit_book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.button_edit_book.ForeColor = System.Drawing.Color.White;
             this.button_edit_book.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
             this.button_edit_book.Location = new System.Drawing.Point(19, 521);
             this.button_edit_book.Name = "button_edit_book";
@@ -119,7 +119,7 @@
             // 
             this.text_box_publishing.BorderThickness = 0;
             this.text_box_publishing.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.text_box_publishing.DefaultText = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
+            this.text_box_publishing.DefaultText = "";
             this.text_box_publishing.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.text_box_publishing.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_publishing.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -177,7 +177,7 @@
             this.text_box_author.BorderColor = System.Drawing.Color.White;
             this.text_box_author.BorderThickness = 0;
             this.text_box_author.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.text_box_author.DefaultText = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
+            this.text_box_author.DefaultText = "";
             this.text_box_author.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.text_box_author.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_author.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -206,7 +206,6 @@
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(546, 40);
             this.label_name.TabIndex = 47;
-            this.label_name.Text = "wwwwwwwwwwwwwwwwwwwwwww";
             this.label_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_quantity

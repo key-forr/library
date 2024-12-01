@@ -127,7 +127,7 @@ namespace library
             this.text_box_search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_box_search.Name = "text_box_search";
             this.text_box_search.PasswordChar = '\0';
-            this.text_box_search.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.text_box_search.PlaceholderForeColor = System.Drawing.Color.White;
             this.text_box_search.PlaceholderText = "Введіть назву книги";
             this.text_box_search.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.text_box_search.SelectedText = "";

@@ -12,15 +12,43 @@ namespace library
 {
     public partial class EmployeeForm : Form
     {
+        private EmployeeListForm employeeForm;
+        private EmployeeAddForm employeeAddForm;
+        private EmployeeEditForm employeeEditForm;
 
         public EmployeeForm()
         {
             InitializeComponent();
+            employeeForm = new EmployeeListForm(this);
+            PanelAndFormManager.EmbedFormInPanel(employeeForm, panel_employee_info);
+
+            employeeAddForm = new EmployeeAddForm(this);
+            PanelAndFormManager.EmbedFormInPanel(employeeAddForm, panel_employee_interaction);
+        }
+
+        public void OpenEmployeeDetails(EmployeeConfig employeeConfig)
+        {
+            employeeEditForm = new EmployeeEditForm(employeeConfig, this);
+            PanelAndFormManager.EmbedFormInPanel(employeeEditForm, panel_employee_interaction);
+        }
+
+        public void UpdateEmployeeListForm()
+        {
+            panel_employee_info.Controls.Clear();
+
+            employeeForm = new EmployeeListForm(this);
+            PanelAndFormManager.EmbedFormInPanel(employeeForm, panel_employee_info);
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_add_employee_Click(object sender, EventArgs e)
+        {
+            employeeAddForm = new EmployeeAddForm(this);
+            PanelAndFormManager.EmbedFormInPanel(employeeAddForm, panel_employee_interaction);
         }
     }
 }

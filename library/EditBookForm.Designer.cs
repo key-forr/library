@@ -43,8 +43,8 @@
             this.text_box_name = new Guna.UI2.WinForms.Guna2TextBox();
             this.combo_box_genre = new Guna.UI2.WinForms.Guna2ComboBox();
             this.button_browse_photo = new Guna.UI2.WinForms.Guna2Button();
-            this.picure_box_book = new System.Windows.Forms.PictureBox();
             this.text_box_photo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.picure_box_book = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picure_box_book)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,7 +176,7 @@
             // 
             this.text_box_publishing.BorderThickness = 0;
             this.text_box_publishing.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.text_box_publishing.DefaultText = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
+            this.text_box_publishing.DefaultText = "";
             this.text_box_publishing.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.text_box_publishing.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_publishing.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -225,7 +225,7 @@
             this.text_box_author.BorderColor = System.Drawing.Color.White;
             this.text_box_author.BorderThickness = 0;
             this.text_box_author.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.text_box_author.DefaultText = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
+            this.text_box_author.DefaultText = "";
             this.text_box_author.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.text_box_author.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_author.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -250,7 +250,7 @@
             this.text_box_name.BorderColor = System.Drawing.Color.White;
             this.text_box_name.BorderThickness = 0;
             this.text_box_name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.text_box_name.DefaultText = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
+            this.text_box_name.DefaultText = "";
             this.text_box_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.text_box_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.text_box_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -309,14 +309,6 @@
             this.button_browse_photo.Text = "Вибрати";
             this.button_browse_photo.Click += new System.EventHandler(this.button_browse_photo_Click);
             // 
-            // picure_box_book
-            // 
-            this.picure_box_book.Location = new System.Drawing.Point(389, 223);
-            this.picure_box_book.Name = "picure_box_book";
-            this.picure_box_book.Size = new System.Drawing.Size(232, 243);
-            this.picure_box_book.TabIndex = 58;
-            this.picure_box_book.TabStop = false;
-            // 
             // text_box_photo
             // 
             this.text_box_photo.BorderThickness = 0;
@@ -341,6 +333,14 @@
             this.text_box_photo.TabIndex = 59;
             this.text_box_photo.Visible = false;
             this.text_box_photo.WordWrap = false;
+            // 
+            // picure_box_book
+            // 
+            this.picure_box_book.Location = new System.Drawing.Point(389, 223);
+            this.picure_box_book.Name = "picure_box_book";
+            this.picure_box_book.Size = new System.Drawing.Size(232, 243);
+            this.picure_box_book.TabIndex = 58;
+            this.picure_box_book.TabStop = false;
             // 
             // EditBookForm
             // 

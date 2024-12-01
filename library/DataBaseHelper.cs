@@ -96,7 +96,7 @@ namespace library
 
         public void GetUserData(string login)
         {
-            string query = "SELECT id, name, ifnull(surname, ''), phone, login, password, roleId FROM user WHERE login = @login";
+            string query = "SELECT id, name, surname, phone, login, password, roleId FROM user WHERE login = @login";
 
             using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
             {
@@ -109,7 +109,8 @@ namespace library
                         while (reader.Read())
                         {
                             UserSession.Id = Convert.ToInt32(reader["id"]);
-                            UserSession.Name = reader["name"].ToString(); 
+                            UserSession.Name = reader["name"].ToString();
+                            UserSession.Surname = reader["surname"].ToString();
                             UserSession.Phone = reader["phone"].ToString();
                             UserSession.Login = reader["login"].ToString();
                             UserSession.Password = reader["password"].ToString();
@@ -231,6 +232,40 @@ namespace library
             }
         }
 
+        public bool AddUser(string name, string surname, string phone, string login, string password, int roleId)
+        {
+            string query = "INSERT INTO user (name, surname, phone, login, password, roleId) " +
+                           "VALUES (@Name, @Surname, @Phone, @Login, @Password, @RoleId)";
+
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Surname", surname);
+                    command.Parameters.AddWithValue("@Phone", phone);
+                    command.Parameters.AddWithValue("@Login", login);
+                    command.Parameters.AddWithValue("@Password", password);
+                    command.Parameters.AddWithValue("@RoleId", roleId);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("User successfully added!", "Success",
+                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    return rowsAffected > 0; 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding user: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; 
+            }
+        }
+
         public List<BookConfig> LoadBooks()
         {
             string query = @"SELECT id, name, author, year, publishing, quantity, photo, genreId" +
@@ -293,6 +328,43 @@ namespace library
             }
 
             return null;
+        }
+
+        public List<EmployeeConfig> LoadEmployee()
+        {
+            string query = "SELECT id, name, IFNULL(surname, '') AS surname, phone, login, password, roleId FROM user";
+            List<EmployeeConfig> employees = new List<EmployeeConfig>();
+
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            EmployeeConfig employee = new EmployeeConfig
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Name = reader["name"].ToString(),
+                                Surname = reader["surname"].ToString(),
+                                Phone = reader["phone"].ToString(),
+                                Login = reader["login"].ToString(),
+                                Password = reader["password"].ToString(),
+                                RoleId = Convert.ToInt32(reader["roleId"])
+                            };
+                            employees.Add(employee);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading employees: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return employees;
         }
 
         public List<ReminderConfig> LoadReminder()
@@ -371,6 +443,42 @@ namespace library
             catch (Exception ex)
             {
                 MessageBox.Show($"Error updating book: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void UpdateEmployee(EmployeeConfig employeeConfig)
+        {
+            string query = @"UPDATE user 
+                     SET name = @name, 
+                         surname = @surname, 
+                         phone = @phone, 
+                         login = @login, 
+                         password = @password,
+                         roleId = @roleId 
+                     WHERE id = @employeeId";
+
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@name", employeeConfig.Name);
+                    command.Parameters.AddWithValue("@surname", employeeConfig.Surname);
+                    command.Parameters.AddWithValue("@phone", employeeConfig.Phone);
+                    command.Parameters.AddWithValue("@login", employeeConfig.Login);
+                    command.Parameters.AddWithValue("@password", employeeConfig.Password);
+                    command.Parameters.AddWithValue("@roleId", employeeConfig.RoleId);
+                    command.Parameters.AddWithValue("@employeeId", employeeConfig.Id);
+
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Employee successfully updated!", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating employee: {ex.Message}",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
