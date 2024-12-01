@@ -17,7 +17,8 @@ namespace library
         public ReminderListForm()
         {
             InitializeComponent();
-            reminderListManager = new ReminderListManager();    
+            reminderListManager = new ReminderListManager();
+          
         }
 
         private void ReminderListForm_Load(object sender, EventArgs e)

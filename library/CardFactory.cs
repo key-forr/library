@@ -13,6 +13,7 @@ namespace library
         Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y);
         Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y);
         Guna.UI2.WinForms.Guna2GroupBox CreateEmployeeCard(EmployeeConfig employeeConfig, int x, int y);
+        Guna.UI2.WinForms.Guna2GroupBox CreateCustomerCard(CustomerConfig customerConfig, int x, int y);
     }
 
 
@@ -26,6 +27,11 @@ namespace library
         }
 
         public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+        }
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateCustomerCard(CustomerConfig customerConfig, int x, int y)
         {
             throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
         }
@@ -147,7 +153,10 @@ namespace library
         {
             throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
         }
-
+        public Guna.UI2.WinForms.Guna2GroupBox CreateCustomerCard(CustomerConfig customerConfig, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+        }
         public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y)
         {
             var book_card = new Guna.UI2.WinForms.Guna2GroupBox()
@@ -264,118 +273,236 @@ namespace library
         {
             throw new NotImplementedException();
         }
+    }
 
-        public class EmployeeCardFactory : ICardFactory
+    public class EmployeeCardFactory : ICardFactory
+    {
+        private EmployeeForm parentForm;
+
+        public EmployeeCardFactory(EmployeeForm parentForm)
         {
-            private EmployeeForm parentForm;
-
-            public EmployeeCardFactory(EmployeeForm parentForm)
+            this.parentForm = parentForm;
+        }
+        public Guna.UI2.WinForms.Guna2GroupBox CreateCustomerCard(CustomerConfig customerConfig, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+        }
+        public Guna.UI2.WinForms.Guna2GroupBox CreateEmployeeCard(EmployeeConfig employeeConfig, int x, int y)
+        {
+            var group_box = new Guna.UI2.WinForms.Guna2GroupBox()
             {
-                this.parentForm = parentForm;
-            }
+                BorderColor = Color.FromArgb(22, 26, 50),
+                BorderRadius = 20,
+                BorderThickness = 0,
+                CustomBorderThickness = new Padding(0),
+                FillColor = Color.FromArgb(36, 42, 78),
+                Font = new Font("Segoe UI", 9F),
+                ForeColor = Color.FromArgb(125, 137, 149),
+                Location = new Point(x, y),
+                Name = "group_box",
+                Size = new Size(440, 120),
+                Tag = false
+            };
 
-            public Guna.UI2.WinForms.Guna2GroupBox CreateEmployeeCard(EmployeeConfig employeeConfig, int x, int y)
+            // Текстове поле для прізвища та імені працівника
+            var text_box_name = new Guna.UI2.WinForms.Guna2TextBox()
             {
-                var group_box = new Guna.UI2.WinForms.Guna2GroupBox()
-                {
-                    BorderColor = Color.FromArgb(22, 26, 50),
-                    BorderRadius = 20,
-                    BorderThickness = 0,
-                    CustomBorderThickness = new Padding(0),
-                    FillColor = Color.FromArgb(36, 42, 78),
-                    Font = new Font("Segoe UI", 9F),
-                    ForeColor = Color.FromArgb(125, 137, 149),
-                    Location = new Point(x, y),
-                    Name = "group_box",
-                    Size = new Size(440, 120),
-                    Tag = false
-                };
+                BorderThickness = 0,
+                DefaultText = $"{employeeConfig.Surname} {employeeConfig.Name}",
+                FillColor = Color.FromArgb(36, 42, 78),
+                Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold),
+                ForeColor = Color.White,
+                Multiline = true,
+                ReadOnly = true,
+                Location = new Point(10, 10),
+                Padding = new Padding(10, 5, 10, 5),
+                Size = new Size(300, 50),
+                TextAlign = HorizontalAlignment.Left
+            };
 
-                // Текстове поле для прізвища та імені працівника
-                var text_box_name = new Guna.UI2.WinForms.Guna2TextBox()
-                {
-                    BorderThickness = 0,
-                    DefaultText = $"{employeeConfig.Surname} {employeeConfig.Name}",
-                    FillColor = Color.FromArgb(36, 42, 78),
-                    Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold),
-                    ForeColor = Color.White,
-                    Multiline = true,
-                    ReadOnly = true,
-                    Location = new Point(10, 10),
-                    Padding = new Padding(10, 5, 10, 5),
-                    Size = new Size(300, 50),
-                    TextAlign = HorizontalAlignment.Left
-                };
+            // Текстове поле для ролі працівника
+            string roleName = new RoleListManager().Roles
+                .FirstOrDefault(g => g.Id == employeeConfig.RoleId)?.Name ?? "Роль не знайдено";
 
-                // Текстове поле для ролі працівника
-                string roleName = new RoleListManager().Roles
-                    .FirstOrDefault(g => g.Id == employeeConfig.RoleId)?.Name ?? "Роль не знайдено";
-
-                var text_box_role = new Guna.UI2.WinForms.Guna2TextBox()
-                {
-                    BorderThickness = 0,
-                    DefaultText = $"Роль: {roleName}",
-                    FillColor = Color.FromArgb(36, 42, 78),
-                    Font = new Font("Segoe UI", 14F),
-                    ForeColor = Color.DarkGray,
-                    Multiline = true,
-                    ReadOnly = true,
-                    Location = new Point(10, text_box_name.Bottom + 5),
-                    Padding = new Padding(10, 5, 10, 5),
-                    Size = new Size(300, 50),
-                    TextAlign = HorizontalAlignment.Left
-                };
-
-                group_box.Size = new Size(group_box.Width, text_box_role.Bottom + 15);
-
-                // Події для hover-ефекту та відкриття деталей працівника
-                EventHandler hoverEffect = (sender, e) =>
-                {
-                    group_box.BorderThickness = 3;
-                    group_box.BorderColor = Color.FromArgb(72, 169, 118);
-                };
-
-                EventHandler resetEffect = (sender, e) =>
-                {
-                    group_box.BorderThickness = 0;
-                    group_box.BorderColor = Color.FromArgb(22, 26, 50);
-                };
-
-                EventHandler openDetails = (sender, e) =>
-                {
-                    parentForm.OpenEmployeeDetails(employeeConfig);
-                };
-
-                // Додаємо події до елементів
-                group_box.MouseEnter += hoverEffect;
-                group_box.MouseLeave += resetEffect;
-                group_box.DoubleClick += openDetails;
-
-                text_box_name.MouseEnter += hoverEffect;
-                text_box_name.MouseLeave += resetEffect;
-                text_box_name.DoubleClick += openDetails;
-
-                text_box_role.MouseEnter += hoverEffect;
-                text_box_role.MouseLeave += resetEffect;
-                text_box_role.DoubleClick += openDetails;
-
-                // Додавання елементів у груповий бокс
-                group_box.Controls.Add(text_box_name);
-                group_box.Controls.Add(text_box_role);
-
-                return group_box;
-            }
-
-
-            public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y)
+            var text_box_role = new Guna.UI2.WinForms.Guna2TextBox()
             {
-                throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
-            }
+                BorderThickness = 0,
+                DefaultText = $"Роль: {roleName}",
+                FillColor = Color.FromArgb(36, 42, 78),
+                Font = new Font("Segoe UI", 14F),
+                ForeColor = Color.DarkGray,
+                Multiline = true,
+                ReadOnly = true,
+                Location = new Point(10, text_box_name.Bottom + 5),
+                Padding = new Padding(10, 5, 10, 5),
+                Size = new Size(300, 50),
+                TextAlign = HorizontalAlignment.Left
+            };
 
-            public Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y)
+            group_box.Size = new Size(group_box.Width, text_box_role.Bottom + 15);
+
+            // Події для hover-ефекту та відкриття деталей працівника
+            EventHandler hoverEffect = (sender, e) =>
             {
-                throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
-            }
+                group_box.BorderThickness = 3;
+                group_box.BorderColor = Color.FromArgb(72, 169, 118);
+            };
+
+            EventHandler resetEffect = (sender, e) =>
+            {
+                group_box.BorderThickness = 0;
+                group_box.BorderColor = Color.FromArgb(22, 26, 50);
+            };
+
+            EventHandler openDetails = (sender, e) =>
+            {
+                parentForm.OpenEmployeeDetails(employeeConfig);
+            };
+
+            // Додаємо події до елементів
+            group_box.MouseEnter += hoverEffect;
+            group_box.MouseLeave += resetEffect;
+            group_box.DoubleClick += openDetails;
+
+            text_box_name.MouseEnter += hoverEffect;
+            text_box_name.MouseLeave += resetEffect;
+            text_box_name.DoubleClick += openDetails;
+
+            text_box_role.MouseEnter += hoverEffect;
+            text_box_role.MouseLeave += resetEffect;
+            text_box_role.DoubleClick += openDetails;
+
+            // Додавання елементів у груповий бокс
+            group_box.Controls.Add(text_box_name);
+            group_box.Controls.Add(text_box_role);
+
+            return group_box;
+        }
+
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+        }
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+        }
+    }
+
+    public class CustomerCardFactory : ICardFactory
+    {
+        private CustomerForm parentForm;
+
+        public CustomerCardFactory(CustomerForm parentForm)
+        {
+            this.parentForm = parentForm;
+        }
+        public Guna.UI2.WinForms.Guna2GroupBox CreateEmployeeCard(EmployeeConfig employeeConfig, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+        }
+        public Guna.UI2.WinForms.Guna2GroupBox CreateCustomerCard(CustomerConfig customerConfig, int x, int y)
+        {
+            var group_box = new Guna.UI2.WinForms.Guna2GroupBox()
+            {
+                BorderColor = Color.FromArgb(22, 26, 50),
+                BorderRadius = 20,
+                BorderThickness = 0,
+                CustomBorderThickness = new Padding(0),
+                FillColor = Color.FromArgb(36, 42, 78),
+                Font = new Font("Segoe UI", 9F),
+                ForeColor = Color.FromArgb(125, 137, 149),
+                Location = new Point(x, y),
+                Name = "group_box",
+                Size = new Size(440, 120),
+                Tag = false
+            };
+
+            // Текстове поле для прізвища та імені працівника
+            var text_box_name = new Guna.UI2.WinForms.Guna2TextBox()
+            {
+                BorderThickness = 0,
+                DefaultText = $"{customerConfig.Surname} {customerConfig.Name}",
+                FillColor = Color.FromArgb(36, 42, 78),
+                Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold),
+                ForeColor = Color.White,
+                Multiline = true,
+                ReadOnly = true,
+                Location = new Point(10, 10),
+                Padding = new Padding(10, 5, 10, 5),
+                Size = new Size(300, 50),
+                TextAlign = HorizontalAlignment.Left
+            };
+
+            // Текстове поле для ролі працівника
+           
+
+            var text_box_role = new Guna.UI2.WinForms.Guna2TextBox()
+            {
+                BorderThickness = 0,
+                DefaultText = customerConfig.Phone,
+                FillColor = Color.FromArgb(36, 42, 78),
+                Font = new Font("Segoe UI", 14F),
+                ForeColor = Color.DarkGray,
+                Multiline = true,
+                ReadOnly = true,
+                Location = new Point(10, text_box_name.Bottom + 5),
+                Padding = new Padding(10, 5, 10, 5),
+                Size = new Size(300, 50),
+                TextAlign = HorizontalAlignment.Left
+            };
+
+            group_box.Size = new Size(group_box.Width, text_box_role.Bottom + 15);
+
+            // Події для hover-ефекту та відкриття деталей працівника
+            EventHandler hoverEffect = (sender, e) =>
+            {
+                group_box.BorderThickness = 3;
+                group_box.BorderColor = Color.FromArgb(72, 169, 118);
+            };
+
+            EventHandler resetEffect = (sender, e) =>
+            {
+                group_box.BorderThickness = 0;
+                group_box.BorderColor = Color.FromArgb(22, 26, 50);
+            };
+
+            EventHandler openDetails = (sender, e) =>
+            {
+                parentForm.OpenCustomerDetails(customerConfig);
+            };
+
+            // Додаємо події до елементів
+            group_box.MouseEnter += hoverEffect;
+            group_box.MouseLeave += resetEffect;
+            group_box.DoubleClick += openDetails;
+
+            text_box_name.MouseEnter += hoverEffect;
+            text_box_name.MouseLeave += resetEffect;
+            text_box_name.DoubleClick += openDetails;
+
+            text_box_role.MouseEnter += hoverEffect;
+            text_box_role.MouseLeave += resetEffect;
+            text_box_role.DoubleClick += openDetails;
+
+
+            group_box.Controls.Add(text_box_name);
+            group_box.Controls.Add(text_box_role);
+
+            return group_box;
+        }
+
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+        }
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
         }
     }
 }

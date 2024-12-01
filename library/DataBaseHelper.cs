@@ -266,6 +266,38 @@ namespace library
             }
         }
 
+        public bool AddCustomer(string name, string surname, string patronymic, string phone)
+        {
+            string query = "INSERT INTO client (name, surname, patronymic, phone) " +
+                           "VALUES (@Name, @Surname, @Patronymic, @Phone)";
+
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Surname", surname);
+                    command.Parameters.AddWithValue("@Patronymic", patronymic);
+                    command.Parameters.AddWithValue("@Phone", phone);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("User successfully added!", "Success",
+                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    return rowsAffected > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding user: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
         public List<BookConfig> LoadBooks()
         {
             string query = @"SELECT id, name, author, year, publishing, quantity, photo, genreId" +
@@ -365,6 +397,43 @@ namespace library
             }
 
             return employees;
+        }
+
+
+        public List<CustomerConfig> LoadCustomer()
+        {
+            string query = "SELECT id, name, surname, patronymic, phone FROM client";
+
+            List<CustomerConfig> customers = new List<CustomerConfig>();
+
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CustomerConfig employee = new CustomerConfig
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Name = reader["name"].ToString(),
+                                Surname = reader["surname"].ToString(),
+                                Patronymic = reader["patronymic"].ToString(),
+                                Phone = reader["phone"].ToString()
+                            };
+                            customers.Add(employee);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading customers: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return customers;
         }
 
         public List<ReminderConfig> LoadReminder()
@@ -469,6 +538,38 @@ namespace library
                     command.Parameters.AddWithValue("@password", employeeConfig.Password);
                     command.Parameters.AddWithValue("@roleId", employeeConfig.RoleId);
                     command.Parameters.AddWithValue("@employeeId", employeeConfig.Id);
+
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Employee successfully updated!", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating employee: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void UpdateCustomer(CustomerConfig customerConfig)
+        {
+            string query = @"UPDATE client 
+                     SET name = @name, 
+                         surname = @surname, 
+                         patronymic = @patronymic, 
+                         phone = @phone
+                     WHERE id = @customerId";
+
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@name", customerConfig.Name);
+                    command.Parameters.AddWithValue("@surname", customerConfig.Surname);
+                    command.Parameters.AddWithValue("@patronymic", customerConfig.Patronymic);
+                    command.Parameters.AddWithValue("@phone", customerConfig.Phone);
+                    command.Parameters.AddWithValue("@customerId", customerConfig.Id);
 
                     command.ExecuteNonQuery();
 

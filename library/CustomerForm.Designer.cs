@@ -28,8 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel_client_interaction = new System.Windows.Forms.Panel();
+            this.panel_add_customer = new System.Windows.Forms.Panel();
+            this.button_add_customer = new Guna.UI2.WinForms.Guna2Button();
+            this.text_box_search = new Guna.UI2.WinForms.Guna2TextBox();
             this.button_back = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
+            // 
+            // panel_client_interaction
+            // 
+            this.panel_client_interaction.Location = new System.Drawing.Point(915, 12);
+            this.panel_client_interaction.Name = "panel_client_interaction";
+            this.panel_client_interaction.Size = new System.Drawing.Size(495, 662);
+            this.panel_client_interaction.TabIndex = 30;
+            // 
+            // panel_add_customer
+            // 
+            this.panel_add_customer.Location = new System.Drawing.Point(414, 12);
+            this.panel_add_customer.Name = "panel_add_customer";
+            this.panel_add_customer.Size = new System.Drawing.Size(495, 662);
+            this.panel_add_customer.TabIndex = 31;
+            // 
+            // button_add_customer
+            // 
+            this.button_add_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_add_customer.BorderRadius = 10;
+            this.button_add_customer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_add_customer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_add_customer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_add_customer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_add_customer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_add_customer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
+            this.button_add_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_add_customer.ForeColor = System.Drawing.Color.White;
+            this.button_add_customer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
+            this.button_add_customer.Location = new System.Drawing.Point(66, 159);
+            this.button_add_customer.Name = "button_add_customer";
+            this.button_add_customer.Size = new System.Drawing.Size(265, 50);
+            this.button_add_customer.TabIndex = 56;
+            this.button_add_customer.Text = "Додати клієнта";
+            this.button_add_customer.Click += new System.EventHandler(this.button_add_customer_Click);
+            // 
+            // text_box_search
+            // 
+            this.text_box_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.text_box_search.BorderColor = System.Drawing.Color.White;
+            this.text_box_search.BorderRadius = 10;
+            this.text_box_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.text_box_search.DefaultText = "+380";
+            this.text_box_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.text_box_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.text_box_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.text_box_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.text_box_search.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.text_box_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_box_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.text_box_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_search.IconLeft = global::library.Properties.Resources.Search;
+            this.text_box_search.Location = new System.Drawing.Point(66, 90);
+            this.text_box_search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.text_box_search.Name = "text_box_search";
+            this.text_box_search.PasswordChar = '\0';
+            this.text_box_search.PlaceholderForeColor = System.Drawing.Color.White;
+            this.text_box_search.PlaceholderText = "";
+            this.text_box_search.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.text_box_search.SelectedText = "";
+            this.text_box_search.Size = new System.Drawing.Size(265, 45);
+            this.text_box_search.TabIndex = 28;
             // 
             // button_back
             // 
@@ -55,6 +121,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(1422, 686);
+            this.Controls.Add(this.button_add_customer);
+            this.Controls.Add(this.panel_add_customer);
+            this.Controls.Add(this.panel_client_interaction);
+            this.Controls.Add(this.text_box_search);
             this.Controls.Add(this.button_back);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
@@ -65,5 +135,9 @@
         #endregion
 
         private FontAwesome.Sharp.IconButton button_back;
+        private Guna.UI2.WinForms.Guna2TextBox text_box_search;
+        private System.Windows.Forms.Panel panel_client_interaction;
+        private System.Windows.Forms.Panel panel_add_customer;
+        private Guna.UI2.WinForms.Guna2Button button_add_customer;
     }
 }

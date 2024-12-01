@@ -39,7 +39,7 @@
             // 
             this.panel_employee_info.Location = new System.Drawing.Point(451, 12);
             this.panel_employee_info.Name = "panel_employee_info";
-            this.panel_employee_info.Size = new System.Drawing.Size(495, 662);
+            this.panel_employee_info.Size = new System.Drawing.Size(458, 662);
             this.panel_employee_info.TabIndex = 28;
             // 
             // text_box_search
@@ -109,9 +109,9 @@
             // 
             // panel_employee_interaction
             // 
-            this.panel_employee_interaction.Location = new System.Drawing.Point(952, 12);
+            this.panel_employee_interaction.Location = new System.Drawing.Point(915, 12);
             this.panel_employee_interaction.Name = "panel_employee_interaction";
-            this.panel_employee_interaction.Size = new System.Drawing.Size(458, 662);
+            this.panel_employee_interaction.Size = new System.Drawing.Size(495, 662);
             this.panel_employee_interaction.TabIndex = 29;
             // 
             // EmployeeForm

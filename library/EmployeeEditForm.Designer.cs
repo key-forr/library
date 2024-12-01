@@ -219,7 +219,7 @@
             this.text_box_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.text_box_password.ForeColor = System.Drawing.Color.White;
             this.text_box_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_password.Location = new System.Drawing.Point(17, 458);
+            this.text_box_password.Location = new System.Drawing.Point(12, 458);
             this.text_box_password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_box_password.Name = "text_box_password";
             this.text_box_password.PasswordChar = '\0';

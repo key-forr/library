@@ -44,7 +44,5 @@ namespace library
                 y += employeeCard.Height + 10;
             }
         }
-
-
     }
 }
