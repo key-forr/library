@@ -10,33 +10,36 @@ namespace library
 {
     public interface ICardFactory
     {
-        Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y);
-        Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y);
-        Guna.UI2.WinForms.Guna2GroupBox CreateEmployeeCard(EmployeeConfig employeeConfig, int x, int y);
-        Guna.UI2.WinForms.Guna2GroupBox CreateCustomerCard(CustomerConfig customerConfig, int x, int y);
+        Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig bookConfig, int x, int y);
+
+        Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderConfig, int x, int y);
+
+        Guna.UI2.WinForms.Guna2GroupBox CreateUserCard(UserConfig userConfig, int x, int y);
+
+        Guna.UI2.WinForms.Guna2GroupBox CreateClientCard(ClientConfig clientConfig, int x, int y);
     }
 
 
     public class ReminderCardFactory : ICardFactory
     {
-        private ReminderListForm reminderListForm;
+        private RemindersListForm reminderListForm;
 
-        public ReminderCardFactory(ReminderListForm reminderListForm)
+        public ReminderCardFactory(RemindersListForm reminderListForm)
         {
             this.reminderListForm = reminderListForm;
         }
 
-        public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y)
+        public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig bookConfig, int x, int y)
         {
             throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
         }
 
-        public Guna.UI2.WinForms.Guna2GroupBox CreateCustomerCard(CustomerConfig customerConfig, int x, int y)
+        public Guna.UI2.WinForms.Guna2GroupBox CreateClientCard(ClientConfig clientConfig, int x, int y)
         {
             throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
         }
 
-        public Guna.UI2.WinForms.Guna2GroupBox CreateEmployeeCard(EmployeeConfig employeeConfig, int x, int y)
+        public Guna.UI2.WinForms.Guna2GroupBox CreateUserCard(UserConfig employeeConfig, int x, int y)
         {
             throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
         }
@@ -132,7 +135,7 @@ namespace library
 
             group_box.Controls.Add(text_box_title);
             group_box.Controls.Add(text_box_description);
-            group_box.Controls.Add(text_box_date);  // Додаємо текстове поле з датою
+            group_box.Controls.Add(text_box_date);
             group_box.Controls.Add(button_attach);
 
             return group_box;
@@ -142,29 +145,35 @@ namespace library
 
     public class BookCardFactory : ICardFactory
     {
-        private BooksForm parentForm;
+        private BooksForm booksForm;
 
-        public BookCardFactory(BooksForm parentForm)
+        public BookCardFactory(BooksForm booksForm)
         {
-            this.parentForm = parentForm;
+            this.booksForm = booksForm;
         }
 
-        public Guna.UI2.WinForms.Guna2GroupBox CreateEmployeeCard(EmployeeConfig employeeConfig, int x, int y)
+        public Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y)
         {
-            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+            throw new NotImplementedException("This method is not applicable for BookCardFactory");
         }
-        public Guna.UI2.WinForms.Guna2GroupBox CreateCustomerCard(CustomerConfig customerConfig, int x, int y)
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateUserCard(UserConfig userConfig, int x, int y)
         {
-            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+            throw new NotImplementedException("This method is not applicable for BookCardFactory");
         }
-        public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y)
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateClientCard(ClientConfig clientConfig, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for BookCardFactory");
+        }
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig bookConfig, int x, int y)
         {
             var book_card = new Guna.UI2.WinForms.Guna2GroupBox()
             {
-                BorderColor = Color.White,
-                BorderRadius = 30,
-                BorderThickness = 1,
                 CustomBorderThickness = new Padding(0, 0, 0, 0),
+                BorderRadius = 30,
+                BorderThickness = 0,
                 FillColor = Color.FromArgb(36, 42, 78),
                 Font = new Font("Segoe UI", 9F),
                 ForeColor = Color.FromArgb(125, 137, 149),
@@ -173,25 +182,25 @@ namespace library
                 Cursor = Cursors.Hand
             };
 
-            var titleText = config.Name.Length > 12 ? config.Name.Substring(0, 12) + "..." : config.Name;
+            var titleText = bookConfig.Name.Length > 12 ? bookConfig.Name.Substring(0, 12) + "..." : bookConfig.Name;
             var titleLabel = new Label()
             {
                 AutoSize = true,
                 BackColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI", 14F, FontStyle.Bold),
+                Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold),
                 ForeColor = Color.White,
                 Location = new Point(28, 20),
                 Text = titleText,
                 Cursor = Cursors.Hand
             };
 
-            var authorText = config.Author.Length > 20 ? config.Author.Substring(0, 20) + "..." : config.Author;
+            var authorText = bookConfig.Author.Length > 20 ? bookConfig.Author.Substring(0, 20) + "..." : bookConfig.Author;
             var authorLabel = new Guna.UI2.WinForms.Guna2TextBox()
             {
                 BorderThickness = 0,
                 FillColor = Color.FromArgb(36, 42, 78),
                 Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular),
-                ForeColor = Color.White,
+                ForeColor = Color.DimGray,
                 Location = new Point(28, 60),
                 Size = new Size(256, 45),
                 Text = authorText,
@@ -199,15 +208,15 @@ namespace library
                 Cursor = Cursors.Hand
             };
 
-            var availabilityText = config.Quantity > 0
-                ? $"В наявності: ({config.Quantity} шт.)"
+            var availabilityText = bookConfig.Quantity > 0
+                ? $"В наявності: ({bookConfig.Quantity} шт.)"
                 : "Немає в наявності";
             var availabilityLabel = new Guna.UI2.WinForms.Guna2TextBox()
             {
                 BorderThickness = 0,
                 FillColor = Color.FromArgb(36, 42, 78),
                 Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold),
-                ForeColor = config.Quantity > 0 ? Color.FromArgb(72, 169, 118) : Color.Red,
+                ForeColor = bookConfig.Quantity > 0 ? Color.FromArgb(72, 169, 118) : Color.Red,
                 Location = new Point(28, 115),
                 Size = new Size(205, 30),
                 Text = availabilityText,
@@ -220,7 +229,7 @@ namespace library
                 Location = new Point(291, 19),
                 Size = new Size(120, 132),
                 SizeMode = PictureBoxSizeMode.StretchImage,
-                Image = ImageUtils.LoadAndScaleImage(config.ImagePath, new Size(120, 130)),
+                Image = ImageUtils.LoadAndScaleImage(bookConfig.ImagePath, new Size(120, 130)),
                 Cursor = Cursors.Hand
             };
 
@@ -232,13 +241,13 @@ namespace library
 
             EventHandler resetEffect = (sender, e) =>
             {
-                book_card.BorderThickness = 1;
+                book_card.BorderThickness = 0;
                 book_card.BorderColor = Color.White;
             };
 
             EventHandler openDetails = (sender, e) =>
             {
-                parentForm.OpenBookDetails(config);
+                booksForm.OpenBookDetails(bookConfig);
             };
 
             book_card.MouseEnter += hoverEffect;
@@ -268,26 +277,33 @@ namespace library
 
             return book_card;
         }
-
-        public Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y)
-        {
-            throw new NotImplementedException();
-        }
     }
 
-    public class EmployeeCardFactory : ICardFactory
+    public class UserCardFactory : ICardFactory
     {
-        private EmployeeForm parentForm;
+        private UsersForm usersForm;
 
-        public EmployeeCardFactory(EmployeeForm parentForm)
+        public UserCardFactory(UsersForm usersForm)
         {
-            this.parentForm = parentForm;
+            this.usersForm = usersForm;
         }
-        public Guna.UI2.WinForms.Guna2GroupBox CreateCustomerCard(CustomerConfig customerConfig, int x, int y)
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateClientCard(ClientConfig clientConfig, int x, int y)
         {
-            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+            throw new NotImplementedException("This method is not applicable for UserCardFactory");
         }
-        public Guna.UI2.WinForms.Guna2GroupBox CreateEmployeeCard(EmployeeConfig employeeConfig, int x, int y)
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig bookConfig, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for UserCardFactory");
+        }
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderConfig, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for UserCardFactory");
+        }
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateUserCard(UserConfig userConfig, int x, int y)
         {
             var group_box = new Guna.UI2.WinForms.Guna2GroupBox()
             {
@@ -304,13 +320,12 @@ namespace library
                 Tag = false
             };
 
-            // Текстове поле для прізвища та імені працівника
             var text_box_name = new Guna.UI2.WinForms.Guna2TextBox()
             {
                 BorderThickness = 0,
-                DefaultText = $"{employeeConfig.Surname} {employeeConfig.Name}",
+                DefaultText = $"{userConfig.Surname} {userConfig.Name}",
                 FillColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold),
+                Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold),
                 ForeColor = Color.White,
                 Multiline = true,
                 ReadOnly = true,
@@ -320,16 +335,15 @@ namespace library
                 TextAlign = HorizontalAlignment.Left
             };
 
-            // Текстове поле для ролі працівника
-            string roleName = new RoleListManager().Roles
-                .FirstOrDefault(g => g.Id == employeeConfig.RoleId)?.Name ?? "Роль не знайдено";
+            string roleName = new RolesListManager().Roles
+                .FirstOrDefault(g => g.Id == userConfig.RoleId)?.Name ?? "Роль не знайдено";
 
             var text_box_role = new Guna.UI2.WinForms.Guna2TextBox()
             {
                 BorderThickness = 0,
                 DefaultText = $"Роль: {roleName}",
                 FillColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI", 14F),
+                Font = new Font("Microsoft Sans Serif", 14F),
                 ForeColor = Color.DarkGray,
                 Multiline = true,
                 ReadOnly = true,
@@ -339,9 +353,6 @@ namespace library
                 TextAlign = HorizontalAlignment.Left
             };
 
-            group_box.Size = new Size(group_box.Width, text_box_role.Bottom + 15);
-
-            // Події для hover-ефекту та відкриття деталей працівника
             EventHandler hoverEffect = (sender, e) =>
             {
                 group_box.BorderThickness = 3;
@@ -356,10 +367,9 @@ namespace library
 
             EventHandler openDetails = (sender, e) =>
             {
-                parentForm.OpenEmployeeDetails(employeeConfig);
+                usersForm.OpenUserDetails(userConfig);
             };
 
-            // Додаємо події до елементів
             group_box.MouseEnter += hoverEffect;
             group_box.MouseLeave += resetEffect;
             group_box.DoubleClick += openDetails;
@@ -372,38 +382,38 @@ namespace library
             text_box_role.MouseLeave += resetEffect;
             text_box_role.DoubleClick += openDetails;
 
-            // Додавання елементів у груповий бокс
             group_box.Controls.Add(text_box_name);
             group_box.Controls.Add(text_box_role);
 
             return group_box;
         }
-
-
-        public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y)
-        {
-            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
-        }
-
-        public Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y)
-        {
-            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
-        }
     }
 
-    public class CustomerCardFactory : ICardFactory
+    public class ClientCardFactory : ICardFactory
     {
-        private CustomerForm parentForm;
+        private ClientsForm clientsForm;
 
-        public CustomerCardFactory(CustomerForm parentForm)
+        public ClientCardFactory(ClientsForm clientsForm)
         {
-            this.parentForm = parentForm;
+            this.clientsForm = clientsForm;
         }
-        public Guna.UI2.WinForms.Guna2GroupBox CreateEmployeeCard(EmployeeConfig employeeConfig, int x, int y)
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateUserCard(UserConfig userConfig, int x, int y)
         {
-            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
+            throw new NotImplementedException("This method is not applicable for ClientCardFactory");
         }
-        public Guna.UI2.WinForms.Guna2GroupBox CreateCustomerCard(CustomerConfig customerConfig, int x, int y)
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig bookConfig, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for ClientCardFactory");
+        }
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderConfig, int x, int y)
+        {
+            throw new NotImplementedException("This method is not applicable for ClientCardFactory");
+        }
+
+        public Guna.UI2.WinForms.Guna2GroupBox CreateClientCard(ClientConfig clientConfig, int x, int y)
         {
             var group_box = new Guna.UI2.WinForms.Guna2GroupBox()
             {
@@ -420,13 +430,12 @@ namespace library
                 Tag = false
             };
 
-            // Текстове поле для прізвища та імені працівника
             var text_box_name = new Guna.UI2.WinForms.Guna2TextBox()
             {
                 BorderThickness = 0,
-                DefaultText = $"{customerConfig.Surname} {customerConfig.Name}",
+                DefaultText = $"{clientConfig.Surname} {clientConfig.Name} {clientConfig.Patronymic}",
                 FillColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold),
+                Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold),
                 ForeColor = Color.White,
                 Multiline = true,
                 ReadOnly = true,
@@ -436,15 +445,12 @@ namespace library
                 TextAlign = HorizontalAlignment.Left
             };
 
-            // Текстове поле для ролі працівника
-           
-
             var text_box_role = new Guna.UI2.WinForms.Guna2TextBox()
             {
                 BorderThickness = 0,
-                DefaultText = customerConfig.Phone,
+                DefaultText = clientConfig.Phone,
                 FillColor = Color.FromArgb(36, 42, 78),
-                Font = new Font("Segoe UI", 14F),
+                Font = new Font("Microsoft Sans Serif", 14F),
                 ForeColor = Color.DarkGray,
                 Multiline = true,
                 ReadOnly = true,
@@ -454,9 +460,6 @@ namespace library
                 TextAlign = HorizontalAlignment.Left
             };
 
-            group_box.Size = new Size(group_box.Width, text_box_role.Bottom + 15);
-
-            // Події для hover-ефекту та відкриття деталей працівника
             EventHandler hoverEffect = (sender, e) =>
             {
                 group_box.BorderThickness = 3;
@@ -471,10 +474,9 @@ namespace library
 
             EventHandler openDetails = (sender, e) =>
             {
-                parentForm.OpenCustomerDetails(customerConfig);
+                clientsForm.OpenClientDetails(clientConfig);
             };
 
-            // Додаємо події до елементів
             group_box.MouseEnter += hoverEffect;
             group_box.MouseLeave += resetEffect;
             group_box.DoubleClick += openDetails;
@@ -492,17 +494,6 @@ namespace library
             group_box.Controls.Add(text_box_role);
 
             return group_box;
-        }
-
-
-        public Guna.UI2.WinForms.Guna2GroupBox CreateBookCard(BookConfig config, int x, int y)
-        {
-            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
-        }
-
-        public Guna.UI2.WinForms.Guna2GroupBox CreateReminderCard(ReminderConfig reminderCardConfig, int x, int y)
-        {
-            throw new NotImplementedException("This method is not applicable for ReminderCardFactory");
         }
     }
 }

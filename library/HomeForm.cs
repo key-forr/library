@@ -11,38 +11,39 @@ namespace library
 {
     public partial class HomeForm : Form
     {
-        private ReminderListForm reminderListForm;
+        private RemindersListForm reminderListForm;
         private BooksForm booksForm;
-        private EmployeeForm employeeForm;
+        private UsersForm employeeForm;
         private ReminderAddForm reminderAddForm;
         private PersonalDataForm personalDataForm;
-        private StorageForm storageForm;
+        private WarehouseForm storageForm;
         private BookingForm bookingForm;
-        private CustomerForm customerForm;
+        private ClientsForm customerForm;
         private StatisticsForm statisticsForm;
+        private AccountOptionsForm accountOptionsForm;
 
         private Control currentActiveButton;
 
         public HomeForm()
         {
             InitializeComponent();
-            reminderListForm = new ReminderListForm();
+            reminderListForm = new RemindersListForm();
             PanelAndFormManager.EmbedFormInPanel(reminderListForm, panel_reminder_list);
 
             SetActiveNavigationButton(button_home_navigation);
+        }
+
+        public Panel MainPanel
+        {
+            get { return panel_main; }
         }
 
         public void UpdateReminderListForm()
         {
             panel_reminder_list.Controls.Clear();
 
-            reminderListForm = new ReminderListForm();
+            reminderListForm = new RemindersListForm();
             PanelAndFormManager.EmbedFormInPanel(reminderListForm, panel_reminder_list);
-        }
-
-        public Panel MainPanel
-        {
-            get { return panel_main; }
         }
 
         private void SetActiveNavigationButton(Control button)
@@ -107,7 +108,10 @@ namespace library
                 this.WindowState = FormWindowState.Normal;
                 this.StartPosition = FormStartPosition.CenterScreen;
             }
-            else this.WindowState = FormWindowState.Maximized;
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void button_close_Click(object sender, EventArgs e)
@@ -133,7 +137,7 @@ namespace library
         {
             SetActiveNavigationButton(button_employee_navigation);
 
-            employeeForm = new EmployeeForm();
+            employeeForm = new UsersForm();
             PanelAndFormManager.EmbedFormInPanel(employeeForm, panel_main);
         }
 
@@ -141,7 +145,7 @@ namespace library
         {
             SetActiveNavigationButton(button_storage_navigation);
 
-            storageForm = new StorageForm();
+            storageForm = new WarehouseForm();
             PanelAndFormManager.EmbedFormInPanel(storageForm, panel_main);
         }
 
@@ -165,7 +169,7 @@ namespace library
         {
             SetActiveNavigationButton(button_customer_navigation);
 
-            customerForm = new CustomerForm();
+            customerForm = new ClientsForm();
             PanelAndFormManager.EmbedFormInPanel(customerForm, panel_main);
         }
 
@@ -173,16 +177,17 @@ namespace library
         {
             SetActiveNavigationButton(button_personal_office_navigation);
 
-            AccountOptionsForm windowUser = new AccountOptionsForm(this);
+            accountOptionsForm = new AccountOptionsForm(this);
 
-            windowUser.Location = new Point(
-                this.Location.X + this.Width - windowUser.Width - 100,
+            accountOptionsForm.Location = new Point
+            (
+                this.Location.X + this.Width - accountOptionsForm.Width - 100,
                 this.Location.Y + 75
             );
 
-            windowUser.ShowDialog();
+            accountOptionsForm.ShowDialog();
 
-            personalDataForm = windowUser.PersonalDataForm;
+            personalDataForm = accountOptionsForm.PersonalDataForm;
         }
 
         private void button_home_navigation_Click(object sender, EventArgs e)
@@ -192,6 +197,11 @@ namespace library
             if (booksForm != null && booksForm.Visible)
             {
                 booksForm.Close();
+            }
+
+            if (accountOptionsForm != null && accountOptionsForm.Visible)
+            {
+                accountOptionsForm.Close();
             }
 
             if (personalDataForm != null && personalDataForm.Visible)

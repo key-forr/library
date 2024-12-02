@@ -10,29 +10,26 @@ using System.Windows.Forms;
 
 namespace library
 {
-    public partial class ReminderListForm : Form
+    public partial class RemindersListForm : Form
     {
-        private ReminderListManager reminderListManager;
+        private RemindersListManager reminderListManager;
 
-        public ReminderListForm()
+        public RemindersListForm()
         {
             InitializeComponent();
-            reminderListManager = new ReminderListManager();
-          
-        }
+            reminderListManager = new RemindersListManager();
 
-        private void ReminderListForm_Load(object sender, EventArgs e)
-        {
             DisplayReminder();
         }
 
         public void DisplayReminder()
         {
             this.Controls.Clear(); 
+
             int x = 15; 
             int y = 15;
 
-            foreach (var reminder in reminderListManager.Reminder)
+            foreach (var reminder in reminderListManager.Reminders)
             {
                 ReminderCardFactory reminderCardFactory = new ReminderCardFactory(this);
                 var reminderCard = reminderCardFactory.CreateReminderCard(reminder, x, y);

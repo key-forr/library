@@ -13,28 +13,28 @@ namespace library
 {
     public partial class BooksForm : Form
     {
-        private BookListManager bookListManager;
-        private BookListForm bookListForm;
+        private BooksListForm bookListForm;
 
         public BooksForm()
         {
             InitializeComponent();
-            bookListForm = new BookListForm(this);
-            PanelAndFormManager.EmbedFormInPanel(bookListForm, panel_main);
+
+            bookListForm = new BooksListForm(this);
+            PanelAndFormManager.EmbedFormInPanel(bookListForm, panel_books_interaction);
         }
 
         public void UpdateBookListForm()
         {
-            panel_main.Controls.Clear();
+            panel_books_interaction.Controls.Clear();
 
-            bookListForm = new BookListForm(this);
-            PanelAndFormManager.EmbedFormInPanel(bookListForm, panel_main);
+            bookListForm = new BooksListForm(this);
+            PanelAndFormManager.EmbedFormInPanel(bookListForm, panel_books_interaction);
         }
 
         private void button_add_book_Click(object sender, EventArgs e)
         {
             AddBookForm childForm = new AddBookForm();
-            PanelAndFormManager.EmbedFormInPanel(childForm, panel_main);
+            PanelAndFormManager.EmbedFormInPanel(childForm, panel_books_interaction);
         }
 
         private void text_box_search_TextChanged(object sender, EventArgs e)
@@ -52,35 +52,36 @@ namespace library
             text_box_search.PlaceholderText = string.Empty;
         }
 
-        public void OpenBookDetails(BookConfig bookCardConfig)
+        public void OpenBookDetails(BookConfig bookConfig)
         {
-            var childForm = new BookManageForm(bookCardConfig, this);
-            PanelAndFormManager.EmbedFormInPanel(childForm, panel);
+            var childForm = new BookManageForm(bookConfig, this);
+            PanelAndFormManager.EmbedFormInPanel(childForm, panel_main);
         }
 
         private void button_list_book_Click(object sender, EventArgs e)
         {
-            bookListForm = new BookListForm(this);
-            PanelAndFormManager.EmbedFormInPanel(bookListForm, panel_main);
-        }
-        private void button_list_book_MouseEnter(object sender, EventArgs e)
-        {
-            ButtonUtils.AnimateButtonOnHover(button_list_book, true, Color.FromArgb(36, 42, 78), 5);
+            bookListForm = new BooksListForm(this);
+            PanelAndFormManager.EmbedFormInPanel(bookListForm, panel_books_interaction);
         }
 
-        private void button_list_book_MouseLeave(object sender, EventArgs e)
+        private void button_books_list_navigation_MouseEnter(object sender, EventArgs e)
         {
-            ButtonUtils.AnimateButtonOnHover(button_list_book, false, Color.FromArgb(36, 42, 78), 5);
+            ButtonUtils.AnimateButtonOnHover(button_books_list_navigation, true, Color.FromArgb(36, 42, 78), 5);
         }
 
-        private void button_add_book_MouseEnter(object sender, EventArgs e)
+        private void button_books_list_navigation_MouseLeave(object sender, EventArgs e)
         {
-            ButtonUtils.AnimateButtonOnHover(button_add_book, true, Color.FromArgb(36, 42, 78), 5);
+            ButtonUtils.AnimateButtonOnHover(button_books_list_navigation, false, Color.FromArgb(36, 42, 78), 5);
         }
 
-        private void button_add_book_MouseLeave(object sender, EventArgs e)
+        private void button_add_book_navigation_MouseEnter(object sender, EventArgs e)
         {
-            ButtonUtils.AnimateButtonOnHover(button_add_book, false, Color.FromArgb(36, 42, 78), 5);
+            ButtonUtils.AnimateButtonOnHover(button_books_list_navigation, true, Color.FromArgb(36, 42, 78), 5);
+        }
+
+        private void button_add_book_navigation_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateButtonOnHover(button_books_list_navigation, false, Color.FromArgb(36, 42, 78), 5);
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using static Guna.UI2.Native.WinApi;
 
 namespace library
@@ -58,42 +59,6 @@ namespace library
             }
         }
 
-        public bool SaveReminder(DateTime date, string title, string description, string login)
-        {
-            string query = "INSERT INTO reminder (title, description, userId, date) VALUES (@Title, @Description, @UserId, @Date)";
-
-            using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
-            {
-                command.Parameters.AddWithValue("@Title", title);
-                command.Parameters.AddWithValue("@Description", description);
-                command.Parameters.AddWithValue("@UserId", UserSession.Id);
-                command.Parameters.AddWithValue("@Date", date);
-
-                try
-                {
-                    int rowsAffected = command.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Reminder successfully saved!", "Success",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Reminder was not saved. No rows affected.", "Warning",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return false;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error saving reminder: {ex.Message}", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-            }
-        }
-
         public void GetUserData(string login)
         {
             string query = "SELECT id, name, surname, phone, login, password, roleId FROM user WHERE login = @login";
@@ -126,78 +91,44 @@ namespace library
             }
         }
 
-        public List<GenreConfig> LoadGenres()
+        public bool AddReminder(string title, string description, DateTime date)
         {
-            string query = "SELECT id, name FROM genre";
+            string query = "INSERT INTO reminder (title, description, date, userId) VALUES (@Title, @Description, @Date, @UserId)";
 
-            List<GenreConfig> Genres = new List<GenreConfig>();
-
-            try
+            using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
             {
-                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
-                {
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            GenreConfig genreConfig = new GenreConfig
-                            (
-                                Convert.ToInt32(reader["id"]),
-                                reader["name"].ToString()
-                            );
-                           
+                command.Parameters.AddWithValue("@Title", title);
+                command.Parameters.AddWithValue("@Description", description);
+                command.Parameters.AddWithValue("@Date", date);
+                command.Parameters.AddWithValue("@UserId", UserSession.Id);
 
-                            Genres.Add(genreConfig);
-                        }
+                try
+                {
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Reminder successfully saved!", "Success",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Reminder was not saved. No rows affected.", "Warning",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Помилка завантаження жанрів: {ex.Message}", "Помилка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return Genres;
-        }
-
-        public List<RolesConfig> LoadRoles()
-        {
-            string query = "SELECT id, name FROM role";
-
-            List<RolesConfig> roles = new List<RolesConfig>();
-
-            try
-            {
-                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
+                catch (Exception ex)
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            RolesConfig genreConfig = new RolesConfig
-                            (
-                                Convert.ToInt32(reader["id"]),
-                                reader["name"].ToString()
-                            );
-
-
-                            roles.Add(genreConfig);
-                        }
-                    }
+                    MessageBox.Show($"Error saving reminder: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Помилка завантаження жанрів: {ex.Message}", "Помилка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return roles;
         }
 
         public bool AddBook(string name, string author, int year, string publishing,
-                            int quantity, string photoPath, int genreId)
+                                    int quantity, string photoPath, int genreId)
         {
             string query = "INSERT INTO book (name, author, year, publishing, quantity, photo, genreId) " +
                          "VALUES (@Name, @Author, @Year, @Publishing, @Quantity, @Photo, @GenreId)";
@@ -256,17 +187,17 @@ namespace library
                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    return rowsAffected > 0; 
+                    return rowsAffected > 0;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error adding user: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false; 
+                return false;
             }
         }
 
-        public bool AddCustomer(string name, string surname, string patronymic, string phone)
+        public bool AddClient(string name, string surname, string patronymic, string phone)
         {
             string query = "INSERT INTO client (name, surname, patronymic, phone) " +
                            "VALUES (@Name, @Surname, @Patronymic, @Phone)";
@@ -284,7 +215,7 @@ namespace library
 
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("User successfully added!", "Success",
+                        MessageBox.Show("Client successfully added!", "Success",
                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -293,9 +224,44 @@ namespace library
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error adding user: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error adding client: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+
+        public List<GenreConfig> LoadGenres()
+        {
+            string query = "SELECT id, name FROM genre";
+
+            List<GenreConfig> Genres = new List<GenreConfig>();
+
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            GenreConfig genreConfig = new GenreConfig
+                            (
+                                Convert.ToInt32(reader["id"]),
+                                reader["name"].ToString()
+                            );
+
+
+                            Genres.Add(genreConfig);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка завантаження жанрів: {ex.Message}", "Помилка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return Genres;
         }
 
         public List<BookConfig> LoadBooks()
@@ -362,10 +328,11 @@ namespace library
             return null;
         }
 
-        public List<EmployeeConfig> LoadEmployee()
+        public List<RoleConfig> LoadRoles()
         {
-            string query = "SELECT id, name, IFNULL(surname, '') AS surname, phone, login, password, roleId FROM user";
-            List<EmployeeConfig> employees = new List<EmployeeConfig>();
+            string query = "SELECT id, name FROM role";
+
+            List<RoleConfig> roles = new List<RoleConfig>();
 
             try
             {
@@ -375,36 +342,69 @@ namespace library
                     {
                         while (reader.Read())
                         {
-                            EmployeeConfig employee = new EmployeeConfig
-                            {
-                                Id = Convert.ToInt32(reader["id"]),
-                                Name = reader["name"].ToString(),
-                                Surname = reader["surname"].ToString(),
-                                Phone = reader["phone"].ToString(),
-                                Login = reader["login"].ToString(),
-                                Password = reader["password"].ToString(),
-                                RoleId = Convert.ToInt32(reader["roleId"])
-                            };
-                            employees.Add(employee);
+                            RoleConfig genreConfig = new RoleConfig
+                            (
+                                Convert.ToInt32(reader["id"]),
+                                reader["name"].ToString()
+                            );
+
+
+                            roles.Add(genreConfig);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading employees: {ex.Message}", "Error",
+                MessageBox.Show($"Помилка завантаження ролів: {ex.Message}", "Помилка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return employees;
+            return roles;
         }
 
+        public List<UserConfig> LoadUsers()
+        {
+            string query = "SELECT id, name, surname, phone, login, password, roleId FROM user";
+            List<UserConfig> users = new List<UserConfig>();
 
-        public List<CustomerConfig> LoadCustomer()
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            UserConfig user = new UserConfig
+                            (
+                                Convert.ToInt32(reader["id"]),
+                                reader["name"].ToString(),
+                                reader["surname"].ToString(),
+                                reader["phone"].ToString(),
+                                reader["login"].ToString(),
+                                reader["password"].ToString(),
+                                Convert.ToInt32(reader["roleId"])
+                            );
+                            users.Add(user);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading users: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return users;
+        }
+
+        public List<ClientConfig> LoadClients()
         {
             string query = "SELECT id, name, surname, patronymic, phone FROM client";
 
-            List<CustomerConfig> customers = new List<CustomerConfig>();
+            List<ClientConfig> clients = new List<ClientConfig>();
 
             try
             {
@@ -414,26 +414,26 @@ namespace library
                     {
                         while (reader.Read())
                         {
-                            CustomerConfig employee = new CustomerConfig
-                            {
-                                Id = Convert.ToInt32(reader["id"]),
-                                Name = reader["name"].ToString(),
-                                Surname = reader["surname"].ToString(),
-                                Patronymic = reader["patronymic"].ToString(),
-                                Phone = reader["phone"].ToString()
-                            };
-                            customers.Add(employee);
+                            ClientConfig client = new ClientConfig
+                            (
+                                Convert.ToInt32(reader["id"]),
+                                reader["name"].ToString(),
+                                reader["surname"].ToString(),
+                                reader["patronymic"].ToString(),
+                                reader["phone"].ToString()
+                            );
+                            clients.Add(client);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading customers: {ex.Message}", "Error",
+                MessageBox.Show($"Error loading clients: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return customers;
+            return clients;
         }
 
         public List<ReminderConfig> LoadReminder()
@@ -457,7 +457,7 @@ namespace library
                             Convert.ToInt32(reader["id"]),
                             reader["title"].ToString(),
                             reader["description"].ToString(),
-                            reminderDate 
+                            reminderDate
                         );
 
                         reminderCards.Add(reminderCardConfig);
@@ -516,7 +516,7 @@ namespace library
             }
         }
 
-        public void UpdateEmployee(EmployeeConfig employeeConfig)
+        public void UpdateUser(UserConfig userConfig)
         {
             string query = @"UPDATE user 
                      SET name = @name, 
@@ -525,61 +525,61 @@ namespace library
                          login = @login, 
                          password = @password,
                          roleId = @roleId 
-                     WHERE id = @employeeId";
+                     WHERE id = @userId";
 
             try
             {
                 using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
                 {
-                    command.Parameters.AddWithValue("@name", employeeConfig.Name);
-                    command.Parameters.AddWithValue("@surname", employeeConfig.Surname);
-                    command.Parameters.AddWithValue("@phone", employeeConfig.Phone);
-                    command.Parameters.AddWithValue("@login", employeeConfig.Login);
-                    command.Parameters.AddWithValue("@password", employeeConfig.Password);
-                    command.Parameters.AddWithValue("@roleId", employeeConfig.RoleId);
-                    command.Parameters.AddWithValue("@employeeId", employeeConfig.Id);
+                    command.Parameters.AddWithValue("@name", userConfig.Name);
+                    command.Parameters.AddWithValue("@surname", userConfig.Surname);
+                    command.Parameters.AddWithValue("@phone", userConfig.Phone);
+                    command.Parameters.AddWithValue("@login", userConfig.Login);
+                    command.Parameters.AddWithValue("@password", userConfig.Password);
+                    command.Parameters.AddWithValue("@roleId", userConfig.RoleId);
+                    command.Parameters.AddWithValue("@userId", userConfig.Id);
 
                     command.ExecuteNonQuery();
 
-                    MessageBox.Show("Employee successfully updated!", "Success",
+                    MessageBox.Show("User successfully updated!", "Success",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error updating employee: {ex.Message}",
+                MessageBox.Show($"Error updating user: {ex.Message}",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void UpdateCustomer(CustomerConfig customerConfig)
+        public void UpdateClient(ClientConfig clientConfig)
         {
             string query = @"UPDATE client 
                      SET name = @name, 
                          surname = @surname, 
                          patronymic = @patronymic, 
                          phone = @phone
-                     WHERE id = @customerId";
+                     WHERE id = @clientId";
 
             try
             {
                 using (MySqlCommand command = new MySqlCommand(query, sqlConnection))
                 {
-                    command.Parameters.AddWithValue("@name", customerConfig.Name);
-                    command.Parameters.AddWithValue("@surname", customerConfig.Surname);
-                    command.Parameters.AddWithValue("@patronymic", customerConfig.Patronymic);
-                    command.Parameters.AddWithValue("@phone", customerConfig.Phone);
-                    command.Parameters.AddWithValue("@customerId", customerConfig.Id);
+                    command.Parameters.AddWithValue("@name", clientConfig.Name);
+                    command.Parameters.AddWithValue("@surname", clientConfig.Surname);
+                    command.Parameters.AddWithValue("@patronymic", clientConfig.Patronymic);
+                    command.Parameters.AddWithValue("@phone", clientConfig.Phone);
+                    command.Parameters.AddWithValue("@clientId", clientConfig.Id);
 
                     command.ExecuteNonQuery();
 
-                    MessageBox.Show("Employee successfully updated!", "Success",
+                    MessageBox.Show("Client successfully updated!", "Success",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error updating employee: {ex.Message}",
+                MessageBox.Show($"Error updating user: {ex.Message}",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

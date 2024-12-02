@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    internal class BookListManager
+    internal class BooksListManager
     {
         private List<BookConfig> books;
 
-        public BookListManager()
+        public BooksListManager()
         {
             LoadBooks();
         }

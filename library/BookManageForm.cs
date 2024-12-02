@@ -16,12 +16,13 @@ namespace library
     {
         private BooksForm booksForm;
         private BookDetailsForm bookDetailsForm;
-        public BookConfig bookCardConfig { get; set; }
 
-        public BookManageForm(BookConfig bookCardConfig, BooksForm booksForm)
+        public BookConfig bookConfig { get; set; }
+
+        public BookManageForm(BookConfig bookConfig, BooksForm booksForm)
         {
             InitializeComponent();
-            this.bookCardConfig = bookCardConfig;
+            this.bookConfig = bookConfig;
             this.booksForm = booksForm;
 
             bookDetailsForm = new BookDetailsForm(booksForm, this);
@@ -32,7 +33,6 @@ namespace library
         {
             get { return panel_book_interaction; }
         }
-
 
         public void UpdateBookInfoForm()
         {
@@ -46,7 +46,7 @@ namespace library
         {
             using (DataBaseHelper dbHelper = new DataBaseHelper())
             {
-                bookCardConfig = dbHelper.LoadBookDetails(bookCardConfig.Id);
+                bookConfig = dbHelper.LoadBookDetails(bookConfig.Id);
             }
         }
     }

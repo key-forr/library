@@ -8,11 +8,11 @@ namespace library
 {
     public class AuthorizationPresenter
     {
-        private readonly AutorizationForm view;
+        private readonly AutorizationForm autorizationForm;
 
-        public AuthorizationPresenter(AutorizationForm view) 
+        public AuthorizationPresenter(AutorizationForm autorizationForm) 
         {
-            this.view = view;
+            this.autorizationForm = autorizationForm;
         }
 
         public void HandleLogin(string login, string password)
@@ -23,7 +23,7 @@ namespace library
                 if (string.IsNullOrEmpty(login) && string.IsNullOrEmpty(password))
                     errorMessage = "Заповніть логін та пароль!";
 
-                view.ShowError(errorMessage);
+                autorizationForm.ShowError(errorMessage);
                 return;
             }
 
@@ -32,11 +32,11 @@ namespace library
             {
                 UserSession.Login = login;
                 dataBaseHelper.GetUserData(login);
-                view.NavigateToHome();
+                autorizationForm.NavigateToHome();
             }
             else
             {
-                view.ShowError("Неправильний логін або пароль!");
+                autorizationForm.ShowError("Неправильний логін або пароль!");
             }
         }
     }

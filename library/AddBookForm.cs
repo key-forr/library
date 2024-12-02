@@ -26,7 +26,7 @@ namespace library
 
         private void LoadGenres()
         {
-            GenreListManager genreListManager = new GenreListManager();
+            GenresListManager genreListManager = new GenresListManager();
             foreach (var genre in genreListManager.Genres)
             {
                 combo_box_genre.Items.Add(genre.Name);
@@ -49,7 +49,7 @@ namespace library
 
         private void button_add_book_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(text_box_book_name.Text)
+            if (string.IsNullOrWhiteSpace(text_box_name.Text)
                || string.IsNullOrWhiteSpace(text_box_author.Text)
                || string.IsNullOrWhiteSpace(text_box_year.Text)
                || string.IsNullOrWhiteSpace(text_box_publishing.Text)
@@ -63,7 +63,7 @@ namespace library
 
             try
             {
-                string name = text_box_book_name.Text;
+                string name = text_box_name.Text;
                 string author = text_box_author.Text;
                 int year = int.Parse(text_box_year.Text);
                 string publishing = text_box_publishing.Text;
@@ -77,7 +77,7 @@ namespace library
                                             quantity, photoPath, genreId);
                 }
 
-                text_box_book_name.Text = "";
+                text_box_name.Text = "";
                 text_box_author.Text = "";
                 text_box_year.Text = "";
                 text_box_publishing.Text = "";

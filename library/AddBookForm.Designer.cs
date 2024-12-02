@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.label_add_book = new System.Windows.Forms.Label();
-            this.label_book_name = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
             this.label_publishing = new System.Windows.Forms.Label();
             this.label_quantity = new System.Windows.Forms.Label();
             this.label_genre = new System.Windows.Forms.Label();
             this.label_photo = new System.Windows.Forms.Label();
             this.label_year = new System.Windows.Forms.Label();
-            this.text_box_book_name = new Guna.UI2.WinForms.Guna2TextBox();
+            this.text_box_name = new Guna.UI2.WinForms.Guna2TextBox();
             this.text_box_author = new Guna.UI2.WinForms.Guna2TextBox();
             this.text_box_year = new Guna.UI2.WinForms.Guna2TextBox();
             this.text_box_publishing = new Guna.UI2.WinForms.Guna2TextBox();
@@ -60,58 +60,58 @@
             this.label_add_book.Text = "Додати книгу";
             this.label_add_book.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label_book_name
+            // label_name
             // 
-            this.label_book_name.AutoSize = true;
-            this.label_book_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_book_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.label_book_name.Location = new System.Drawing.Point(36, 109);
-            this.label_book_name.Name = "label_book_name";
-            this.label_book_name.Size = new System.Drawing.Size(113, 20);
-            this.label_book_name.TabIndex = 1;
-            this.label_book_name.Text = "Назва книги";
+            this.label_name.AutoSize = true;
+            this.label_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
+            this.label_name.Location = new System.Drawing.Point(36, 104);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(133, 25);
+            this.label_name.TabIndex = 1;
+            this.label_name.Text = "Назва книги";
             // 
             // label_author
             // 
             this.label_author.AutoSize = true;
-            this.label_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_author.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.label_author.Location = new System.Drawing.Point(36, 196);
+            this.label_author.Location = new System.Drawing.Point(36, 190);
             this.label_author.Name = "label_author";
-            this.label_author.Size = new System.Drawing.Size(61, 20);
+            this.label_author.Size = new System.Drawing.Size(74, 25);
             this.label_author.TabIndex = 2;
             this.label_author.Text = "Автор";
             // 
             // label_publishing
             // 
             this.label_publishing.AutoSize = true;
-            this.label_publishing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_publishing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_publishing.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.label_publishing.Location = new System.Drawing.Point(221, 278);
+            this.label_publishing.Location = new System.Drawing.Point(220, 273);
             this.label_publishing.Name = "label_publishing";
-            this.label_publishing.Size = new System.Drawing.Size(123, 20);
+            this.label_publishing.Size = new System.Drawing.Size(145, 25);
             this.label_publishing.TabIndex = 3;
             this.label_publishing.Text = "Видавництво";
             // 
             // label_quantity
             // 
             this.label_quantity.AutoSize = true;
-            this.label_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_quantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.label_quantity.Location = new System.Drawing.Point(36, 435);
+            this.label_quantity.Location = new System.Drawing.Point(36, 432);
             this.label_quantity.Name = "label_quantity";
-            this.label_quantity.Size = new System.Drawing.Size(86, 20);
+            this.label_quantity.Size = new System.Drawing.Size(105, 25);
             this.label_quantity.TabIndex = 4;
             this.label_quantity.Text = "Кількість";
             // 
             // label_genre
             // 
             this.label_genre.AutoSize = true;
-            this.label_genre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_genre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_genre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.label_genre.Location = new System.Drawing.Point(36, 357);
+            this.label_genre.Location = new System.Drawing.Point(36, 359);
             this.label_genre.Name = "label_genre";
-            this.label_genre.Size = new System.Drawing.Size(53, 20);
+            this.label_genre.Size = new System.Drawing.Size(67, 25);
             this.label_genre.TabIndex = 5;
             this.label_genre.Text = "Жанр";
             // 
@@ -129,40 +129,44 @@
             // label_year
             // 
             this.label_year.AutoSize = true;
-            this.label_year.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_year.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_year.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
-            this.label_year.Location = new System.Drawing.Point(36, 278);
+            this.label_year.Location = new System.Drawing.Point(36, 273);
             this.label_year.Name = "label_year";
-            this.label_year.Size = new System.Drawing.Size(110, 20);
+            this.label_year.Size = new System.Drawing.Size(130, 25);
             this.label_year.TabIndex = 7;
             this.label_year.Text = "Рік видання";
             // 
-            // text_box_book_name
+            // text_box_name
             // 
-            this.text_box_book_name.BorderColor = System.Drawing.Color.White;
-            this.text_box_book_name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.text_box_book_name.DefaultText = "";
-            this.text_box_book_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.text_box_book_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.text_box_book_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_book_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.text_box_book_name.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.text_box_book_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_book_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.text_box_book_name.ForeColor = System.Drawing.Color.White;
-            this.text_box_book_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.text_box_book_name.Location = new System.Drawing.Point(34, 134);
-            this.text_box_book_name.Margin = new System.Windows.Forms.Padding(5);
-            this.text_box_book_name.Name = "text_box_book_name";
-            this.text_box_book_name.PasswordChar = '\0';
-            this.text_box_book_name.PlaceholderText = "";
-            this.text_box_book_name.SelectedText = "";
-            this.text_box_book_name.Size = new System.Drawing.Size(604, 47);
-            this.text_box_book_name.TabIndex = 9;
+            this.text_box_name.BorderColor = System.Drawing.Color.White;
+            this.text_box_name.BorderRadius = 10;
+            this.text_box_name.BorderThickness = 0;
+            this.text_box_name.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.text_box_name.DefaultText = "";
+            this.text_box_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.text_box_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.text_box_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.text_box_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.text_box_name.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.text_box_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.text_box_name.ForeColor = System.Drawing.Color.White;
+            this.text_box_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.text_box_name.Location = new System.Drawing.Point(34, 134);
+            this.text_box_name.Margin = new System.Windows.Forms.Padding(5);
+            this.text_box_name.Name = "text_box_name";
+            this.text_box_name.PasswordChar = '\0';
+            this.text_box_name.PlaceholderText = "";
+            this.text_box_name.SelectedText = "";
+            this.text_box_name.Size = new System.Drawing.Size(604, 47);
+            this.text_box_name.TabIndex = 9;
             // 
             // text_box_author
             // 
             this.text_box_author.BorderColor = System.Drawing.Color.White;
+            this.text_box_author.BorderRadius = 10;
+            this.text_box_author.BorderThickness = 0;
             this.text_box_author.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_author.DefaultText = "";
             this.text_box_author.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -186,6 +190,8 @@
             // text_box_year
             // 
             this.text_box_year.BorderColor = System.Drawing.Color.White;
+            this.text_box_year.BorderRadius = 10;
+            this.text_box_year.BorderThickness = 0;
             this.text_box_year.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_year.DefaultText = "";
             this.text_box_year.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -210,6 +216,8 @@
             // text_box_publishing
             // 
             this.text_box_publishing.BorderColor = System.Drawing.Color.White;
+            this.text_box_publishing.BorderRadius = 10;
+            this.text_box_publishing.BorderThickness = 0;
             this.text_box_publishing.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_publishing.DefaultText = "";
             this.text_box_publishing.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -234,6 +242,8 @@
             // 
             this.combo_box_genre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.combo_box_genre.BorderColor = System.Drawing.Color.White;
+            this.combo_box_genre.BorderRadius = 10;
+            this.combo_box_genre.BorderThickness = 0;
             this.combo_box_genre.Cursor = System.Windows.Forms.Cursors.Hand;
             this.combo_box_genre.DisplayMember = "id";
             this.combo_box_genre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -253,6 +263,8 @@
             // text_box_quantity
             // 
             this.text_box_quantity.BorderColor = System.Drawing.Color.White;
+            this.text_box_quantity.BorderRadius = 10;
+            this.text_box_quantity.BorderThickness = 0;
             this.text_box_quantity.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.text_box_quantity.DefaultText = "";
             this.text_box_quantity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -278,6 +290,7 @@
             // 
             this.button_add_book.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
             this.button_add_book.BorderRadius = 10;
+            this.button_add_book.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_add_book.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.button_add_book.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.button_add_book.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -335,14 +348,14 @@
             this.Controls.Add(this.text_box_publishing);
             this.Controls.Add(this.text_box_year);
             this.Controls.Add(this.text_box_author);
-            this.Controls.Add(this.text_box_book_name);
+            this.Controls.Add(this.text_box_name);
             this.Controls.Add(this.label_year);
             this.Controls.Add(this.label_photo);
             this.Controls.Add(this.label_genre);
             this.Controls.Add(this.label_quantity);
             this.Controls.Add(this.label_publishing);
             this.Controls.Add(this.label_author);
-            this.Controls.Add(this.label_book_name);
+            this.Controls.Add(this.label_name);
             this.Controls.Add(this.label_add_book);
             this.Name = "AddBookForm";
             this.Text = "AddBookForm";
@@ -356,14 +369,14 @@
         #endregion
 
         private System.Windows.Forms.Label label_add_book;
-        private System.Windows.Forms.Label label_book_name;
+        private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Label label_author;
         private System.Windows.Forms.Label label_publishing;
         private System.Windows.Forms.Label label_quantity;
         private System.Windows.Forms.Label label_genre;
         private System.Windows.Forms.Label label_photo;
         private System.Windows.Forms.Label label_year;
-        private Guna.UI2.WinForms.Guna2TextBox text_box_book_name;
+        private Guna.UI2.WinForms.Guna2TextBox text_box_name;
         private Guna.UI2.WinForms.Guna2TextBox text_box_author;
         private Guna.UI2.WinForms.Guna2TextBox text_box_year;
         private Guna.UI2.WinForms.Guna2TextBox text_box_publishing;

@@ -7,19 +7,19 @@ using System.Web;
 
 namespace library
 {
-    internal class GenreListManager
+    internal class GenresListManager
     {
         private List<GenreConfig> genres;
-
-        public GenreListManager()
-        {
-            LoadGenres();
-        }
 
         public List<GenreConfig> Genres
         {
             get { return genres; }
             private set { genres = value; }
+        }
+
+        public GenresListManager()
+        {
+            LoadGenres();
         }
 
         public void LoadGenres()

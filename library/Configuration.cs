@@ -18,12 +18,12 @@ namespace library
         }
     }
 
-    internal class RolesConfig
+    internal class RoleConfig
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public RolesConfig(int id, string name)
+        public RoleConfig(int id, string name)
         {
             Id = id;
             Name = name;
@@ -70,23 +70,43 @@ namespace library
         }
     }
 
-    public class EmployeeConfig
+    public class UserConfig
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Phone { get; set; }
-        public string Password { get; set; }
         public string Login { get; set; }
+        public string Password { get; set; }
         public int RoleId { get; set; }
+
+        public UserConfig(int id, string name, string surname, string phone, string login, string password, int roleId)
+        {
+            Id = id;
+            Name = name;
+            Surname = surname;
+            Phone = phone;
+            Login = login;
+            Password = password;
+            RoleId = roleId;
+        }
     }
 
-    public class CustomerConfig
+    public class ClientConfig
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Patronymic { get; set; }
         public string Phone { get; set; }
+
+        public ClientConfig(int id, string name, string surname, string patronymic, string phone)
+        {
+            Id = id;
+            Name = name;
+            Surname = surname;
+            Patronymic = patronymic;
+            Phone = phone;
+        }
     }
 }

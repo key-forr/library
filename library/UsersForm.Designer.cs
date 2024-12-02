@@ -1,6 +1,6 @@
 ﻿namespace library
 {
-    partial class CustomerForm
+    partial class UsersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel_client_interaction = new System.Windows.Forms.Panel();
-            this.panel_add_customer = new System.Windows.Forms.Panel();
-            this.button_add_customer = new Guna.UI2.WinForms.Guna2Button();
+            this.panel_user_interaction = new System.Windows.Forms.Panel();
             this.text_box_search = new Guna.UI2.WinForms.Guna2TextBox();
             this.button_back = new FontAwesome.Sharp.IconButton();
+            this.button_add_user_navigation = new Guna.UI2.WinForms.Guna2Button();
+            this.panel_users_list = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panel_client_interaction
+            // panel_user_interaction
             // 
-            this.panel_client_interaction.Location = new System.Drawing.Point(915, 12);
-            this.panel_client_interaction.Name = "panel_client_interaction";
-            this.panel_client_interaction.Size = new System.Drawing.Size(495, 662);
-            this.panel_client_interaction.TabIndex = 30;
-            // 
-            // panel_add_customer
-            // 
-            this.panel_add_customer.Location = new System.Drawing.Point(414, 12);
-            this.panel_add_customer.Name = "panel_add_customer";
-            this.panel_add_customer.Size = new System.Drawing.Size(495, 662);
-            this.panel_add_customer.TabIndex = 31;
-            // 
-            // button_add_customer
-            // 
-            this.button_add_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.button_add_customer.BorderRadius = 10;
-            this.button_add_customer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_add_customer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_add_customer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_add_customer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_add_customer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_add_customer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
-            this.button_add_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_add_customer.ForeColor = System.Drawing.Color.White;
-            this.button_add_customer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
-            this.button_add_customer.Location = new System.Drawing.Point(66, 159);
-            this.button_add_customer.Name = "button_add_customer";
-            this.button_add_customer.Size = new System.Drawing.Size(265, 50);
-            this.button_add_customer.TabIndex = 56;
-            this.button_add_customer.Text = "Додати клієнта";
-            this.button_add_customer.Click += new System.EventHandler(this.button_add_customer_Click);
+            this.panel_user_interaction.Location = new System.Drawing.Point(451, 12);
+            this.panel_user_interaction.Name = "panel_user_interaction";
+            this.panel_user_interaction.Size = new System.Drawing.Size(458, 662);
+            this.panel_user_interaction.TabIndex = 28;
             // 
             // text_box_search
             // 
@@ -86,7 +59,7 @@
             this.text_box_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(100)))), ((int)(((byte)(126)))));
             this.text_box_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.text_box_search.IconLeft = global::library.Properties.Resources.Search;
-            this.text_box_search.Location = new System.Drawing.Point(66, 90);
+            this.text_box_search.Location = new System.Drawing.Point(93, 69);
             this.text_box_search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_box_search.Name = "text_box_search";
             this.text_box_search.PasswordChar = '\0';
@@ -95,11 +68,10 @@
             this.text_box_search.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.text_box_search.SelectedText = "";
             this.text_box_search.Size = new System.Drawing.Size(265, 45);
-            this.text_box_search.TabIndex = 28;
+            this.text_box_search.TabIndex = 27;
             // 
             // button_back
             // 
-            this.button_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
             this.button_back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_back.FlatAppearance.BorderSize = 0;
             this.button_back.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
@@ -111,33 +83,62 @@
             this.button_back.Location = new System.Drawing.Point(12, 12);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(55, 46);
-            this.button_back.TabIndex = 22;
-            this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.TabIndex = 20;
+            this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
-            // CustomerForm
+            // button_add_user_navigation
+            // 
+            this.button_add_user_navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.button_add_user_navigation.BorderRadius = 10;
+            this.button_add_user_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_add_user_navigation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_add_user_navigation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_add_user_navigation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_add_user_navigation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_add_user_navigation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
+            this.button_add_user_navigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_add_user_navigation.ForeColor = System.Drawing.Color.White;
+            this.button_add_user_navigation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
+            this.button_add_user_navigation.Location = new System.Drawing.Point(93, 140);
+            this.button_add_user_navigation.Name = "button_add_user_navigation";
+            this.button_add_user_navigation.Size = new System.Drawing.Size(265, 50);
+            this.button_add_user_navigation.TabIndex = 55;
+            this.button_add_user_navigation.Text = "Додати користувача";
+            this.button_add_user_navigation.Click += new System.EventHandler(this.button_add_user_navigation_Click);
+            this.button_add_user_navigation.MouseEnter += new System.EventHandler(this.button_add_user_navigation_MouseEnter);
+            this.button_add_user_navigation.MouseLeave += new System.EventHandler(this.button_add_user_navigation_MouseLeave);
+            // 
+            // panel_users_list
+            // 
+            this.panel_users_list.Location = new System.Drawing.Point(915, 12);
+            this.panel_users_list.Name = "panel_users_list";
+            this.panel_users_list.Size = new System.Drawing.Size(495, 662);
+            this.panel_users_list.TabIndex = 29;
+            // 
+            // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(1422, 686);
-            this.Controls.Add(this.button_add_customer);
-            this.Controls.Add(this.panel_add_customer);
-            this.Controls.Add(this.panel_client_interaction);
+            this.Controls.Add(this.panel_users_list);
+            this.Controls.Add(this.button_add_user_navigation);
+            this.Controls.Add(this.panel_user_interaction);
             this.Controls.Add(this.text_box_search);
             this.Controls.Add(this.button_back);
-            this.Name = "CustomerForm";
-            this.Text = "CustomerForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "UsersForm";
+            this.Text = "UsersForm";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
         private FontAwesome.Sharp.IconButton button_back;
         private Guna.UI2.WinForms.Guna2TextBox text_box_search;
-        private System.Windows.Forms.Panel panel_client_interaction;
-        private System.Windows.Forms.Panel panel_add_customer;
-        private Guna.UI2.WinForms.Guna2Button button_add_customer;
+        private System.Windows.Forms.Panel panel_user_interaction;
+        private Guna.UI2.WinForms.Guna2Button button_add_user_navigation;
+        private System.Windows.Forms.Panel panel_users_list;
     }
 }

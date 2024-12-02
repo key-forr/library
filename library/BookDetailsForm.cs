@@ -26,37 +26,37 @@ namespace library
         {
             using (DataBaseHelper dbHelper = new DataBaseHelper())
             {
-                bookManageForm.bookCardConfig = dbHelper.LoadBookDetails(bookManageForm.bookCardConfig.Id);
+                bookManageForm.bookConfig = dbHelper.LoadBookDetails(bookManageForm.bookConfig.Id);
 
-                text_box_author.Text = bookManageForm.bookCardConfig.Author;
-                label_name.Text = bookManageForm.bookCardConfig.Name;
-                picure_box_book.Image = ImageUtils.LoadAndScaleImage(bookManageForm.bookCardConfig.ImagePath, new Size(263, 403));
-                text_box_genre.Text = new GenreListManager().Genres.FirstOrDefault(g => g.Id == bookManageForm.bookCardConfig.GenreId)?.Name ?? "Жанр не знайдено";
-                text_box_publishing.Text = bookManageForm.bookCardConfig.Publishing;
-                text_box_quantity.Text = bookManageForm.bookCardConfig.Quantity.ToString();
-                text_box_year.Text = bookManageForm.bookCardConfig.Year.ToString();
+                text_box_author.Text = bookManageForm.bookConfig.Author;
+                label_name.Text = bookManageForm.bookConfig.Name;
+                picure_box_book.Image = ImageUtils.LoadAndScaleImage(bookManageForm.bookConfig.ImagePath, new Size(263, 403));
+                text_box_genre.Text = new GenresListManager().Genres.FirstOrDefault(g => g.Id == bookManageForm.bookConfig.GenreId)?.Name ?? "Жанр не знайдено";
+                text_box_publishing.Text = bookManageForm.bookConfig.Publishing;
+                text_box_quantity.Text = bookManageForm.bookConfig.Quantity.ToString();
+                text_box_year.Text = bookManageForm.bookConfig.Year.ToString();
             }
-        }
-
-        private void button_edit_book_MouseEnter(object sender, EventArgs e)
-        {
-            ButtonUtils.AnimateButtonOnHover(button_edit_book, true, Color.FromArgb(36, 42, 78), 5);
-        }
-
-        private void button_edit_book_MouseLeave(object sender, EventArgs e)
-        {
-            ButtonUtils.AnimateButtonOnHover(button_edit_book, false, Color.FromArgb(36, 42, 78), 5);
-        }
-
-        private void button_edit_book_Click(object sender, EventArgs e)
-        {
-            EditBookForm childForm = new EditBookForm(booksForm, bookManageForm);
-            PanelAndFormManager.EmbedFormInPanel(childForm, bookManageForm.PanelBookInteraction);
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
             bookManageForm.Close();
+        }
+
+        private void button_edit_Click(object sender, EventArgs e)
+        {
+            BookEditForm childForm = new BookEditForm(booksForm, bookManageForm);
+            PanelAndFormManager.EmbedFormInPanel(childForm, bookManageForm.PanelBookInteraction);
+        }
+
+        private void button_edit_MouseEnter(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateButtonOnHover(button_edit, true, Color.FromArgb(36, 42, 78), 5);
+        }
+
+        private void button_edit_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonUtils.AnimateButtonOnHover(button_edit, false, Color.FromArgb(36, 42, 78), 5);
         }
     }
 }

@@ -16,6 +16,7 @@ namespace library
     public partial class ReminderAddForm : Form
     {
         private HomeForm homeForm;
+
         public ReminderAddForm(HomeForm homeForm)
         {
             InitializeComponent();
@@ -40,8 +41,9 @@ namespace library
             {
                 using (DataBaseHelper dataBaseHelper = new DataBaseHelper())
                 {
-                    dataBaseHelper.SaveReminder(date_picker.Value, text_box_title.Text, text_box_description.Text, UserSession.Login);
+                    dataBaseHelper.AddReminder(text_box_title.Text, text_box_description.Text, date_picker.Value);
                 }
+
                 homeForm.UpdateReminderListForm();
 
                 text_box_title.Text = "";

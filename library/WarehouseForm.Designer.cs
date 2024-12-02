@@ -1,6 +1,6 @@
 ﻿namespace library
 {
-    partial class StorageForm
+    partial class WarehouseForm
     {
         /// <summary>
         /// Required designer variable.

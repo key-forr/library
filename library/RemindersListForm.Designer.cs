@@ -1,6 +1,6 @@
 ﻿namespace library
 {
-    partial class ReminderListForm
+    partial class RemindersListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,6 @@
             this.ClientSize = new System.Drawing.Size(359, 216);
             this.Name = "ReminderListForm";
             this.Text = "ReminderListForm";
-            this.Load += new System.EventHandler(this.ReminderListForm_Load);
             this.ResumeLayout(false);
 
         }

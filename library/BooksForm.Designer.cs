@@ -32,79 +32,79 @@ namespace library
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel = new System.Windows.Forms.Panel();
-            this.button_list_book = new Guna.UI2.WinForms.Guna2Button();
             this.panel_main = new System.Windows.Forms.Panel();
-            this.button_add_book = new Guna.UI2.WinForms.Guna2Button();
+            this.button_books_list_navigation = new Guna.UI2.WinForms.Guna2Button();
+            this.panel_books_interaction = new System.Windows.Forms.Panel();
+            this.button_add_book_navigation = new Guna.UI2.WinForms.Guna2Button();
             this.text_box_search = new Guna.UI2.WinForms.Guna2TextBox();
             this.button_back = new FontAwesome.Sharp.IconButton();
-            this.panel.SuspendLayout();
+            this.panel_main.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel
-            // 
-            this.panel.Controls.Add(this.button_list_book);
-            this.panel.Controls.Add(this.panel_main);
-            this.panel.Controls.Add(this.button_add_book);
-            this.panel.Controls.Add(this.text_box_search);
-            this.panel.Controls.Add(this.button_back);
-            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(0, 0);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1422, 686);
-            this.panel.TabIndex = 0;
-            // 
-            // button_list_book
-            // 
-            this.button_list_book.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.button_list_book.BorderRadius = 10;
-            this.button_list_book.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_list_book.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_list_book.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_list_book.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_list_book.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_list_book.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
-            this.button_list_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_list_book.ForeColor = System.Drawing.Color.White;
-            this.button_list_book.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
-            this.button_list_book.Location = new System.Drawing.Point(87, 151);
-            this.button_list_book.Name = "button_list_book";
-            this.button_list_book.Size = new System.Drawing.Size(243, 50);
-            this.button_list_book.TabIndex = 29;
-            this.button_list_book.Text = "Список Книг";
-            this.button_list_book.Click += new System.EventHandler(this.button_list_book_Click);
-            this.button_list_book.MouseEnter += new System.EventHandler(this.button_list_book_MouseEnter);
-            this.button_list_book.MouseLeave += new System.EventHandler(this.button_list_book_MouseLeave);
             // 
             // panel_main
             // 
-            this.panel_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.panel_main.Location = new System.Drawing.Point(394, 12);
+            this.panel_main.Controls.Add(this.button_books_list_navigation);
+            this.panel_main.Controls.Add(this.panel_books_interaction);
+            this.panel_main.Controls.Add(this.button_add_book_navigation);
+            this.panel_main.Controls.Add(this.text_box_search);
+            this.panel_main.Controls.Add(this.button_back);
+            this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_main.Location = new System.Drawing.Point(0, 0);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1016, 662);
-            this.panel_main.TabIndex = 28;
+            this.panel_main.Size = new System.Drawing.Size(1422, 686);
+            this.panel_main.TabIndex = 0;
             // 
-            // button_add_book
+            // button_books_list_navigation
             // 
-            this.button_add_book.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
-            this.button_add_book.BorderRadius = 10;
-            this.button_add_book.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_add_book.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_add_book.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_add_book.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_add_book.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_add_book.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
-            this.button_add_book.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add_book.ForeColor = System.Drawing.Color.White;
-            this.button_add_book.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
-            this.button_add_book.Location = new System.Drawing.Point(87, 224);
-            this.button_add_book.Name = "button_add_book";
-            this.button_add_book.Size = new System.Drawing.Size(243, 50);
-            this.button_add_book.TabIndex = 27;
-            this.button_add_book.Text = "Додати книгу";
-            this.button_add_book.Click += new System.EventHandler(this.button_add_book_Click);
-            this.button_add_book.MouseEnter += new System.EventHandler(this.button_add_book_MouseEnter);
-            this.button_add_book.MouseLeave += new System.EventHandler(this.button_add_book_MouseLeave);
+            this.button_books_list_navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.button_books_list_navigation.BorderRadius = 10;
+            this.button_books_list_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_books_list_navigation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_books_list_navigation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_books_list_navigation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_books_list_navigation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_books_list_navigation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
+            this.button_books_list_navigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_books_list_navigation.ForeColor = System.Drawing.Color.White;
+            this.button_books_list_navigation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
+            this.button_books_list_navigation.Location = new System.Drawing.Point(93, 140);
+            this.button_books_list_navigation.Name = "button_books_list_navigation";
+            this.button_books_list_navigation.Size = new System.Drawing.Size(265, 50);
+            this.button_books_list_navigation.TabIndex = 29;
+            this.button_books_list_navigation.Text = "Список книг";
+            this.button_books_list_navigation.Click += new System.EventHandler(this.button_list_book_Click);
+            this.button_books_list_navigation.MouseEnter += new System.EventHandler(this.button_books_list_navigation_MouseEnter);
+            this.button_books_list_navigation.MouseLeave += new System.EventHandler(this.button_books_list_navigation_MouseLeave);
+            // 
+            // panel_books_interaction
+            // 
+            this.panel_books_interaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
+            this.panel_books_interaction.Location = new System.Drawing.Point(394, 12);
+            this.panel_books_interaction.Name = "panel_books_interaction";
+            this.panel_books_interaction.Size = new System.Drawing.Size(1016, 662);
+            this.panel_books_interaction.TabIndex = 28;
+            // 
+            // button_add_book_navigation
+            // 
+            this.button_add_book_navigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
+            this.button_add_book_navigation.BorderRadius = 10;
+            this.button_add_book_navigation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_add_book_navigation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_add_book_navigation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_add_book_navigation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_add_book_navigation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_add_book_navigation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
+            this.button_add_book_navigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_add_book_navigation.ForeColor = System.Drawing.Color.White;
+            this.button_add_book_navigation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(78)))));
+            this.button_add_book_navigation.Location = new System.Drawing.Point(93, 221);
+            this.button_add_book_navigation.Name = "button_add_book_navigation";
+            this.button_add_book_navigation.Size = new System.Drawing.Size(265, 50);
+            this.button_add_book_navigation.TabIndex = 27;
+            this.button_add_book_navigation.Text = "Додати книгу";
+            this.button_add_book_navigation.Click += new System.EventHandler(this.button_add_book_Click);
+            this.button_add_book_navigation.MouseEnter += new System.EventHandler(this.button_add_book_navigation_MouseEnter);
+            this.button_add_book_navigation.MouseLeave += new System.EventHandler(this.button_add_book_navigation_MouseLeave);
             // 
             // text_box_search
             // 
@@ -123,7 +123,7 @@ namespace library
             this.text_box_search.ForeColor = System.Drawing.Color.White;
             this.text_box_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.text_box_search.IconLeft = global::library.Properties.Resources.Search;
-            this.text_box_search.Location = new System.Drawing.Point(87, 82);
+            this.text_box_search.Location = new System.Drawing.Point(93, 69);
             this.text_box_search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.text_box_search.Name = "text_box_search";
             this.text_box_search.PasswordChar = '\0';
@@ -131,7 +131,7 @@ namespace library
             this.text_box_search.PlaceholderText = "Введіть назву книги";
             this.text_box_search.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.text_box_search.SelectedText = "";
-            this.text_box_search.Size = new System.Drawing.Size(243, 45);
+            this.text_box_search.Size = new System.Drawing.Size(265, 45);
             this.text_box_search.TabIndex = 26;
             this.text_box_search.TextChanged += new System.EventHandler(this.text_box_search_TextChanged);
             this.text_box_search.Enter += new System.EventHandler(this.text_box_search_Enter);
@@ -159,21 +159,21 @@ namespace library
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(20)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(1422, 686);
-            this.Controls.Add(this.panel);
+            this.Controls.Add(this.panel_main);
             this.Name = "BooksForm";
             this.Text = "BooksForm";
-            this.panel.ResumeLayout(false);
+            this.panel_main.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Panel panel_main;
-        private Guna.UI2.WinForms.Guna2Button button_add_book;
+        private System.Windows.Forms.Panel panel_books_interaction;
+        private Guna.UI2.WinForms.Guna2Button button_add_book_navigation;
         private Guna.UI2.WinForms.Guna2TextBox text_box_search;
         private FontAwesome.Sharp.IconButton button_back;
-        private Guna.UI2.WinForms.Guna2Button button_list_book;
+        private Guna.UI2.WinForms.Guna2Button button_books_list_navigation;
     }
 }

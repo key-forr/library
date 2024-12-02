@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    internal class RoleListManager
+    internal class RolesListManager
     {
-        private List<RolesConfig> roles;
+        private List<RoleConfig> roles;
 
-        public RoleListManager()
-        {
-            LoadRoles();
-        }
-
-        public List<RolesConfig> Roles
+        public List<RoleConfig> Roles
         {
             get { return roles; }
             private set { roles = value; }
+        }
+
+        public RolesListManager()
+        {
+            LoadRoles();
         }
 
         public void LoadRoles()

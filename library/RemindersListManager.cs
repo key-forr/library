@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    internal class ReminderListManager
+    internal class RemindersListManager
     {
         private List<ReminderConfig> reminders;
 
-        public ReminderListManager()
-        {
-            LoadReminder();
-        }
-
-        public List<ReminderConfig> Reminder
+        public List<ReminderConfig> Reminders
         {
             get { return reminders; }
             private set { reminders = value; }
+        }
+
+        public RemindersListManager()
+        {
+            LoadReminder();
         }
 
         public void LoadReminder()

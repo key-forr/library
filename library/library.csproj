@@ -184,13 +184,13 @@
     <Compile Include="BookingForm.Designer.cs">
       <DependentUpon>BookingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookListForm.cs">
+    <Compile Include="BooksListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookListForm.Designer.cs">
-      <DependentUpon>BookListForm.cs</DependentUpon>
+    <Compile Include="BooksListForm.Designer.cs">
+      <DependentUpon>BooksListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookListManager.cs" />
+    <Compile Include="BooksListManager.cs" />
     <Compile Include="BooksForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,63 +200,63 @@
     <Compile Include="ButtonUtils.cs" />
     <Compile Include="CardFactory.cs" />
     <Compile Include="Configuration.cs" />
-    <Compile Include="CustomerAddForm.cs">
+    <Compile Include="ClientAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerAddForm.Designer.cs">
-      <DependentUpon>CustomerAddForm.cs</DependentUpon>
+    <Compile Include="ClientAddForm.Designer.cs">
+      <DependentUpon>ClientAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerEditForm.cs">
+    <Compile Include="ClientEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerEditForm.Designer.cs">
-      <DependentUpon>CustomerEditForm.cs</DependentUpon>
+    <Compile Include="ClientEditForm.Designer.cs">
+      <DependentUpon>ClientEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerForm.cs">
+    <Compile Include="ClientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerForm.Designer.cs">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <Compile Include="ClientsForm.Designer.cs">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerListForm.cs">
+    <Compile Include="ClientsListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerListForm.Designer.cs">
-      <DependentUpon>CustomerListForm.cs</DependentUpon>
+    <Compile Include="ClientsListForm.Designer.cs">
+      <DependentUpon>ClientsListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerListManager.cs" />
-    <Compile Include="EditBookForm.cs">
+    <Compile Include="ClientsListManager.cs" />
+    <Compile Include="BookEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditBookForm.Designer.cs">
-      <DependentUpon>EditBookForm.cs</DependentUpon>
+    <Compile Include="BookEditForm.Designer.cs">
+      <DependentUpon>BookEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeAddForm.cs">
+    <Compile Include="UserAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeAddForm.Designer.cs">
-      <DependentUpon>EmployeeAddForm.cs</DependentUpon>
+    <Compile Include="UserAddForm.Designer.cs">
+      <DependentUpon>UserAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeEditForm.cs">
+    <Compile Include="UserEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeEditForm.Designer.cs">
-      <DependentUpon>EmployeeEditForm.cs</DependentUpon>
+    <Compile Include="UserEditForm.Designer.cs">
+      <DependentUpon>UserEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeListForm.cs">
+    <Compile Include="UsersListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeListForm.Designer.cs">
-      <DependentUpon>EmployeeListForm.cs</DependentUpon>
+    <Compile Include="UsersListForm.Designer.cs">
+      <DependentUpon>UsersListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeListManager.cs" />
-    <Compile Include="GenreListManager.cs" />
+    <Compile Include="UsersListManager.cs" />
+    <Compile Include="GenresListManager.cs" />
     <Compile Include="DataBaseHelper.cs" />
-    <Compile Include="EmployeeForm.cs">
+    <Compile Include="UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeForm.Designer.cs">
-      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    <Compile Include="UsersForm.Designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -280,25 +280,25 @@
     <Compile Include="ReminderAddForm.Designer.cs">
       <DependentUpon>ReminderAddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReminderListForm.cs">
+    <Compile Include="RemindersListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReminderListForm.Designer.cs">
-      <DependentUpon>ReminderListForm.cs</DependentUpon>
+    <Compile Include="RemindersListForm.Designer.cs">
+      <DependentUpon>RemindersListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReminderListManager.cs" />
-    <Compile Include="RoleListManager.cs" />
+    <Compile Include="RemindersListManager.cs" />
+    <Compile Include="RolesListManager.cs" />
     <Compile Include="StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StatisticsForm.Designer.cs">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StorageForm.cs">
+    <Compile Include="WarehouseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StorageForm.Designer.cs">
-      <DependentUpon>StorageForm.cs</DependentUpon>
+    <Compile Include="WarehouseForm.Designer.cs">
+      <DependentUpon>WarehouseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="AccountOptionsForm.resx">
@@ -319,38 +319,38 @@
     <EmbeddedResource Include="BookingForm.resx">
       <DependentUpon>BookingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookListForm.resx">
-      <DependentUpon>BookListForm.cs</DependentUpon>
+    <EmbeddedResource Include="BooksListForm.resx">
+      <DependentUpon>BooksListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BooksForm.resx">
       <DependentUpon>BooksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerAddForm.resx">
-      <DependentUpon>CustomerAddForm.cs</DependentUpon>
+    <EmbeddedResource Include="ClientAddForm.resx">
+      <DependentUpon>ClientAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerEditForm.resx">
-      <DependentUpon>CustomerEditForm.cs</DependentUpon>
+    <EmbeddedResource Include="ClientEditForm.resx">
+      <DependentUpon>ClientEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerForm.resx">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <EmbeddedResource Include="ClientsForm.resx">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerListForm.resx">
-      <DependentUpon>CustomerListForm.cs</DependentUpon>
+    <EmbeddedResource Include="ClientsListForm.resx">
+      <DependentUpon>ClientsListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditBookForm.resx">
-      <DependentUpon>EditBookForm.cs</DependentUpon>
+    <EmbeddedResource Include="BookEditForm.resx">
+      <DependentUpon>BookEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeAddForm.resx">
-      <DependentUpon>EmployeeAddForm.cs</DependentUpon>
+    <EmbeddedResource Include="UserAddForm.resx">
+      <DependentUpon>UserAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeEditForm.resx">
-      <DependentUpon>EmployeeEditForm.cs</DependentUpon>
+    <EmbeddedResource Include="UserEditForm.resx">
+      <DependentUpon>UserEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeForm.resx">
-      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    <EmbeddedResource Include="UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeListForm.resx">
-      <DependentUpon>EmployeeListForm.cs</DependentUpon>
+    <EmbeddedResource Include="UsersListForm.resx">
+      <DependentUpon>UsersListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -371,14 +371,14 @@
     <EmbeddedResource Include="ReminderAddForm.resx">
       <DependentUpon>ReminderAddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReminderListForm.resx">
-      <DependentUpon>ReminderListForm.cs</DependentUpon>
+    <EmbeddedResource Include="RemindersListForm.resx">
+      <DependentUpon>RemindersListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StorageForm.resx">
-      <DependentUpon>StorageForm.cs</DependentUpon>
+    <EmbeddedResource Include="WarehouseForm.resx">
+      <DependentUpon>WarehouseForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

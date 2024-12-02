@@ -11,16 +11,17 @@ using static Guna.UI2.Native.WinApi;
 
 namespace library
 {
-    public partial class BookListForm : Form
+    public partial class BooksListForm : Form
     {
-        private BookListManager bookListManager;
-        private BooksForm parentForm;
+        private BooksListManager booksListManager;
+        private BooksForm booksForm;
 
-        public BookListForm(BooksForm parentForm)
+        public BooksListForm(BooksForm booksForm)
         {
             InitializeComponent();
-            bookListManager = new BookListManager();
-            this.parentForm = parentForm;
+
+            booksListManager = new BooksListManager();
+            this.booksForm = booksForm;
         }
 
         private void BookListForm_Load(object sender, EventArgs e)
@@ -31,13 +32,14 @@ namespace library
         public void DisplayBooks()
         {
             this.Controls.Clear(); 
+
             int x = 30;
             int y = 30;
             int bookCount = 0;
 
-            foreach (var book in bookListManager.Books)
+            foreach (var book in booksListManager.Books)
             {
-                BookCardFactory bookCardFactory = new BookCardFactory(parentForm);
+                BookCardFactory bookCardFactory = new BookCardFactory(booksForm);
                 var bookCard = bookCardFactory.CreateBookCard(book, x, y);
 
                 this.Controls.Add(bookCard);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace library
 {
-    public partial class StorageForm : Form
+    public partial class WarehouseForm : Form
     {
-        public StorageForm()
+        public WarehouseForm()
         {
             InitializeComponent();
         }

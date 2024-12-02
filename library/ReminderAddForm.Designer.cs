@@ -102,6 +102,7 @@
             // date_picker
             // 
             this.date_picker.Checked = true;
+            this.date_picker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.date_picker.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(73)))), ((int)(((byte)(229)))));
             this.date_picker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_picker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -122,7 +123,7 @@
             this.button_add.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(169)))), ((int)(((byte)(118)))));
             this.button_add.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.button_add.IconSize = 50;
-            this.button_add.Location = new System.Drawing.Point(270, 299);
+            this.button_add.Location = new System.Drawing.Point(299, 299);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(48, 42);
             this.button_add.TabIndex = 31;

@@ -20,12 +20,12 @@ namespace library
 
         public void LoadUser()
         {
-            text_box_login.Text = UserSession.Login;
             text_box_name.Text = UserSession.Name;
             text_box_surname.Text = UserSession.Surname;
             text_box_phone.Text = UserSession.Phone;
-            text_box_role_name.Text = new RoleListManager().Roles.FirstOrDefault(g => g.Id == UserSession.RoleId)?.Name ?? "Роль не знайдено";
+            text_box_login.Text = UserSession.Login;
             text_box_password.Text = UserSession.Password;
+            text_box_role_name.Text = new RolesListManager().Roles.FirstOrDefault(g => g.Id == UserSession.RoleId)?.Name ?? "Роль не знайдено";
         }
 
         private void button_back_Click(object sender, EventArgs e)

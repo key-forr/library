@@ -1,6 +1,6 @@
 ﻿namespace library
 {
-    partial class CustomerListForm
+    partial class BooksListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // CustomerListForm
+            // BookListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(26)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(477, 615);
-            this.Name = "CustomerListForm";
-            this.Text = "CustomerListForm";
-            this.Load += new System.EventHandler(this.CustomerListForm_Load);
+            this.ClientSize = new System.Drawing.Size(998, 615);
+            this.Name = "BookListForm";
+            this.Text = "BookListForm";
+            this.Load += new System.EventHandler(this.BookListForm_Load);
             this.ResumeLayout(false);
 
         }

@@ -43,7 +43,6 @@ namespace library
             return scaledBitmap;
         }
 
-        
         public static Image LoadAndScaleImage(string imagePath, Size containerSize)
         {
             try
