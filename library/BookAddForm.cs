@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace library
 {
-    public partial class AddBookForm : Form
+    public partial class BookAddForm : Form
     {
-        public AddBookForm()
+        public BookAddForm()
         {
             InitializeComponent();
         }

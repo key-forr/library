@@ -491,14 +491,13 @@ namespace library
                     command.Parameters.AddWithValue("@publishing", bookCardConfig.Publishing);
                     command.Parameters.AddWithValue("@quantity", bookCardConfig.Quantity);
 
-                    // Перевірка на NULL для photo
                     if (string.IsNullOrEmpty(bookCardConfig.ImagePath))
                     {
-                        command.Parameters.AddWithValue("@photo", DBNull.Value); // Якщо пусто, встановити NULL
+                        command.Parameters.AddWithValue("@photo", DBNull.Value); 
                     }
                     else
                     {
-                        command.Parameters.AddWithValue("@photo", bookCardConfig.ImagePath); // Встановити шлях до фото
+                        command.Parameters.AddWithValue("@photo", bookCardConfig.ImagePath); 
                     }
 
                     command.Parameters.AddWithValue("@bookId", bookCardConfig.Id);

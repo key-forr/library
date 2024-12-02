@@ -33,7 +33,7 @@ namespace library
 
         private void button_add_book_Click(object sender, EventArgs e)
         {
-            AddBookForm childForm = new AddBookForm();
+            BookAddForm childForm = new BookAddForm();
             PanelAndFormManager.EmbedFormInPanel(childForm, panel_books_interaction);
         }
 
@@ -76,12 +76,12 @@ namespace library
 
         private void button_add_book_navigation_MouseEnter(object sender, EventArgs e)
         {
-            ButtonUtils.AnimateButtonOnHover(button_books_list_navigation, true, Color.FromArgb(36, 42, 78), 5);
+            ButtonUtils.AnimateButtonOnHover(button_add_book_navigation, true, Color.FromArgb(36, 42, 78), 5);
         }
 
         private void button_add_book_navigation_MouseLeave(object sender, EventArgs e)
         {
-            ButtonUtils.AnimateButtonOnHover(button_books_list_navigation, false, Color.FromArgb(36, 42, 78), 5);
+            ButtonUtils.AnimateButtonOnHover(button_add_book_navigation, false, Color.FromArgb(36, 42, 78), 5);
         }
     }
 }
